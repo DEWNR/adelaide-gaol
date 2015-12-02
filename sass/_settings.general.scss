@@ -16,7 +16,9 @@
 
 /* = File locations and prefixes = */
 
-$sagovau-file-prefix:   ""; // A two or three letter prefix to differentiate between site files.
+$sagovau-path-shared: "../images/";
+$sagovau-path-svg: "../images/";
+$sagovau-file-prefix:   "ag"; // A two or three letter prefix to differentiate between site files.
 
 
 
@@ -24,5 +26,5 @@ $sagovau-file-prefix:   ""; // A two or three letter prefix to differentiate bet
 
 /* = Colours = */
 
-$sagovau-color-brand:   #002855;    // The site's main brand colour
+$sagovau-color-brand: #5e292a;    // The site's main brand colour
 $sagovau-color-brand-secondary: #9e948b;
