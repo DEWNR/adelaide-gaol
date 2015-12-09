@@ -1,11 +1,11 @@
 {
-  "name": "dewnr-series-three-template",
-  "description": "Base responsive site templates for DEWNR's websites.",
+  "name": "dewnr-adelaide-gaol",
+  "description": "Adelaide Gaol site template for DEWNR's websites. Builds on top of dewnr-series-three.",
   "main": "gulpfile.js",
   "private": true,
   "dependencies": {},
   "devDependencies": {
-    "browser-sync": "^2.9.11",
+    "browser-sync": "^2.10.0",
     "del": "^2.0.2",
     "dewnr-series-three": "^0.2.3",
     "gulp": "^3.9.0",
@@ -23,11 +23,11 @@
     "gulp-uglify": "^1.4.2",
     "gulp-util": "^3.0.7",
     "jsonfile": "^2.2.3",
+    "lodash": "^3.10.1",
     "run-sequence": "^1.1.4",
-    "yargs": "^3.29.0",
-    "lodash": "^3.10.1"
+    "yargs": "^3.29.0"
   },
-  "repository": "dewnr/series-three-template",
+  "repository": "dewnr/adelaide-gaol",
   "license": "CC-BY-4.0",
   "author": "The DEWNR Internet Team <DEWNR.Internet@sa.gov.au>"
 }
