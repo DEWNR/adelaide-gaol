@@ -27,18 +27,19 @@ $sagovau-icon-module-icon-type: news, donate, find;
 
 /* === SITE-HEADER === */
 
-.site-header__logo {
-    background-image: url(../images/ag-header-logo-background.svg);
-    background-repeat: no-repeat;
-    -webkit-background-size: auto 100%;
-    background-size: auto 100%;
-}
+// .site-header__logo {
+//     background-image: url("#{$sagovau-path-svg}#{$sagovau-file-prefix}-header-logo-background.svg");
+//     background-repeat: no-repeat;
+//     -webkit-background-size: auto 100%;
+//     background-size: auto 100%;
+// }
 
 $sagovau-site-header-logo-height: 120px;
 
 @mixin sagovau-site-header-custom-content {
 
     background-color: $sagovau-color-brand;
+    //background-image: url("../images/ag-header-logo-background.svg");
 
     @include media-query(small-and-up) {
         // background-image: url("#{$sagovau-path-svg}#{$sagovau-file-prefix}-header-background.svg");
@@ -60,5 +61,7 @@ $sagovau-sitemap-background: "#{$sagovau-path-svg}#{$sagovau-file-prefix}-sitema
 /* === SPOTLIGHT === */
 
 $sagovau-spotlight-image-left-offset: 0;    // The gap to the left of the spotlight image on huge devices. (This gap is hidden by the spotight overlay.)
-$sagovau-spotlight-overlay-width: 570px;    // The width of the spotlight overlay at its widest point.
-$sagovau-spotlight-overlay-padding-right: 250px;   // The amount of padding on the right of the spotlight overlay. (This is used to keep the text within the overlay.)
+$sagovau-spotlight-overlay-width: 329px;    // The width of the spotlight overlay at its widest point.
+$sagovau-spotlight-overlay-padding-right: 70px;   // The amount of padding on the right of the spotlight overlay. (This is used to keep the text within the overlay.)
+
+//.site-search__input--submit { fill: #FFFFFF !important; }

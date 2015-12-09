@@ -1,0 +1,36 @@
+/*------------------------------------*\
+    #SITEMAP
+\*------------------------------------*/
+
+/**
+ * Styling for the Alpha series "sitemap".
+ */
+
+
+
+
+/*a*/.#{$sagovau-namespace}sitemap__link {
+    color: tint( $sagovau-color-brand--light, 80% );  //#fff;
+    display: inline-block;
+    @include ui-link;   // Underline on hover/focus
+
+    /**
+     * 1. Add extra padding on touch devices to give larger tap targets
+     *
+     * 2. Add a negative margin so the padding doesn't affect the baseline
+     **/
+
+    .touch & {
+        margin-top: -$sagovau-spacing-unit-base--small;     /* [2] */
+        padding: $sagovau-spacing-unit-base--small 0;    /* [1] */
+    }
+}
+
+
+		/*h2*/.#{$sagovau-namespace}sitemap__title {
+			font-size: 1rem;  //90%
+		}
+
+		/*ul*/.#{$sagovau-namespace}sitemap__list {
+			font-size: 0.85714rem; //80%
+		}
