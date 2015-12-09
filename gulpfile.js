@@ -321,11 +321,12 @@ gulp.task('html:watch', function () {
 gulp.task('imagemin', function () {
     return gulp.src(paths.src.images + '*', {base: paths.src.root})  // Use root as base to get paths in rev-manifest.json
         .pipe(imagemin(imageminOptions))
-        .pipe(rev())    // Add cache-busting fingerprint
+        //.pipe(rev())    // Add cache-busting fingerprint
         .pipe(gulp.dest(paths.dest))
         .pipe(browserSync.stream())
-        .pipe(rev.manifest(paths.manifest, revManifestOptions))
-        .pipe(gulp.dest(paths.dest));
+        //.pipe(rev.manifest(paths.manifest, revManifestOptions))
+        //.pipe(gulp.dest(paths.dest))
+        ;
 });
 
 gulp.task('imagemin:watch', function () {
