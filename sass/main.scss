@@ -138,7 +138,6 @@
 @import "dewnr-series-three/sass/components.feature-module";
 @import "dewnr-series-three/sass/components.icon-module";
 @import "dewnr-series-three/sass/components.image-gallery";
-@import "dewnr-series-three/sass/components.page-shadow";
 @import "dewnr-series-three/sass/components.navigation-tile";
 @import "dewnr-series-three/sass/components.primary-navigation";
 @import "dewnr-series-three/sass/components.related-information";
@@ -152,9 +151,12 @@
 @import "dewnr-series-three/sass/components.sitemap";
 @import "dewnr-series-three/sass/components.spotlight";
 
+@import "components.primary-navigation";
+@import "components.action-module";
 @import "components.site-search";
 @import "components.site-header";
 @import "components.sitemap";
+@import "components.page-shadow";
 
 
 

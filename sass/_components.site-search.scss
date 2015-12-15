@@ -4,11 +4,19 @@
 
 
 /*form*/.#{$sagovau-namespace}site-search {
-	
+
     ::placeholder {
             color: #af9fa1;
         }
     .site-search__input--submit {
     	fill: #af9fa1;
     }
+    .site-search__input--submit:hover {
+        fill: lighten(#af9fa1, 20%);
+    }
+}
+
+
+/*form*/.#{$sagovau-namespace}site-search {
+    color: lighten(#af9fa1, 20%);
 }

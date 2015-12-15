@@ -12,7 +12,7 @@
     },{
         "index": "2",
         "title": "Tour info",
-        "class": "  icon-module--location",
+        "class": "  icon-module--info",
         "href": "#"
     }
 ]
