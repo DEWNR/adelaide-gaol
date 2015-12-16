@@ -66,3 +66,7 @@ $sagovau-spotlight-overlay-width: 329px;    // The width of the spotlight overla
 $sagovau-spotlight-overlay-padding-right: 70px;   // The amount of padding on the right of the spotlight overlay. (This is used to keep the text within the overlay.)
 
 //.site-search__input--submit { fill: #FFFFFF !important; }
+
+
+/* === FONT SIZE FIX === */
+nav, article, aside, .secondary-navigation__item, .related-information { font-size: 1rem; }
