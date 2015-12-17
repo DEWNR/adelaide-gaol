@@ -27,32 +27,35 @@ $sagovau-icon-module-icon-type: find, fees, info, location, news;
 
 /* === SITE-HEADER === */
 
-// .site-header__logo {
-//     background-image: url("#{$sagovau-path-svg}#{$sagovau-file-prefix}-header-logo-background.svg");
-//     background-repeat: no-repeat;
-//     -webkit-background-size: auto 100%;
-//     background-size: auto 100%;
-// }
-
 $sagovau-site-header-logo-height: 120px;
+
 
 @mixin sagovau-site-header-custom-content {
 
-    background-color: $sagovau-color-brand;
-    //background-image: url("../images/ag-header-logo-background.svg");
+    background-color: $sagovau-color-background-content;
 
     @include media-query(small-and-up) {
-        // background-image: url("#{$sagovau-path-svg}#{$sagovau-file-prefix}-header-background.svg");
         background-position: 320px 0;
         background-repeat: no-repeat;
     }
 
     @include media-query(huge) {
+        background-color: $sagovau-color-brand;
         background-position: 100% 0;   // Manually set to create smooth transition between breakpoints
     }
 
 }
 
+
+@mixin sagovau-site-header-logo-custom-content() {
+
+    @include media-query(huge) {
+        background-image: url("#{$sagovau-path-svg}#{$sagovau-file-prefix}-header-logo-background.svg");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: -2.4em 0em;
+    }
+}
 
 
 /* === SITEMAP === */

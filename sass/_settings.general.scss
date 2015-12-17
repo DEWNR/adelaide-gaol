@@ -28,18 +28,3 @@ $sagovau-file-prefix:   "ag"; // A two or three letter prefix to differentiate b
 
 $sagovau-color-brand: #5e292a;    // The site's main brand colour
 $sagovau-color-brand-secondary: #9e948b;
-//$sagovau-color-brand--light: green;
-
-
-@mixin sagovau-site-header-logo-custom-content() {
-	//background-color: orange;
-	background-image: url("#{$sagovau-path-svg}#{$sagovau-file-prefix}-header-logo-background.svg");
-    background-repeat: no-repeat;
-    -webkit-background-size: auto 100%;
-    background-size: auto 100%;
-    //padding-left: 1rem;
-    //width: 100%;
-    background-position: -2.4em 0em;
-
-
-}
