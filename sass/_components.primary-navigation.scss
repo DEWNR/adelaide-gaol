@@ -87,7 +87,7 @@ $sagovau-primary-navigation-dropdown-width: 420px !default;
         }
 
         li {
-            border-color: ($sagovau-color-brand / 2) + ($sagovau-color-brand--light / 2);
+            border-color: (#af9495) + ($sagovau-color-brand--light / 2);
             border-style: solid;
             border-width: 0;
             margin: 0;
@@ -97,7 +97,7 @@ $sagovau-primary-navigation-dropdown-width: 420px !default;
         }
 
         a {
-            color: $sagovau-color-brand;
+            color: tint(#af9fa1, 50%);
             display: block;
             text-decoration: none;
             width: 100%;
