@@ -6,17 +6,23 @@
 /*form*/.#{$sagovau-namespace}site-search {
 
     ::placeholder {
-            color: #af9fa1;
-        }
-    .site-search__input--submit {
-    	fill: #af9fa1;
+        color: #af9fa1;
     }
-    .site-search__input--submit:hover {
-        fill: lighten(#af9fa1, 20%);
+
+    .site-search__input--submit {
+        fill: #af9fa1;
+
+        &:hover {
+            fill: lighten(#af9fa1, 20%);
+        }
     }
 }
 
 
 /*form*/.#{$sagovau-namespace}site-search {
-    color: lighten(#af9fa1, 20%);
+    color: $sagovau-color-brand;
+
+    @include media-query(large-and-up) {
+        color: lighten(#af9fa1, 20%);
+    }
 }
