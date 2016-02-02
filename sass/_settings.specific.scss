@@ -85,3 +85,67 @@ $sagovau-spotlight-overlay-padding-right: 70px;   // The amount of padding on th
 
 /* === FONT SIZE FIX === */
 nav, article, aside, .secondary-navigation__item, .related-information { font-size: 1rem; }
+
+
+/* === SEARCH === */
+// form div.js {
+//     > div:first-of-type {
+//         //border: 5px solid #e6f4f8;
+//         background: #ddd7d7;
+//         //overflow:hidden;
+//         height: 2em;
+//         padding: 0.4em;
+//         padding-bottom: 2em;
+//     }
+// }
+
+// table.noBorderTable  {
+//     td, th {
+//         padding: 0 10px;
+//         border: solid 1px #EEE;
+//         //padding: 5px;
+//     }
+// }
+
+// table.search-box {
+//     padding: 10px;
+// }
+// table.search-box td {
+//     padding-right: 1.3em;
+// }
+// table.search-box .divInput input {
+//     padding: 0.6em;
+// }
+// .divInputBtn input {
+//     padding: 0.6em;
+// }
+
+
+.search-r {
+    position: relative;
+    input {}
+}
+.search-r__table {
+    td {
+        padding-right: 1.3em;
+    }
+}
+.search-r__label {}
+.search-r__field input {
+    padding: 0.6em;
+}
+.search-r__button input {
+    padding: 0.6em;
+}
+
+.search-header {}
+.search-header__item {
+    //border: 5px solid #e6f4f8;
+    //overflow: hidden;
+    background: #ddd7d7;
+    //height: 2em;
+    padding: 1.2em 0.4em 2.2em 0.4em;
+    //padding-top: 1.2em;
+}
+.search-header__item--label { float: left; }
+.search-header__item--nav { float: right; }
