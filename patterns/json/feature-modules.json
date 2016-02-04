@@ -2,17 +2,17 @@
     {
         "title": "Opening hours",
         "class": "",
-        "image": "http://placehold.it/632x482",
+        "image": "test-images/block-632x482.png",
         "href": "#"
     },{
         "title": "Ghost Tours",
         "class": "",
-        "image": "http://placehold.it/632x482",
+        "image": "test-images/block-632x482.png",
         "href": "#"
     },{
         "title": "Other buildings",
         "class": "",
-        "image": "http://placehold.it/632x482",
+        "image": "test-images/block-632x482.png",
         "href": "#"
     }
 ]

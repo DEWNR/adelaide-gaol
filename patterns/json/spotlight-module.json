@@ -2,8 +2,15 @@
     {
         "title": "Welcome",
         "class": "",
-        "image": "http://lorempixel.com/946/280/nature",
+        "image": "test-images/block-946x280.jpg",
         "imageAltText": "Looking through a wire fence down a narrow courtyard with stone walls either side towards a watch tower.",
+        "href": "#",
+        "description": "The Adelaide Gaol is known as the longest continuously operating prison in Australia."
+    },{
+        "title": "Tours",
+        "class": "",
+        "image": "test-images/block-946x280-castle.jpg",
+        "imageAltText": "Narrow courtyard with stone walls either side points towards a watch tower.",
         "href": "#",
         "description": "The Adelaide Gaol is known as the longest continuously operating prison in Australia."
     }

@@ -4,21 +4,21 @@
         "title": "Title 1",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "class": "",
-        "image": "http://placehold.it/160x160",
+        "image": "test-images/block-160x160.png",
         "href": "#"
     },{
         "index": "1",
         "title": "Title 2",
         "text": "Proin posuere turpis felis, vel dapibus sem vulputate non.",
         "class": "",
-        "image": "http://placehold.it/160x160",
+        "image": "test-images/block-160x160.png",
         "href": "#"
     },{
         "index": "2",
         "title": "Title 3",
         "text": "Etiam convallis ante eget augue ullamcorper.",
         "class": "",
-        "image": "http://placehold.it/160x160",
+        "image": "test-images/block-160x160.png",
         "href": "#"
     }
 ]
