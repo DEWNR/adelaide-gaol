@@ -1,0 +1,55 @@
+/*------------------------------------*\
+    #SPECIFIC SETTINGS
+\*------------------------------------*/
+
+/**
+ * Site settings that have specific uses, such as controlling which classes
+ * are output or the design of a particular object or component. Builds on
+ * the group's settings.
+ **/
+
+// Import the group settings
+
+@import 'dewnr-series-three/src/stylesheets/settings.specific';
+
+
+
+
+
+/* == COMPONENTS == */
+
+/* === SPOTLIGHT === */
+
+$sagovau-spotlight-image-left-offset: 0;
+$sagovau-spotlight-overlay-width: 362px;
+$sagovau-spotlight-overlay-padding-right: 70px;
+
+
+/* === SITE-HEADER === */
+
+$sagovau-site-header-logo-height: 120px;
+
+@mixin sagovau-site-header-custom-content {
+
+    background-color: $sagovau-color-background-content;
+
+    @include media-query(huge) {
+        background-color: $sagovau-color-brand;
+    }
+
+}
+
+@mixin sagovau-site-header-logo-custom-content {
+
+    @include media-query(huge) {
+        background-image: url(#{$sagovau-path-svg}#{$sagovau-file-prefix}-header-logo-background.svg);
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+    }
+
+}
+
+
+/* === SITEMAP === */
+
+$sagovau-sitemap-background: '#{$sagovau-path-png}#{$sagovau-file-prefix}-sitemap-background.png';
