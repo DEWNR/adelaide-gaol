@@ -1,6 +1,7 @@
 {% from 'macros/helpers.nunjucks' import sprite %}
 
 {% set image_path = 'images/' %}
+{% set js_path = 'js/' %}
 {% set share_path = 'http://www.environment.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f88a7f3c-df7e-430a-825c-24cfa8dec9a8/' %}
 {% set site_prefix = 'ag' %}
 {% set site_url = 'http://www.environment.sa.gov.au' %}
@@ -105,21 +106,13 @@
 
         <!-- End jQuery -->
 
+        <script src="{{js_path}}app.js"></script>
 
         <!-- Progressive enhancement -->
 
         <script src="http://www.environment.sa.gov.au/files/templates/00000000-0000-0000-0000-000000000000/f88a7f3c-df7e-430a-825c-24cfa8dec9a8/s3-enhance-d2bad55bd7.js"></script>
 
         <!-- End progressive enhancement -->
-
-
-        <!-- trip advisor badge -->
-        <script type="text/javascript">
-            $(document).ready( function() {
-                $('.site-header__banner').append( '<div class="site-header__badge"><img alt="trip advisor certificate of excellence" class="site-header__badge--image" src="{{image_path}}certificate-of-excellence.png"></div>' );
-            });
-        </script>
-        <!-- End trip advisor badge -->
 
     {% endblock %}
 
