@@ -112,6 +112,15 @@
 
         <!-- End progressive enhancement -->
 
+
+        <!-- trip advisor badge -->
+        <script type="text/javascript">
+            $(document).ready( function() {
+                $('.site-header__banner').append( '<div class="site-header__badge"><img alt="trip advisor certificate of excellence" class="site-header__badge--image" src="{{image_path}}certificate-of-excellence.png"></div>' );
+            });
+        </script>
+        <!-- End trip advisor badge -->
+
     {% endblock %}
 
 
