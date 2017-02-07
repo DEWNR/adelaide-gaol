@@ -1,0 +1,18 @@
+
+{% for item in article %}
+
+    <div class="layout">
+
+        <div class="layout__item">
+            <h1 class="article__title">{{ item.title }}</h1>
+        </div>
+
+        <div class="article__content    layout__item">
+
+            {{ item.body | safe }}
+
+        </div>
+
+    </div>
+
+{% endfor %}
