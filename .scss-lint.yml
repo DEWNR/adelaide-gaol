@@ -31,7 +31,7 @@ linters:
     enabled: false
 
   DuplicateProperty:
-    enabled: true
+    enabled: false
 
   ElsePlacement:
     enabled: true
@@ -93,9 +93,9 @@ linters:
     convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
 
   NestingDepth:
-    enabled: true
+    enabled: false
     max_depth: 3
-    ignore_parent_selectors: false
+    ignore_parent_selectors: true
 
   PlaceholderInExtend:
     enabled: true
@@ -185,7 +185,7 @@ linters:
 
   StringQuotes:
     enabled: true
-    style: double_quotes # or single_quotes
+    style: single_quotes # or double_quotes
 
   TrailingSemicolon:
     enabled: true
