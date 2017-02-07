@@ -1,0 +1,16 @@
+/*------------------------------------*\
+    #SITE-HEADER
+\*------------------------------------*/
+
+@import 'dewnr-series-three/src/stylesheets/components.site-header';
+
+
+/*div*/.#{$sagovau-namespace}site-header__badge {
+    position: absolute;
+    right: 8px;
+    top: -6px;
+
+    img {
+        width: 55px;
+    }
+}
