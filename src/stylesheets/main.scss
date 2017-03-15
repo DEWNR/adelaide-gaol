@@ -97,7 +97,7 @@
 @import 'dewnr-bedrock/sass/base.main';
 @import 'dewnr-bedrock/sass/base.page';
 @import 'dewnr-bedrock/sass/base.tables';
-
+@import 'dewnr-bedrock/sass/_generic.dewnrger';
 
 
 
@@ -155,6 +155,11 @@
 
 /* == AG == */
 @import 'components.site-header';
+@import 'components.spotlight';
+@import 'components.site-search';
+@import 'components.primary-navigation';
+
+@import 'components.hacks';
 
 
 

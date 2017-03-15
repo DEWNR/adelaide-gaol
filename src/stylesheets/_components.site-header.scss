@@ -14,3 +14,21 @@
         width: 55px;
     }
 }
+
+
+/*div*/.#{$sagovau-namespace}site-header__quick-links {
+    bottom: $sagovau-spacing-unit-base--small;
+    position: relative;
+    right: $sagovau-spacing-unit-base--small;
+    text-align: right;
+
+    @include media-query(small-and-up) {
+        position: absolute;
+        opacity: 0.7;
+    }
+
+}
+
+.site-header__navigation {
+    background-color: $sagovau-color-brand-tertiary;
+}

@@ -24,7 +24,27 @@ $sagovau-path-svg: '../images/';
 
 
 
+/* == High-level colours == */
+
+$sagovau-color-brand: #002855;
+$sagovau-color-brand-secondary: #9e948b;
+
 
 /* = Colours = */
 
+$sagovau-color-text-base: #333;
+
+$sagovau-color-background-base: #999; //#666
+$sagovau-color-background-content: #fff;
+$sagovau-color-background-sitemap: #333;
+
+
 $sagovau-color-brand: #672e2a;
+// $sagovau-color-brand-secondary: #555;
+$sagovau-color-brand-tertiary: #555;
+$sagovau-color-brand-tertiary--dark: #333;
+
+
+/* = Fonts = */
+
+$sagovau-font-family-highlight: Dewnrger,"Frutiger W01",Helvetica,Arial,sans-serif;
