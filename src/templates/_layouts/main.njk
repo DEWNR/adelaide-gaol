@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% if page.title %}{{ page.title }} - {% endif %} Adelaide Gaol</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  {# Prefetch #}
+  <link rel="dns-prefetch" href="//fast.fonts.net">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//twitter.com">
+  <link rel="dns-prefetch" href="//www.facebook.com">
+  <link rel="dns-prefetch" href="">
+
+  {# Opengraph #}
+  <meta property="og:title" content="{{ page.title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.currentUrl }}" />
+  <meta property="og:image" content="{{ page.image }}" />
+
+  {# Stylesheets #}
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="{% if page.bodyClass %}{{ page.bodyClass }}{% endif %}">
+
+  {# {% include "_components/header.njk" %} #}
+  
+  <div id="main-content">
+    {% block main %}{% endblock %}
+  </div>  
+
+  {# Any page specific javascript will go in here #}
+  {% block javascript %}{% endblock %}
+  
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>  
+</body>
+</html>

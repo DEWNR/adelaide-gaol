@@ -1,4 +1,25 @@
-.DS_Store
-*.log
-node_modules/
-temp/
+### OSX ###
+*.DS_store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+### Node ###
+logs
+.logs
+# Dependency directories
+node_modules
+
+# Yarn integrity file
+.yarn-integrity
+
+# Build files
+/dev/
+/build/
