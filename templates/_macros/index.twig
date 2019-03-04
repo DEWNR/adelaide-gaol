@@ -1,0 +1,31 @@
+{#
+================================================================================
+SVG Icons
+================================================================================
+Add new icons by dropping a svg into the 'src/icons' folder.
+Usage:
+{% import '_macros/utils' as utils %}
+{{ utils.icon('iconFilename') }}
+#}
+
+{% macro icon(iconFilename, classes) %}
+	<span class="icon {{ "icon-#{iconFilename}" }}{{ classes ? ' ' ~ classes }}">
+		<svg><use xlink:href="{{ "#icon-#{iconFilename}" }}"/></svg>
+	</span>
+{% endmacro %}
+
+
+{#
+================================================================================
+Date formatted
+================================================================================
+Will format the date as 1st January 2019
+j - Day of the month without leading zeros
+S - English ordinal suffix for the day of the month, 2 characters
+F - A full textual representation of a month, such as January or March
+Y - A full numeric representation of a year, 4 digits
+#}
+
+{% macro dateFormatted(givenDate) %}
+    {{ givenDate | date('jS F Y') }}
+{% endmacro %}

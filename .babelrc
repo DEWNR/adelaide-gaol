@@ -1,7 +1,17 @@
+
 {
-  "presets": [ "@babel/preset-env" ],
-  "compact": true,
-  "ignore": [
-    "./node_modules/**/*.js"
+  "presets": [[
+    "@babel/preset-env", {
+      "shippedProposals": true,
+      "forceAllTransforms": true
+    }
+  ]],
+  "compact": false,
+  "comments": false,
+  "plugins": [
+    ["@babel/plugin-proposal-object-rest-spread", {
+      "useBuiltIns": true
+    }],
+    "@babel/plugin-proposal-class-properties"
   ]
 }

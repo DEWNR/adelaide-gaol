@@ -1,0 +1,40 @@
+/* -- Site fonts */
+
+/* -- Dewnrger */
+@font-face {
+  font-family: Dewnrger;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('https://www.environment.sa.gov.au/assets/Dewnrger45LightCondensed.woff2') format('woff2'),
+    url('https://www.environment.sa.gov.au/assets/Dewnrger45LightCondensed.woff') format('woff');
+}
+
+@font-face {
+  font-family: Dewnrger;
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url('https://www.environment.sa.gov.au/assets/Dewnrger48LightCondensedItalic.woff2') format('woff2'),
+    url('https://www.environment.sa.gov.au/assets/Dewnrger48LightCondensedItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: Dewnrger;
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url('https://www.environment.sa.gov.au/assets/Dewnrger67BoldCondensed.woff2') format('woff2'),
+    url('https://www.environment.sa.gov.au/assets/Dewnrger67BoldCondensed.woff') format('woff');
+}
+
+@font-face {
+  font-family: Dewnrger;
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url('https://www.environment.sa.gov.au/assets/Dewnrger68BoldCondensedItalic.woff2') format('woff2'),
+    url('https://www.environment.sa.gov.au/assets/Dewnrger68BoldCondensedItalic.woff') format('woff');
+}
+
+/* -- Frutiger */

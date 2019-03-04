@@ -1,0 +1,38 @@
+dateModified: 1551231448
+email:
+  fromEmail: liam.rella@gmail.com
+  fromName: 'Adelaide Gaol'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  7e2a939a-a0dd-4825-9cff-33ef02c3bfeb:
+    name: Common
+plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+siteGroups:
+  4221bd02-481b-4416-bdaa-48cadfabefb5:
+    name: 'Adelaide Gaol'
+sites:
+  89ad90bb-4100-47b8-a793-95080e52e0d7:
+    baseUrl: $DEFAULT_SITE_URL
+    handle: default
+    hasUrls: true
+    language: en-GB
+    name: 'Adelaide Gaol'
+    primary: true
+    siteGroup: 4221bd02-481b-4416-bdaa-48cadfabefb5
+    sortOrder: 1
+system:
+  edition: pro
+  live: true
+  name: 'Adelaide Gaol'
+  schemaVersion: 3.1.25
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

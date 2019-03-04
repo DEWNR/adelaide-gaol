@@ -1,8 +1,9 @@
-[![Project logo](./src/images/ag-logotype.svg)](https://adelaidegaol.sa.gov.au)
+<a href="https://adelaidegaol.sa.gov.au"><img style="margin: 0 auto 40px; display: block;" src="./src/img/site/ag-logotype.svg" alt="Adelaide Gaol" width="300"/></a>
 
-[![js-standard-style](https://cdn.rawgit.com/standard/standard/master/badge.svg)](http://standardjs.com)
-# Adelaide Gaol
-> 2018 redesign
+<a href="http://standardjs.com"><img style="margin: auto; display: inline-block;" src="https://cdn.rawgit.com/standard/standard/master/badge.svg" alt="JS Standard style" height="30"/></a>
+<a href="[http://standardjs.com](https://github.com/craftcms/craft)"><img style="margin-left: 10px; display: inline-block;" src="https://camo.githubusercontent.com/d8aced316d902adde570feb55d096d47f523f2d3/68747470733a2f2f6372616674636d732e636f6d2f6372616674636d732e737667" alt="Craft CMS" height="30"/></a>
+
+# Adelaide Gaol :cop:
 
 A repository for creating templates and files for the Adelaide Gaol website.
 https://adelaidegaol.sa.gov.au
@@ -11,33 +12,42 @@ https://adelaidegaol.sa.gov.au
 To install this repository, first make sure you are using node v10.4.2 or later then run either of the following commands.
 
 ```
-$ yarn
-```
-```
 $ npm install
 ```
 
 ## Developing and building
-There are only 2 scripts to run.
 
 ```
-$ yarn start
+$ npm run start
 
-$ yarn production
+$ npm run production
+
+$ npm run fix
 ```
-`start` will compile all the files into a 'dev' folder and start a server for live reloading.
+`start` will compile all the files necessary files to build the site in dev with livereloading
 
-`production` will minify and uglify scss and javascript files optimize images and compile files into a 'production' folder
+`production` will build the entire site ready for the live environment
+
+`fix` will run an eslint on any js files in the src/js directory as per our eslint config
 
 ## Code notes
-eslint is using a slight variation on [js-standard-style](http://standardjs.com) to include semicolons at the end of blocks to ensure that there is one less thing to make us go insane.
+Eslint is using a slight variation on [js-standard-style](http://standardjs.com) to include semicolons at the end of blocks to ensure that there is one less thing to make us go insane.
+
+Sometimes imagemin will need rebuilding. To do this run the following code:
+```
+$ npm rebuild jpegtran-bin
+```
 
 Stylelint is using [stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended)
 
 ## Credits
-Build based on [webpack-gulp-boilerplate by shalachev](https://github.com/shalachev/webpack-gulp-boilerplate)
+Leaning heavily on [Andrew Welch's craft repo](https://github.com/nystudio107/craft/)
 
+## Plugins
+* [lazysizes](https://github.com/aFarkas/lazysizes)
+* [picturefill](https://github.com/scottjehl/picturefill)
 
 ## TODO
-* Build a site
-* Revise revving/hashing for gulp task (there has to be a cleaner way)
+* 
+
+

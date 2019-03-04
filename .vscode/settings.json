@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "modules/": true,
+    "storage/": true,
+    "vendor/": true,
+    "craft.bat": true,
+    "craft": true
+  },
+  "stylelint.enable": true
+}

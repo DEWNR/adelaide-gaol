@@ -1,10 +1,10 @@
 module.exports = {
-    "env": {
-        "node": true,
-        "browser": true
+    env: {
+        node: true,
+        browser: true
     },
-    "extends": "standard",
-    "rules": {
-        "semi": ["error", "always"]
+    extends: 'standard',
+    rules: {
+        semi: ['error', 'always']
     }
 };
