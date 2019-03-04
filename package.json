@@ -16,6 +16,10 @@
     "production": "NODE_ENV=production gulp build",
     "fix": "eslint src/js --fix"
   },
+  "engines": {
+    "node": ">=10.1.0"
+  },
+  "engineStrict": true,
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "fg-loadcss": "^2.1.0",
