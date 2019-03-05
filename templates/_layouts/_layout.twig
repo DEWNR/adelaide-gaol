@@ -20,8 +20,8 @@
 
         {# -- ServiceWokrer, loadjs, and tiny-cookie #}
         <script>
-            {% if not craft.app.config.general.isSystemLive %}
-                {{ source('_inlinejs/register-service-worker.min.js')}}
+            {% if craft.app.config.general.isSystemLive %}
+                {{ source('_inlinejs/register-service-worker.min.js', ignore_missing = true)}}
             {% endif %}
             {{ source('_inlinejs/tiny-cookie.min.js')}}
             {{ source('_inlinejs/tab-handler.min.js')}}
