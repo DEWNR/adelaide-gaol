@@ -1,0 +1,66 @@
+/* ==========================================================================
+   #Mixins
+   ========================================================================== */
+
+/* Contents
+    - Clearfix
+    - Visually hidden content
+    - Fluid aspect
+   ========================================================================== */
+
+
+/* Clearfix
+   ========================================================================== */
+/* stylelint-disable declaration-no-important */
+@mixin clearfix() {
+  &::after {
+    content: '' !important;
+    display: block !important;
+    clear: both !important;
+  }
+}
+/* stylelint-enable declaration-no-important */
+
+
+/* Visually hidden content
+ * ==========================================================================
+ *
+ * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ * ========================================================================== */
+@mixin hide-visually($important: false) {
+  @if ($important == false) {
+    $important: null;
+  }
+
+  @else {
+    $important: !important;
+  }
+
+  border: 0 $important;
+  clip: rect(0 0 0 0) $important;
+  height: 1px $important;
+  margin: -1px $important;
+  overflow: hidden $important;
+  padding: 0 $important;
+  position: absolute $important;
+  width: 1px $important;
+}
+
+
+/* Fluid aspect
+   ========================================================================== */
+@mixin fluid-aspect($ratio: 1 1, $selector: '> :first-child') {
+  $selector: unquote($selector);
+
+  padding-bottom: (percentage(nth($ratio, 2) / nth($ratio, 1))) / 2;
+  padding-top: (percentage(nth($ratio, 2) / nth($ratio, 1))) / 2;
+  position: relative;
+
+  #{$selector} {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

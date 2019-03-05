@@ -28,6 +28,7 @@
     "loadjs": "^3.5.5",
     "normalize.css": "^8.0.1",
     "picturefill": "^3.0.3",
+    "sass-mq": "^5.0.0",
     "tiny-cookie": "^2.3.1"
   },
   "devDependencies": {

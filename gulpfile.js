@@ -181,7 +181,6 @@ gulp.task('styles', ['styles:scss'], () => {
     config.fontello.build + 'css/fontello.css'
   ])
     .pipe($.plumber({ errorHandler: handleError }))
-    .pipe($.newer({ dest: config.styles.dest }))
     .pipe($.if(isDev, $.sourcemaps.init({ loadMaps: true })))
     .pipe($.concat(config.vars.siteCssName))
     .pipe($.postcss(postCssPlugins))

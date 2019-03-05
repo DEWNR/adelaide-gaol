@@ -1,0 +1,76 @@
+/* ==========================================================================
+   #Definitions
+   ========================================================================== */
+
+/* Contents
+    - Config...............
+    - Typography...........Our most basic and global typographic settings.
+    - Colors...............Load up a map with our color definitions.
+    - Assets...............Asset paths for fonts, sprites, etc.
+    - Responsive...........Define our breakpoint sizes and what they’re called.
+    - Sizing...............Settings pertaining to various UI sizes.
+   ========================================================================== */
+
+/* Config
+   ========================================================================== */
+
+/* Typography
+   ========================================================================== */
+$global-font-size: 20px !default;
+$global-line-height: 24px !default;
+
+$global-font-size-h1: 44px !default;
+$global-font-size-h2: 40px !default;
+$global-font-size-h3: 36px !default;
+$global-font-size-h4: 26px !default;
+$global-font-size-h5: 18px !default;
+$global-font-size-h6: 16px !default;
+
+
+/* Colors
+   ========================================================================== */
+$global-colors: (
+  'error': #da291c,
+  'success': #78be20,
+  'warning': #fae100,
+  'brand': #5f2a2b,
+  'white': #ffffff,
+  'black': #232121
+) !default;
+
+
+/* Assets
+   ========================================================================== */
+$font-path: '../fonts/' !default;
+$image-path: '../img/' !default;
+
+
+/* Responsive
+   ========================================================================== */
+$mq-breakpoints: (
+  'sm': 480px,
+  'md': 720px,
+  'lg': 1024px,
+  'xl': 1800px
+) !default;
+
+
+/* Sizing
+   ========================================================================== */
+$global-spacing-unit: 20px !default;
+
+$global-border-heavy: 15px !default;
+$global-border-mid: 10px !default;
+$global-border-light: 1px !default;
+
+
+///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+//                                                                            \\
+//                               W A R N I N G                                \\
+//                                                                            \\
+///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Do not modify anything below this point: this is framework-only reassignment.
+$global-spacing-unit-tiny: round(0.25 * $global-spacing-unit);
+$global-spacing-unit-small: round(0.5 * $global-spacing-unit);
+$global-spacing-unit-large: round(2 * $global-spacing-unit);

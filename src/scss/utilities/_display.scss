@@ -1,0 +1,66 @@
+/* ==========================================================================
+   #Display
+   ========================================================================== */
+
+/**
+ * A series of display utilities that we can use to easily show
+ * elements in the HTML. Classes are responsive and follow this sort of patter:
+ *
+ *   .u-display-block {}
+ *   .u-display-inline-block-@lg {}
+ */
+
+// The following Sass is super scary; I’m sorry. Basically what it does is loops
+// over all of our different possible permutations of display types  and breakpoints
+// and gives us the corresponding classes.
+
+
+// Load up some maps for us to loop through later.
+$_display-types: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex
+);
+
+/* stylelint-disable declaration-no-important */
+
+// Use a mixin to build display classes, rather than generating them directly.
+// This also allows us to call the mixin from within other loops.
+@mixin _build-display($breakpoint: null) {
+
+  // Start looping through our different permutations.
+  @each $type in $_display-types {
+
+    // Create display.
+    .u-display-#{$type}#{$breakpoint} {
+      display: #{$type} !important;
+      visibility: visible !important;
+    }
+  }
+
+  // Create hidden classes.
+  .u-hide-visually#{$breakpoint} {
+    @include hide-visually(' !important');
+  }
+
+  .u-hidden#{$breakpoint} {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+/* stylelint-enable declaration-no-important */
+
+
+// Generate our regular, non-responsive classes.
+@include _build-display();
+
+
+// Generate our responsive classes by looping over the series of breakpoints
+// held by Sass MQ.
+@each $alias, $bp in $mq-breakpoints {
+  @include mq($from: $alias) {
+    @include _build-display(\@#{$alias});
+  }
+}

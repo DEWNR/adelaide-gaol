@@ -1,0 +1,50 @@
+/* ==========================================================================
+   #Print
+   ========================================================================== */
+@media print {
+  html {
+    background: transparent;
+    color: #000;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  a {
+    &,
+    &:visited {
+      text-decoration: underline;
+    }
+
+    // include the href after links, unless they contain a # or javascript
+    &[href]:not([href^="#"]):not([href^="javascript"])::after {
+      content: " [" attr(href) "]";
+    }
+  }
+
+  // Typography
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3, {
+    page-break-after: avoid;
+  }
+
+  // anything we want to hide
+  iframe {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  // Style tables
+
+  // Any specific style changes for components
+}
