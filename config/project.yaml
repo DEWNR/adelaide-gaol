@@ -1,4 +1,4 @@
-dateModified: 1551231448
+dateModified: 1551760990
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
@@ -29,7 +29,7 @@ system:
   live: true
   name: 'Adelaide Gaol'
   schemaVersion: 3.1.25
-  timeZone: America/Los_Angeles
+  timeZone: Australia/Darwin
 users:
   allowPublicRegistration: false
   defaultGroup: null
