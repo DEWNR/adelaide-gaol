@@ -48,6 +48,4 @@ Leaning heavily on [Andrew Welch's craft repo](https://github.com/nystudio107/cr
 * [picturefill](https://github.com/scottjehl/picturefill)
 
 ## TODO
-* 
-
-
+* Set up cookies

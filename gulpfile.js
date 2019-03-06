@@ -11,7 +11,8 @@ const $ = require('gulp-load-plugins')({
   scope: ['devDependencies']
 });
 
-// these get a bit messy using gulp-load-plugins so we define these independently
+// these get a bit messy using gulp-load-plugins so we define these
+// independently
 const notifier = require('node-notifier');
 const stream = require('stream-combiner2');
 const sequence = require('run-sequence');
@@ -102,7 +103,7 @@ const log = (message) => {
  *  - clean
  *  - styles
  *  -
- * =============================================================================== */
+ * ========================================================================== */
 
 /**
  * Clean task
@@ -238,9 +239,10 @@ gulp.task('js:inline', ['js:babel'], () => {
 
 /**
  * js task
- *  - filter files so that we don't have any of the files that we are inlining, in our distJS
- *  - concatenate any remaining files
- *  - output to distribution folder
+ *  - filter files so that we don't have any of the files that we are inlining,
+ *    in our distJS.
+ *  - concatenate any remaining files.
+ *  - output to distribution folder.
  */
 gulp.task('js', ['js:inline'], () => {
   log(`Building js 🔨`);
@@ -249,16 +251,19 @@ gulp.task('js', ['js:inline'], () => {
     const srcFiles = config.globs.distJs;
     const ignoreFiles = [];
 
-    // filter the inlineJs arr so it only contains files that come from the 'temp' dir
+    // filter the inlineJs arr so it only contains files that come from the
+    // 'temp' dir.
     const inlineFiles = config.globs.inlineJs.filter((path) => path.indexOf('/temp/') >= 0);
 
-    // add an '!' to each item in the inlineFiles arr then push it to the ignoreFiles arr
+    // add an '!' to each item in the inlineFiles arr then push it to the
+    // ignoreFiles arr.
     inlineFiles.forEach((element) => {
       element = '!' + element;
       ignoreFiles.push(element);
     });
 
-    // return a single array that contains the source files and the files we want to ignore
+    // return a single array that contains the source files and the files we
+    // want to ignore.
     return srcFiles.concat(ignoreFiles);
   };
 
@@ -279,8 +284,8 @@ gulp.task('js', ['js:inline'], () => {
 });
 
 /**
- * Process critical css using, this will be output to the templates folder so that it can
- * be included inline
+ * Process critical css using, this will be output to the templates folder so
+ * that it can be included inline.
  *  -
  */
 const processCriticalCSS = (element, i, done) => {
@@ -321,7 +326,8 @@ const processCriticalCSS = (element, i, done) => {
 
 /**
  * criticalcss task
- *  - simply invokes the processCriticalCSS function on the files specified in the config
+ *  - simply invokes the processCriticalCSS function on the files specified in
+ *    the config.
  */
 gulp.task('criticalcss', ['styles'], (done) => {
   doSynchronousLoop(config.globs.critical, processCriticalCSS, () => {
@@ -346,7 +352,8 @@ function processDownload (element, i, done) {
 
 /**
  * download task
- *  - simply invokes the processDownload function on the files specified in the config
+ *  - simply invokes the processDownload function on the files specified in the
+ *    config.
  */
 gulp.task('download', (done) => {
   doSynchronousLoop(config.globs.download, processDownload, () => {
@@ -435,8 +442,8 @@ gulp.task('imagemin', () => {
  * Generate fontello
  *  - Will end up in the src/fonts/ directory
  *
- *  1. put the fonts in a folder called 'fonts' so that the css path lines up with
- *     the final directory structure
+ *  1. put the fonts in a folder called 'fonts' so that the css path lines up
+ *     with the final directory structure.
  */
 gulp.task('generate-fontello', () => {
   return gulp.src(config.fontello.src)
@@ -461,8 +468,9 @@ gulp.task('fonts', ['generate-fontello'], () => {
 
 /**
  * build task
- *  - sequentially execute all of the tasks that we configured earlier
- *  - some tasks are not listed in the sequence because they are called by a main task
+ *  - sequentially execute all of the tasks that we configured earlier.
+ *  - some tasks are not listed in the sequence because they are called by a
+ *    main task.
  */
 gulp.task('build', (done) => (
   sequence(

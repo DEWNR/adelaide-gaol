@@ -6,5 +6,6 @@
     "craft.bat": true,
     "craft": true
   },
-  "stylelint.enable": true
+  "stylelint.enable": true,
+  "editor.rulers": [80]
 }
