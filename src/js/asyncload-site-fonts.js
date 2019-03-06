@@ -1,5 +1,4 @@
 /* -- A listener to ensure the fonts we need to use have been loaded */
-/* global FontFaceObserver, Cookie */
 
 if (!document.documentElement.classList.contains('fonts-loaded')) {
   var fontello = new FontFaceObserver('fontello');
@@ -13,6 +12,5 @@ if (!document.documentElement.classList.contains('fonts-loaded')) {
 
   ]).then(function () {
     document.documentElement.classList.add('fonts-loaded');
-    Cookie.set('fonts-loaded', 1, { expires: '7D', secure: true });
   });
 }
