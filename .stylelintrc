@@ -1,5 +1,6 @@
 {
   "extends": "stylelint-config-recommended",
+  "ignoreFiles": "./web/**/*.css",
   "rules": {
     "at-rule-empty-line-before": ["always", {
       "except": [

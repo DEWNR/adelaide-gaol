@@ -1,0 +1,76 @@
+/* ==========================================================================
+   #Links
+   ========================================================================== */
+a:not([class]) {
+  color: color('links');
+  text-decoration: none;
+  position: relative;
+  text-decoration-skip-ink: auto;
+
+  &:visited {
+    color: color('brand');
+  }
+
+  &::after {
+
+  }
+
+  &:hover {
+    text-decoration: underline;
+
+    &::after {
+
+    }
+  }
+
+  &:active,
+  &:focus {
+
+  }
+}
+
+/* Heading links
+   ========================================================================== */
+$color-links-headings: blue !default;
+$color-links-headings-hover: red !default;
+
+@mixin _heading-link() {
+  text-decoration: none;
+  color: $color-links-headings;
+}
+
+@mixin _heading-visited() {
+  text-decoration: underline;
+  color: $color-links-headings;
+}
+
+@mixin _heading-hover() {
+  text-decoration: none;
+  color: $color-links-headings-hover;
+}
+
+@mixin _heading-focus() {
+  text-decoration: underline;
+  color: $color-links-headings;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} > a:not([class]) {
+    &:link {
+      @include _heading-link();
+    }
+
+    &:visited {
+      @include _heading-visited();
+    }
+
+    &:hover {
+      @include _heading-hover();
+    }
+
+    &:focus,
+    &:active {
+      @include _heading-focus();
+    }
+  }
+}

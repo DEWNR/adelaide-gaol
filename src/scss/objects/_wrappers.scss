@@ -1,0 +1,58 @@
+/* ==========================================================================
+   #Wrappers
+   ========================================================================== */
+.o-wrapper {
+  @include clearfix();
+
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1280px;
+
+  &--small {
+    @include mq($from: md) {
+      padding-right: 5%;
+      padding-left: 5%;
+    }
+
+    @include mq($from: lg) {
+      padding-right: 80px;
+      padding-left: 80px;
+    }
+  }
+
+  &--xsmall {
+    @include mq($from: md) {
+      padding-right: 15%;
+      padding-left: 15%;
+    }
+
+    @include mq($from: lg) {
+      padding-right: 200px;
+      padding-left: 200px;
+    }
+  }
+
+  &--flex {
+    display: flex;
+
+    &\@md {
+      @include mq($from: md) {
+        display: flex;
+      }
+    }
+
+    &\@lg {
+      @include mq($from: lg) {
+        display: flex;
+      }
+    }
+  }
+
+  &--flexwrap {
+    flex-wrap: wrap;
+  }
+
+  &--flexcenter {
+    align-items: center;
+  }
+}

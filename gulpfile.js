@@ -179,7 +179,7 @@ gulp.task('styles', ['styles:scss'], () => {
 
   return gulp.src([
     config.styles.build + '**/*.css',
-    config.fontello.build + 'css/fontello.css'
+    config.fontello.build + 'css/fontello-codes.css'
   ])
     .pipe($.plumber({ errorHandler: handleError }))
     .pipe($.if(isDev, $.sourcemaps.init({ loadMaps: true })))

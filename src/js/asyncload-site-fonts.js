@@ -1,16 +1,34 @@
 /* -- A listener to ensure the fonts we need to use have been loaded */
 
+/* global FontFaceObserver */
+
 if (!document.documentElement.classList.contains('fonts-loaded')) {
-  var fontello = new FontFaceObserver('fontello');
-  var dewnrger = new FontFaceObserver('Dewnrger');
-  var frutiger = new FontFaceObserver('Frutiger');
+  var fonts = [
+    'dewnrger',
+    'fontello'
+  ];
 
-  Promise.all([
-    fontello.load(''),
-    dewnrger.load(),
-    frutiger.load()
+  var observers = [];
+  var loadedFonts = [];
 
-  ]).then(function () {
-    document.documentElement.classList.add('fonts-loaded');
+  fonts.forEach((family) => {
+    var obs = new FontFaceObserver(family);
+    observers.push(obs.load());
   });
+
+  Promise.all(observers)
+    .then((fonts) => {
+      fonts.forEach((font) => {
+        loadedFonts.push(font.family);
+      });
+    })
+    .catch((error) => {
+      console.warn(`Fonts didn't load: `, error);
+    })
+    .finally(() => {
+      loadedFonts.forEach((font) => {
+        document.documentElement.classList.add(font);
+      });
+      document.documentElement.classList.add('fonts-loaded');
+    });
 }

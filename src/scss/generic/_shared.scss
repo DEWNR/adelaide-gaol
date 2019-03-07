@@ -1,0 +1,88 @@
+/* ==========================================================================
+   #Shared
+   ========================================================================== */
+
+/* Contents
+    - Vertical rhythm....Add some consistent default spacing to key elements.
+    - Fixed ratios.......Useful for iframe and image containers.
+    - Focus states.......Remove default focus states from focusable elements.
+   ========================================================================== */
+
+/* Vertical-rhythm
+   ========================================================================== */
+address,
+details,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+ol,
+ul,
+figure,
+hr,
+table,
+fieldset {
+  @include rem(margin-bottom, $global-spacing-unit);
+}
+
+ul,
+ol,
+dd {
+  @include rem(margin-left, $global-spacing-unit);
+}
+
+
+/* Fixed aspect ratios - useful for iframe and image containers
+   ========================================================================== */
+.fixed-aspect-ratio {
+  height: 0;
+  position: relative;
+  width: 100%;
+  max-width: none;
+
+  > :first-child {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+  }
+
+  &--1\:1 {
+    padding-bottom: 100%;
+  }
+
+  &--2\:1 {
+    padding-bottom: (1 / 2) * 100%;
+  }
+
+  &--16\:9 {
+    padding-bottom: (9 / 16) * 100%;
+  }
+
+  &--4\:3 {
+    padding-bottom: (3 / 4) * 100%;
+  }
+}
+
+
+/* Focus states
+   ========================================================================== */
+/* stylelint-disable declaration-no-important */
+*:focus {
+  // outline: 3px dashed orange;
+
+  html.user-is-tabbing & {
+    outline: initial;
+    outline-width: initial;
+    outline-style: auto;
+    outline-color: -webkit-focus-ring-color;
+  }
+}
+/* stylelint-enable declaration-no-important */

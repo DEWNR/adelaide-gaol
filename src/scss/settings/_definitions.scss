@@ -3,20 +3,22 @@
    ========================================================================== */
 
 /* Contents
-    - Config...............
+    - CSS vars.............So that we can edit these variables inline.
     - Typography...........Our most basic and global typographic settings.
     - Colors...............Load up a map with our color definitions.
     - Assets...............Asset paths for fonts, sprites, etc.
     - Responsive...........Define our breakpoint sizes and what they’re called.
     - Sizing...............Settings pertaining to various UI sizes.
+    - Forms................Some variables to keep form elements consistent.
    ========================================================================== */
 
-/* Config
+/* CSS vars
    ========================================================================== */
+
 
 /* Typography
    ========================================================================== */
-$global-font-size: 20px !default;
+$global-font-size: 16px !default;
 $global-line-height: 24px !default;
 
 $global-font-size-h1: 44px !default;
@@ -26,6 +28,13 @@ $global-font-size-h4: 26px !default;
 $global-font-size-h5: 18px !default;
 $global-font-size-h6: 16px !default;
 
+$global-font-size-h1-mobile: $global-font-size-h1 / 1.5 !default;
+$global-font-size-h2-mobile: $global-font-size-h2 / 1.5 !default;
+$global-font-size-h3-mobile: $global-font-size-h3 / 1.5 !default;
+$global-font-size-h4-mobile: $global-font-size-h4 / 1.5 !default;
+$global-font-size-h5-mobile: $global-font-size-h5 / 1.5 !default;
+$global-font-size-h6-mobile: $global-font-size-h6 / 1.5 !default;
+
 
 /* Colors
    ========================================================================== */
@@ -34,8 +43,9 @@ $global-colors: (
   'success': #78be20,
   'warning': #fae100,
   'brand': #5f2a2b,
-  'white': #ffffff,
-  'black': #232121
+  'white': #fff,
+  'black': #232121,
+  'links': #446eca
 ) !default;
 
 
@@ -62,6 +72,11 @@ $global-spacing-unit: 20px !default;
 $global-border-heavy: 15px !default;
 $global-border-mid: 10px !default;
 $global-border-light: 1px !default;
+
+
+/* Forms
+   ========================================================================== */
+$color-form-label: color('black');
 
 
 ///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

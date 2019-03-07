@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #SMALL
+   ========================================================================== */
+
+/**
+ * There’s a standard, set size for smallprint (i.e. it’s not relative to its
+ * context) so we can set that up very easily.
+ *
+ */
+
+small {
+  font-size: 14px;
+  line-height: (20 / 14);
+  display: inline-block;
+}

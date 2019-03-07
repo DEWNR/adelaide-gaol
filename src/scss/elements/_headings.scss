@@ -1,0 +1,74 @@
+/* ==========================================================================
+   #Headings
+   ========================================================================== */
+h1 {
+  font-size: $global-font-size-h1-mobile;
+  font-weight: bold;
+
+  @include mq($from: md) {
+    font-size: $global-font-size-h1;
+  }
+}
+
+h2 {
+  font-size: $global-font-size-h2-mobile;
+  font-weight: bold;
+
+  @include mq($from: md) {
+    font-size: $global-font-size-h2;
+  }
+}
+
+h3 {
+  font-size: $global-font-size-h3-mobile;
+  font-weight: bold;
+
+  @include mq($from: md) {
+    font-size: $global-font-size-h3;
+  }
+}
+
+h4 {
+  font-size: $global-font-size-h4-mobile;
+  font-weight: bold;
+  font-style: italic;
+
+  @include mq($from: md) {
+    font-size: $global-font-size-h4;
+  }
+}
+
+h5 {
+  font-size: $global-font-size-h5-mobile;
+  font-weight: bold;
+  font-style: italic;
+
+  @include mq($from: md) {
+    font-size: $global-font-size-h5;
+  }
+}
+
+h6 {
+  font-size: $global-font-size-h6-mobile;
+  font-weight: normal;
+
+  @include mq($from: md) {
+    font-size: $global-font-size-h6;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include rem(margin-top, $global-spacing-unit);
+  @include rem(margin-bottom, $global-spacing-unit-small);
+
+  color: color('brand');
+
+  .dewnrger & {
+    font-family: 'Dewnrger', 'Frutiger', sans-serif;
+  }
+}

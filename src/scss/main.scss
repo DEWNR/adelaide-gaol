@@ -9,19 +9,35 @@
 
 /* Generic
    ========================================================================== */
+@import 'generic/animations';
+@import 'generic/box-sizing';
+@import 'generic/helpers';
+@import 'generic/reset';
+@import 'generic/shared';
 
 /* Elements
-   ========================================================================== */
+========================================================================== */
+@import 'elements/forms';
+@import 'elements/headings';
+@import 'elements/icons';
+@import 'elements/images';
+@import 'elements/links';
+@import 'elements/page';
+@import 'elements/quotes';
+@import 'elements/small';
+
 
 /* Objects
-   ========================================================================== */
+========================================================================== */
+@import 'objects/layout';
+@import 'objects/list-bare';
+@import 'objects/wrappers';
 
 /* Components
    ========================================================================== */
 
 /* Utilities
    ========================================================================== */
-@import 'utilities/animations';
 @import 'utilities/display';
 @import 'utilities/spacing';
 @import 'utilities/widths';

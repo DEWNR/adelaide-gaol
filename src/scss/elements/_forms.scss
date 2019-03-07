@@ -1,0 +1,22 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+@mixin _label-text() {
+  display: block;
+  font-weight: bold;
+  color: $color-form-label;
+}
+
+label {
+  @include _label-text();
+
+  cursor: pointer;
+  margin-bottom: $global-spacing-unit;
+
+  > small {
+    display: block;
+    color: $color-form-label;
+    font-weight: normal;
+  }
+}

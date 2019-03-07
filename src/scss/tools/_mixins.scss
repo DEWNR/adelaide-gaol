@@ -9,6 +9,19 @@
    ========================================================================== */
 
 
+/* Rem - convert pixels to rem
+   ========================================================================== */
+@mixin rem($property, $value) {
+  @if (type-of($value) == number and unit($value) == 'px') {
+    #{$property}: $value;
+    #{$property}: rem($value);
+  }
+
+  @else {
+    @error "`@include rem()` expected a pixel value. Actual value was: `#{$value}`";
+  }
+}
+
 /* Clearfix
    ========================================================================== */
 /* stylelint-disable declaration-no-important */
