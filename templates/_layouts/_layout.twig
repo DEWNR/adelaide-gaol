@@ -10,13 +10,17 @@
         <link rel="dns-prefetch" href="{{ baseUrl }}">
         <link rel="preconnect" href="{{ baseUrl }}" crossorigin>
 
-        <title></title>
+        {# -- Misc header tags #}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <title>Adelaide Gaol</title>
 
         {# -- Any <link> tags that should be included in the header #}
         {% block _head_links %}{% endblock %}
 
         {% import "_macros" as utils %}
-        {% include "_partials/_global_header" %}
+        {% include "_partials/_favicons" ignore missing %}
 
         {# -- ServiceWokrer, loadjs, and tiny-cookie #}
         <script>
@@ -65,13 +69,13 @@
 
         {# -- Site fonts #}
         <style>
-            {# {% include "_inlinecss/_site_fonts.css" %} #}
+            {% include "_inlinecss/_site_fonts.css" %}
         </style>
 
         {# -- FontFaceObserver #}
         <script>
             {{ source('_inlinejs/fontfaceobserver.min.js') }}
-            {# {{ source('_inlinejs/asyncload-site-fonts.min.js') }} #}
+            {{ source('_inlinejs/asyncload-site-fonts.min.js') }}
         </script>
 
         {# -- Inline JS #}
@@ -87,11 +91,14 @@
 
     {# -- HTML Body #}
     <body>
-        <div id="page-container">
-            {# -- Header, including _navbar #}
-            {% include "_partials/_info_header" %}
+        <a href="#main-content" id="skip-to-content" class="c-skip-to-content">Skip to content</a>
 
-            <div id="content-container" class="container mx-auto">
+        <div id="page-container">
+
+            {# -- Header, including _navbar #}
+            {% include "_partials/_header" %}
+
+            <div id="main-content" class="">
                 <main>
                     {# -- Primary content block #}
                     {% block content %}{% endblock %}
@@ -101,23 +108,19 @@
             {# -- Content that appears below the primary content block #}
             {% block subcontent %}{% endblock %}
 
-            {# -- Info footer -- #}
-            {% include "_partials/_info_footer" %}
-
-            {# -- HTML Footer -- #}
-            {% include "_partials/_global_footer" %}
+            {# -- Footer #}
+            {% include "_partials/_footer" %}
 
         </div>
 
-
+        {# -- Main JS #}
+        <script async src="{{ rev('assets/js/main.js') }}"></script>
 
         {# -- Inline JS #}
         {% block _inline_js %}{% endblock %}
 
         {% if craft.app.config.general.devMode %}
-        <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='//localhost:443/browser-sync/browser-sync-client.js?v=2.26.3'><\/script>");
-//]]></script>
+            <script src="//localhost:443/browser-sync/browser-sync-client.js"></script>
         {% endif %}
     </body>
 </html>
