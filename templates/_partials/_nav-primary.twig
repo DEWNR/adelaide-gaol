@@ -1,0 +1,25 @@
+{% set pages = craft.entries.section('pages').all() %}
+
+{% set pages = [
+    {
+        'link': 'home',
+    },
+    {
+        'link': 'Visiting the gaol'
+    },
+    {
+        'link': 'history'
+    },
+    {
+        'link': 'history'
+    }
+] %}
+
+
+<nav id="nav-primary" class="c-nav-primary" aria-label="Primary menu">
+    <ul class="c-nav-primary__list">
+        {% for page in pages %}
+            <li class="c-nav-primary__item">{{ page.link }}</li>
+        {% endfor %}
+    </ul>
+</nav>

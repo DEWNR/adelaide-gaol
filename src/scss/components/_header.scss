@@ -1,0 +1,34 @@
+/* ==========================================================================
+   #Header
+   ========================================================================== */
+.c-header {
+  padding: $global-spacing-unit;
+  background: rgba(color('brand'), 0.8);
+
+  &__logo {
+    margin-right: auto;
+
+    > :first-child {
+      height: 50px;
+    }
+  }
+
+  &__menu-toggle,
+  &__search-toggle {
+    background: transparent;
+    border: 0;
+    color: color('white');
+    font-size: 180%;
+    cursor: pointer;
+  }
+
+  &__menu-toggle {
+    @include mq($from: md) {
+      display: none;
+    }
+  }
+
+  &__search-toggle {
+
+  }
+}

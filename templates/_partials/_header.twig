@@ -1,10 +1,18 @@
-<header>
-    <div>
-        <p>
-            Header
-        </p>
+<header class="c-header">
+    <div class="o-wrapper o-wrapper--flex o-wrapper--flexwrap o-wrapper --flexcenter">
+
+        <a href="{{ baseUrl }}" class="c-header__logo" rel="home" itemprop="url">
+            <img src="{{ assetBaseUrl }}img/site/ag-logotype_white.svg" alt="">
+        </a>
+
+        <button id="menu-toggle" class="c-header__menu-toggle" type="button" aria-controls="primary menu" aria-expanded="false">
+            <span class="icon-menu"></span>
+        </button>
+
+        <button id="search-toggle" class="c-header__search-toggle" type="button" aria-expanded="false">
+            <span class="icon-search"></span>
+        </button>
+
+        {% include "_partials/_nav-primary" %}
     </div>
-
-    {% include "_partials/_navbar.twig" %}
-
 </header>
