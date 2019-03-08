@@ -5,6 +5,7 @@ module.exports = {
     },
     extends: 'standard',
     rules: {
-        semi: ['error', 'always']
+        semi: ['error', 'always'],
+        'no-var': 2
     }
 };
