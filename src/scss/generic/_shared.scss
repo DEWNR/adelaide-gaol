@@ -74,15 +74,10 @@ dd {
 
 /* Focus states
    ========================================================================== */
-/* stylelint-disable declaration-no-important */
-*:focus {
-  // outline: 3px dashed orange;
 
-  html.user-is-tabbing & {
-    outline: initial;
-    outline-width: initial;
-    outline-style: auto;
-    outline-color: -webkit-focus-ring-color;
-  }
+// If we use the `not` pseudo condition then we don't have to redefine the
+// default focus style which changes from bowser to browser.
+html:not(.user-is-tabbing) *:focus {
+  outline: none;
 }
-/* stylelint-enable declaration-no-important */
+
