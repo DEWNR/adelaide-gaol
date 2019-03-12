@@ -49,3 +49,4 @@ Leaning heavily on [Andrew Welch's craft repo](https://github.com/nystudio107/cr
 
 ## TODO
 * Set up cookies
+* Fix how gulp handles new files
