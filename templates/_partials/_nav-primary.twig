@@ -3,15 +3,31 @@
 {% set pages = [
     {
         'link': 'home',
+        'url': '#'
     },
     {
-        'link': 'Visiting the gaol'
+        'link': 'Visiting the gaol',
+        'url': '#'
     },
     {
-        'link': 'history'
+        'link': 'history',
+        'url': '#'
     },
     {
-        'link': 'history'
+        'link': 'Venue Hire',
+        'url': '#'
+    },
+    {
+        'link': 'get involved',
+        'url': '#'
+    },
+    {
+        'link': 'education',
+        'url': '#'
+    },
+    {
+        'link': 'contact',
+        'url': '#'
     }
 ] %}
 
@@ -19,7 +35,7 @@
 <nav id="nav-primary" class="c-nav-primary" aria-label="Primary menu">
     <ul class="c-nav-primary__list">
         {% for page in pages %}
-            <li class="c-nav-primary__item">{{ page.link }}</li>
+            <li class="c-nav-primary__item"><a class="c-nav-primary__link" href="{{ page.url }}">{{ page.link | upper }}</a></li>
         {% endfor %}
     </ul>
 </nav>

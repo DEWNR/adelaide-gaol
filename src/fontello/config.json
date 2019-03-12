@@ -191,6 +191,12 @@
       "css": "link",
       "code": 59407,
       "src": "entypo"
+    },
+    {
+      "uid": "5211af474d3a9848f67f945e2ccaf143",
+      "css": "cancel",
+      "code": 59408,
+      "src": "fontawesome"
     }
   ]
 }

@@ -38,18 +38,42 @@ $global-font-size-h6-mobile: $global-font-size-h6 / 1.5 !default;
 
 /* Colors
    ========================================================================== */
+
+/**
+ * 1. Define main colors.
+ * 2. Create variations of main colors.
+ * 3. Make a list of reusable colors to use with the color function `color('')`.
+ * 4. Create some secondary definitions that can be reused
+ */
+
+$color-brand: #5f2a2b; /* [1] */
+$color-brand-20: shade($color-brand, 20%); /* [2] */
+$color-brand-40: shade($color-brand, 40%); /* [2] */
+$color-brand-60: shade($color-brand, 60%); /* [2] */
+$color-brand-80: shade($color-brand, 80%); /* [2] */
+
+$color-white: #fff; /* [1] */
+$color-white-20: shade($color-white, 20%); /* [2] */
+$color-white-40: shade($color-white, 40%); /* [2] */
+$color-white-60: shade($color-white, 60%); /* [2] */
+$color-white-80: shade($color-white, 80%); /* [2] */
+
+$color-black: #232121; /* [1] */
+$color-black-20: tint($color-black, 20%); /* [2] */
+$color-black-40: tint($color-black, 40%); /* [2] */
+$color-black-60: tint($color-black, 60%); /* [2] */
+$color-black-80: tint($color-black, 80%); /* [2] */
+
+
 $global-colors: (
-  'error': #da291c,
-  'success': #78be20,
-  'warning': #fae100,
-  'brand': #5f2a2b,
-  'white': #fff,
-  'black': #232121,
-  'links': #446eca
+  'error': #da291c, /* [3] */
+  'success': #78be20, /* [3] */
+  'warning': #fae100, /* [3] */
+  'links': #446eca /* [3] */
 ) !default;
 
-$color-text: color('black');
-$color-text-bg: color('white');
+$color-text: $color-black; /* [4] */
+$color-text-bg: $color-white; /* [4] */
 
 /* Assets
    ========================================================================== */

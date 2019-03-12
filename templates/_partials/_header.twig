@@ -1,18 +1,31 @@
 <header class="c-header">
-    <div class="o-wrapper o-wrapper--flex o-wrapper--flexwrap o-wrapper --flexcenter">
+    <div class="o-wrapper o-wrapper--flex o-wrapper--flexwrap o-wrapper--flexcenter">
 
         <a href="{{ baseUrl }}" class="c-header__logo" rel="home" itemprop="url">
             <img src="{{ assetBaseUrl }}img/site/ag-logotype_white.svg" alt="">
         </a>
 
+        {% include "_partials/_nav-primary" %}
+
         <button id="menu-toggle" class="c-header__menu-toggle" type="button" aria-controls="primary menu" aria-expanded="false">
-            <span class="icon-menu"></span>
+            <span aria-hidden="true" class="icon-menu"></span>
+            <span class="sr-only">Menu toggle</span>
         </button>
 
         <button id="search-toggle" class="c-header__search-toggle" type="button" aria-expanded="false">
-            <span class="icon-search"></span>
+            <span aria-hidden="true" class="icon-search"></span>
+            <span class="sr-only">Search toggle</span>
         </button>
 
-        {% include "_partials/_nav-primary" %}
+        <div class="c-site-search">
+            <form class="c-site-search__form">
+                <input class="c-site-search__input" type="search" name="site-search" id="site-search" placeholder="Search the site...">
+                <button class="c-site-search__button" type="button">
+                    <span aria-hidden="true" class="icon-search"></span>
+                    <span class="sr-only">Submit search</span>
+                </button>
+            </form>
+        </div>
+
     </div>
 </header>

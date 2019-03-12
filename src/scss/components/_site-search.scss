@@ -1,0 +1,73 @@
+/* ==========================================================================
+   #Site search
+   ========================================================================== */
+.c-site-search {
+  width: 100%;
+  z-index: z-index(10);
+  margin-top: $global-spacing-unit-large;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  .dewnrger & {
+    font-family: 'dewnrger', sans-serif;
+  }
+
+  .has-nav-open &,
+  .has-search-open & {
+    display: flex;
+  }
+
+  @include mq($from: lg) {
+    top: -100%;
+
+    .has-search-open & {
+      margin-top: 0;
+      position: absolute;
+      justify-content: flex-end;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__form {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    flex: 1;
+    height: 100%;
+    border: 0;
+    padding: $global-spacing-unit-small;
+    border-radius: 3px;
+    width: 100%;
+
+    &::placeholder {
+      font-weight: 700;
+    }
+  }
+
+  &__button {
+    opacity: 1;
+    background: 0;
+    border: 0;
+    color: $color-white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    // Keep everything centred with the menu items
+    @include mq($from: 540px, $until: lg) {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(110%, -50%);
+    }
+  }
+}

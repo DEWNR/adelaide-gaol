@@ -3,7 +3,7 @@
    ========================================================================== */
 .c-header {
   padding: $global-spacing-unit;
-  background: rgba(color('brand'), 0.8);
+  background: rgba($color-brand, 0.8);
 
   &__logo {
     margin-right: auto;
@@ -17,18 +17,42 @@
   &__search-toggle {
     background: transparent;
     border: 0;
-    color: color('white');
-    font-size: 180%;
+    color: $color-white;
     cursor: pointer;
+    z-index: z-index(10);
+
   }
 
   &__menu-toggle {
-    @include mq($from: md) {
+    .has-nav-open & {
+      &::after {
+        content: 'close';
+        font-weight: 700;
+
+        .dewnrger & {
+          font-family: 'dewnrger', sans-serif;
+        }
+      }
+
+      .icon-menu::before {
+        content: '\e810'; // code for cancel icon
+      }
+    }
+
+    @include mq($from: lg) {
       display: none;
     }
   }
 
   &__search-toggle {
+    .has-nav-open & {
+      display: none;
+    }
 
+    .has-search-open & {
+      .icon-search::before {
+        content: '\e810'; // code for cancel icon
+      }
+    }
   }
 }

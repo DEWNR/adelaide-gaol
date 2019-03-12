@@ -513,7 +513,7 @@ gulp.task('default', ['build'], () => {
   });
   gulp.watch([`${config.styles.src}**/*.{${config.styles.extensions}}`], ['styles']);
   gulp.watch([`${config.js.src}**/*.js`], ['js']);
-  gulp.watch([`${config.images.src}**/*.{${config.images.extensions}}`])
+  gulp.watch([`${config.images.src}**/*.{${config.images.extensions}}`], ['imagemin'])
     .on('change', $.browserSync.reload);
   gulp.watch([`${config.templates.src}**/*.{${config.templates.extensions}}`])
     .on('change', $.browserSync.reload)
