@@ -4,6 +4,11 @@
 .c-header {
   padding: $global-spacing-unit;
   background: rgba($color-brand, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: z-index(2);
 
   &__logo {
     margin-right: auto;
@@ -20,7 +25,6 @@
     color: $color-white;
     cursor: pointer;
     z-index: z-index(10);
-
   }
 
   &__menu-toggle {
