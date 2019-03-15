@@ -2,13 +2,24 @@
    #Animations
    ========================================================================== */
 
-/* Classes
+/**
+  * By defining a mixin and then creating a class we are able to easily add
+  * animations to DOM nodes or to CSS rules.
+  *
+  */
+
+/* Mixins
    ========================================================================== */
-.animate-spin {
+@mixin animate-spin {
   animation: spin 2s infinite linear;
   display: inline-block;
 }
 
+/* Classes
+   ========================================================================== */
+.animate-spin {
+  @include animate-spin;
+}
 
 /* Keyframes
    ========================================================================== */

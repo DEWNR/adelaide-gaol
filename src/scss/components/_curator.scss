@@ -1,0 +1,163 @@
+/* ==========================================================================
+   #Curator feed
+   ========================================================================== */
+
+/* Our base styles
+   ========================================================================== */
+.c-curator {
+  overflow: auto;
+  padding: $global-spacing-unit;
+  position: relative;
+  min-height: 120vw;
+
+  @include mq($from: md) {
+    min-height: 118px;
+  }
+
+  @include mq($from: md) {
+    min-height: 314px;
+  }
+
+  @include mq($from: md) {
+    min-height: 364px;
+  }
+
+  &__heading {
+    color: $color-white;
+    margin-left: -0.2em; // adjust for the margin on the icon.
+  }
+
+  &::before {
+    display: none;
+  }
+
+  &__feed {
+    min-height: 448px;
+
+    &.loading {
+      &::before {
+        content: '\e839';
+        color: $color-white;
+
+        @include fontello();
+        @include animate-spin();
+
+        font-size: 30px;
+        margin: auto;
+        position: absolute;
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+        height: initial;
+      }
+    }
+  }
+}
+
+/* Curator overrides
+    - We need to raise specificity so we wrap everything in our `#curator-feed`
+   ========================================================================== */
+#curator-feed {
+  padding-bottom: 0;
+  transition: opacity 1s ease;
+
+  .crt-feed-window {
+    opacity: 1;
+    transition-duration: 2s;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-delay: 0.5s;
+  }
+
+  &.loading {
+    .crt-feed-window {
+      opacity: 0;
+    }
+  }
+
+  .crt {
+    &-feed {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &-social-icon {
+      margin: 0;
+      right: 8px;
+      bottom: 0;
+      text-shadow: 0 0 3px rgba($color-black, 0.4);
+    }
+
+    &-grid-post {
+      margin-bottom: $global-spacing-unit;
+
+      /**
+        * This can look a little scary at first glance but hang in there.
+        * 1. A dynamic width that is supported across browsers
+        * 2. Sometimes the last image falls off the end because we are
+        *    specifying the width as a percentage but the margin as pixels.
+        * 3. Remove margin from first image of every row.
+        */
+
+      @include mq($until: md) {
+        // [1] two represents the number of columns, everything else
+        //     stays the same.
+        width: calc((((1 / 2) * 100%) + (#{$global-spacing-unit} / 2)) - #{$global-spacing-unit});
+
+        & + .crt-grid-post {
+          margin-left: $global-spacing-unit - 1px; /* [2] */
+
+          &:nth-child(2n + 1) {
+            margin-left: 0; /* [3] */
+          }
+        }
+      }
+
+      @include mq($from: md) {
+        width: calc((((1 / 5) * 100%) + (#{$global-spacing-unit} / 5)) - #{$global-spacing-unit});
+
+        & + .crt-grid-post {
+          margin-left: $global-spacing-unit - 1px;
+
+          &:nth-child(5n + 1) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    &-post {
+      &-fullname,
+      &-content-text,
+      &-footer {
+        display: none;
+      }
+
+      &-c {
+        margin: 0;
+      }
+
+      &-hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color-white, 0.8);
+
+        .crt-social-icon {
+          text-shadow: none;
+        }
+      }
+
+      &-header {
+        padding: 0;
+      }
+    }
+
+    &-load-more {
+      .c-curator.loading & {
+        display: none;
+      }
+    }
+  }
+}

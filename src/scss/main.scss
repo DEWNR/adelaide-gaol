@@ -16,7 +16,7 @@
 @import 'generic/shared';
 
 /* Elements
-========================================================================== */
+   ========================================================================== */
 @import 'elements/forms';
 @import 'elements/headings';
 @import 'elements/icons';
@@ -26,19 +26,27 @@
 @import 'elements/quotes';
 @import 'elements/small';
 
+/* Vendor
+   ========================================================================== */
+
 
 /* Objects
-========================================================================== */
+   ========================================================================== */
 @import 'objects/layout';
 @import 'objects/list-bare';
 @import 'objects/wrappers';
 
 /* Components
-========================================================================== */
+   ========================================================================== */
 @import 'components/skip-to-content';
 @import 'components/header';
 @import 'components/nav-primary';
 @import 'components/site-search';
+
+@import 'components/footer';
+@import 'components/curator';
+@import 'components/sitemap';
+@import 'components/copyright';
 
 
 /* Utilities

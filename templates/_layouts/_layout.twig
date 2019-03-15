@@ -38,8 +38,10 @@
         {% block _inline_css %}{% endblock %}
 
         <link rel="preload" href="{{ rev('assets/css/main.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-
         <noscript><link rel="stylesheet" href="{{ rev('assets/css/main.css') }}"></noscript>
+
+        <link rel="preload" href="//cdn.curator.io/3.1/css/curator.min.css" as="style" onload="this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="//cdn.curator.io/3.1/css/curator.min.css"></noscript>
 
         <script>
             {{ source('_inlinejs/loadCSS.min.js') }}
@@ -90,7 +92,8 @@
     </head>
 
     {# -- HTML Body #}
-    <body>
+    {# {{ entry.backgroundImage.one().getUrl() }} #}
+    <body style="background-image: url()">
         <a href="#main-content" id="skip-to-content" class="c-skip-to-content">Skip to content</a>
 
         <div id="page-container">
@@ -113,11 +116,17 @@
 
         </div>
 
+        <script src="//cdn.curator.io/3.1/js/curator.min.js"></script>
+
         {# -- Main JS #}
         <script async src="{{ rev('assets/js/main.js') }}"></script>
 
+        {# -- Curator templates #}
+        {% include "_partials/_curator-templates" %}
+
         {# -- Inline JS #}
         {% block _inline_js %}{% endblock %}
+
 
         {% if craft.app.config.general.devMode %}
             <script src="//localhost:443/browser-sync/browser-sync-client.js"></script>

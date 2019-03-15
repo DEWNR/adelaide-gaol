@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #Footer
+   ========================================================================== */
+
+/**
+  * 1. Position background-image
+  * 2. Create an overlay that has 100% browser support
+  */
+
+.c-footer {
+  background-size: cover; /* [1] */
+  background-position: top center; /* [1] */
+  box-shadow: inset 5000px 0 0 0 rgba($color-brand, 0.5); /* [2] */
+  position: relative;
+
+  svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    // transform: rotate(180deg);
+  }
+}

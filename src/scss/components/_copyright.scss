@@ -1,0 +1,61 @@
+/* ==========================================================================
+   #Copyright
+   ========================================================================== */
+.c-copyright {
+  background: #716a62;
+  padding: $global-spacing-unit;
+
+  @include mq($from: xl) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    &--logos {
+      display: flex;
+      margin-top: $global-spacing-unit;
+      align-items: center;
+
+      @include mq($from: lg) {
+        justify-content: flex-end;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    text-align: center;
+
+    & + .c-copyright__item {
+      padding-left: $global-spacing-unit-small;
+      margin-left: $global-spacing-unit-small;
+      position: relative;
+      border-left: 1px solid $color-white;
+
+      .c-copyright__list--logos & {
+        border-left: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-white;
+
+    &:not(:hover) {
+      text-decoration: none;
+    }
+  }
+
+  &__text {
+    color: $color-white;
+    margin-top: $global-spacing-unit;
+  }
+
+  &__logo {
+    height: 45px;
+  }
+}

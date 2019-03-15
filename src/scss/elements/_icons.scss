@@ -2,9 +2,14 @@
    #Icons
    ========================================================================== */
 
+/**
+  * Create a mixin here, this will make it much easier to add icons to
+  * `::before` and `::after` pseudo elements
+  *
+  */
+
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
-[class^="icon-"]::before,
-[class*=" icon-"]::before {
+@mixin fontello() {
   .fontello & {
     font-family: 'fontello';
   }
@@ -40,3 +45,8 @@
   // text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3);
 }
 /* stylelint-enable font-family-no-missing-generic-family-keyword */
+
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  @include fontello();
+}
