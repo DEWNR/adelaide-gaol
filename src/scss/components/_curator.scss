@@ -8,19 +8,6 @@
   overflow: auto;
   padding: $global-spacing-unit;
   position: relative;
-  min-height: 120vw;
-
-  @include mq($from: md) {
-    min-height: 118px;
-  }
-
-  @include mq($from: md) {
-    min-height: 314px;
-  }
-
-  @include mq($from: md) {
-    min-height: 364px;
-  }
 
   &__heading {
     color: $color-white;
@@ -32,7 +19,19 @@
   }
 
   &__feed {
-    min-height: 448px;
+    min-height: 97vw;
+
+    @include mq($from: md) {
+      min-height: 36vw;
+    }
+
+    @include mq($from: lg) {
+      min-height: 34vw;
+    }
+
+    @include mq($from: xl) {
+      min-height: 455px;
+    }
 
     &.loading {
       &::before {

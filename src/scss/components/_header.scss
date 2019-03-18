@@ -25,6 +25,11 @@
     color: $color-white;
     cursor: pointer;
     z-index: z-index(10);
+
+    ::before {
+      font-size: 150%;
+      font-weight: bold;
+    }
   }
 
   &__menu-toggle {
@@ -32,6 +37,8 @@
       &::after {
         content: 'close';
         font-weight: 700;
+        position: relative;
+        top: -3px;
 
         .dewnrger & {
           font-family: 'dewnrger', sans-serif;
@@ -39,7 +46,7 @@
       }
 
       .icon-menu::before {
-        content: '\e810'; // code for cancel icon
+        content: '\e846'; // code for cancel icon
       }
     }
 
@@ -55,7 +62,7 @@
 
     .has-search-open & {
       .icon-search::before {
-        content: '\e810'; // code for cancel icon
+        content: '\e846'; // code for cancel icon
       }
     }
   }

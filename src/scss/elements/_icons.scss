@@ -15,7 +15,7 @@
   }
 
   font-style: normal;
-  font-weight: normal;
+  font-weight: inherit;
   speak: none;
   display: inline-block;
   text-decoration: inherit;
@@ -29,7 +29,7 @@
   text-transform: none;
 
   /* fix buttons height, for twitter bootstrap */
-  line-height: 1em;
+  // line-height: 1em;
 
   /* Animation center compensation - margins should be symmetric */
   margin-left: 0.2em;
