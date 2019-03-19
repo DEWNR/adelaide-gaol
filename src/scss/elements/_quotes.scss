@@ -19,17 +19,21 @@ blockquote {
   // How many times bigger than the text should the hung quote be?
   $hung-quote-ratio: 3;
 
-  font-family: inherit;
+  font-family: sans-serif;
   font-size: 1em;
   font-style: italic;
   padding-left: $hung-quote-ratio * 0.5em;
   font-weight: bold;
 
+  .dewnrger & {
+    font-family: Dewnrger;
+  }
+
   @include mq($from: md) {
     font-size: 1.2em;
     line-height: (32/24);
     padding-left: $hung-quote-ratio * 1em;
-    font-weight: normal;
+    // font-weight: bold;
   }
 
   /**
@@ -41,7 +45,7 @@ blockquote {
   &::before {
     content: '“';
     float: left;
-    font-family: inherit;
+    font-family: Wingdings, Webdings, 'Plantagenet Cherokee', Times, serif;
     font-size: $hung-quote-ratio * 1em;
     line-height: 1;
     width: 1em;

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   #Content
+   ========================================================================== */
+
+
+.c-content {
+    background-color: $color-white;
+
+    .o-layout__item {
+        padding: $global-spacing-unit-large;
+    }
+
+    &__intro {
+        color: $color-brand;
+        font-weight: 700;
+        font-size: 1.5em;
+        font-kerning: normal;
+        letter-spacing: -0.05rem;
+
+        .dewnrger & {
+            font-family: dewnrger, sans-serif;
+        }
+
+    }
+
+    p {
+        font-size: 1.26rem;
+        // font-kerning: normal;
+        letter-spacing: -0.03rem;
+
+        .dewnrger & {
+            font-family: dewnrger, sans-serif;
+        }
+    }
+}
