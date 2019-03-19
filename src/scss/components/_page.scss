@@ -9,12 +9,12 @@
  .c-page {
 
     &__title {
+        color: $color-white;
         text-transform: uppercase;
         width: 20ch;
         line-height: 1.1em;
-        margin: 2rem 0 2rem 0;
-        color: $color-white;
-        margin: 1em $global-spacing-unit-large 5em $global-spacing-unit-large;
+        margin: 0;
+        padding: 2em 0 5em $global-spacing-unit-large;
     }
  }
 
@@ -22,5 +22,4 @@
      background-repeat: no-repeat;
      background-size: cover;
      background-attachment: fixed;
-     background-image: url(../../assets/img/test-image.jpg);
  }
