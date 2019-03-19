@@ -1,0 +1,50 @@
+/* ==========================================================================
+   #Typography
+   ========================================================================== */
+/*
+    Global base typography goes here.
+    Things like font-family, font-size, font-weight, letter-spacing.
+    More specific typography changes can be over-written in the components.
+    margins, padding etc would likely go in specific components.
+*/
+
+h1,
+h2,
+p,
+q,
+em,
+strong,
+b,
+blockquote,
+cite,
+figcaption {
+    font-family: dewnrger, sans-serif;
+}
+figcaption {
+    line-height: 1.5em;
+}
+
+code,
+pre {
+    font-family: Consolas, Courier, monospace;
+    line-height: 1em;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+pre code {
+    padding: 1em;
+    padding: 1em 0;
+}
+code {
+    background-color: #EEE;
+    font-size: 1rem;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+em {
+    font-weight: 600;
+}

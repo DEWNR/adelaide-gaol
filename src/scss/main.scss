@@ -4,11 +4,14 @@
 
 /* Settings and tools
    ========================================================================== */
+@import 'tools/functions';
 @import 'settings/all'; // Grab all of our settings files in one go.
-@import 'tools/all';    // Grab all of our tools files in one go.
+@import 'tools/mixins';
+@import 'sass-mq/mq';
 
 /* Generic
    ========================================================================== */
+@import 'generic/typography';
 @import 'generic/animations';
 @import 'generic/box-sizing';
 @import 'generic/helpers';
@@ -48,6 +51,9 @@
 @import 'components/sitemap';
 @import 'components/copyright';
 
+@import 'components/page';
+@import 'components/nav-side';
+@import 'components/content';
 
 /* Utilities
    ========================================================================== */
