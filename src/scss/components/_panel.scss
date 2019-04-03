@@ -1,0 +1,72 @@
+/* ==========================================================================
+   #Panel
+   ========================================================================== */
+.c-panel {
+  background: rgba($color-black, 0.8);
+  color: $color-white;
+  padding: $global-spacing-unit;
+
+  & + & {
+    margin-top: $global-spacing-unit-large;
+  }
+
+  @include mq($from: md) {
+    padding: $global-spacing-unit;
+  }
+}
+
+.c-panel__group {
+  display: flex;
+  margin-top: $global-spacing-unit-small;
+}
+
+.c-panel__item {
+  .c-panel__group & {
+    display: inline-flex;
+    flex-direction: column;
+  }
+}
+
+.c-panel__images {
+  margin-top: -$global-spacing-unit;
+  margin-bottom: -$global-spacing-unit;
+
+  > .o-layout {
+    margin-right: -$global-spacing-unit;
+  }
+
+  @include mq($from: md) {
+    margin-top: -$global-spacing-unit;
+    margin-bottom: -$global-spacing-unit;
+  }
+}
+
+.c-panel__image {
+  // max-width: 100%;
+}
+
+.c-panel__title {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.c-panel__subtitle {
+  margin: 0;
+
+  .c-panel__image + & {
+    margin-top: $global-spacing-unit;
+  }
+}
+
+.c-panel__text {
+  margin-top: 0;
+  margin-bottom: auto;
+
+  &--small {
+    font-size: 20px;
+  }
+
+  &--tiny {
+    font-size: 14px;
+  }
+}

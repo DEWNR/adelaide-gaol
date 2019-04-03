@@ -9,6 +9,10 @@
 @import 'tools/mixins';
 @import 'sass-mq/mq';
 
+/* Vendor
+   ========================================================================== */
+@import 'normalize.css/normalize';
+
 /* Generic
    ========================================================================== */
 @import 'generic/typography';
@@ -29,10 +33,6 @@
 @import 'elements/quotes';
 @import 'elements/small';
 
-/* Vendor
-   ========================================================================== */
-
-
 /* Objects
    ========================================================================== */
 @import 'objects/layout';
@@ -41,16 +41,17 @@
 
 /* Components
    ========================================================================== */
+@import 'components/buttons';
 @import 'components/skip-to-content';
 @import 'components/header';
 @import 'components/nav-primary';
 @import 'components/site-search';
-
+@import 'components/hero';
+@import 'components/panel';
 @import 'components/footer';
 @import 'components/curator';
 @import 'components/sitemap';
 @import 'components/copyright';
-
 @import 'components/page';
 @import 'components/nav-side';
 @import 'components/content';
