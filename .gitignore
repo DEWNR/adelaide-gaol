@@ -13,7 +13,10 @@
 /storage/logs/*
 
 # ASSETS
-/web/assets/*
+/web/assets/css/*
+/web/assets/fonts/*
+/web/assets/js/*
+/web/assets/img/site/*
 /web/cpresources/*
 
 # BUILD FILES
