@@ -93,8 +93,8 @@
 
     {# -- HTML Body #}
     {# {{ entry.backgroundImage.one().getUrl() }} #}
-    <body style="background-image: url(../../assets/img/test-image.jpg)">
-        <a href="#main-content" id="skip-to-content" class="c-skip-to-content">Skip to content</a>
+    <body style="background-image: url({{ entry.backgroundImage.one().getUrl() }})">
+        <a href="#main-content" id="skip-to-content" class="c-button c-button--secondary c-skip-to-content">Skip to content</a>
 
         <div id="page-container">
 

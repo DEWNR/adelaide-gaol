@@ -110,7 +110,8 @@ const log = (message) => {
  *  - we use this to remove all files created by the gulp tasks
  *  - might look at moving this into the config
  *
- *  1. removes all files from the web/assets/ directory
+ *  1. removes all files from the web/assets/ directory that are created by the
+ *     build
  *  2. removes temporary build files
  *  3. remove all critical css from the templates folder
  *  4. remove favicons
@@ -120,7 +121,10 @@ gulp.task('clean', () => {
   log(`Taking out the trash 🗑`);
 
   gulp.src([
-    config.public.assets, /* 1 */
+    `${config.public.assets}css`, /* 1 */
+    `${config.public.assets}js`, /* 1 */
+    `${config.public.assets}fonts`, /* 1 */
+    `${config.public.assets}img/site`, /* 1 */
     config.build.base, /* 2 */
     `${config.templates.src}/*.css`, /* 3 */
     `${config.public.base}favicon.ico`, /* 4 */

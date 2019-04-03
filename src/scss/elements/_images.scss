@@ -20,6 +20,6 @@ audio {
   vertical-align: middle; /* [3] */
 
   &:not([width]):not([height]) {
-    max-width: none; /* [4] */
+    // max-width: none; /* [4] */
   }
 }

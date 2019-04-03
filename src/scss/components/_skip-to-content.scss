@@ -10,7 +10,6 @@
   height: 1px;
   overflow: hidden;
   z-index: z-index(10);
-  text-align: center;
   margin-top: $global-spacing-unit;
   font-weight: bold;
   transition: top 0.3s ease;
@@ -21,7 +20,5 @@
     width: auto;
     height: auto;
     top: 0;
-    padding: $global-spacing-unit-small $global-spacing-unit;
-    background-color: $color-white;
   }
 }

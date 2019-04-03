@@ -1,0 +1,66 @@
+/* ==========================================================================
+   #Buttons
+   ========================================================================== */
+.c-button {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  padding: $global-spacing-unit-small + 4 $global-spacing-unit $global-spacing-unit-small;
+  border-width: 2px;
+  border-style: solid;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-color: transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+  .dewnrger & {
+    font-family: 'Dewnrger', sans-serif;
+  }
+}
+
+.c-button--primary {
+  background-color: $color-brand;
+  color: $color-white;
+
+  &:hover {
+    border-color: $color-white;
+  }
+
+  &:active {
+    background-color: $color-brand-80;
+    border-color: $color-white-80;
+  }
+}
+
+.c-button--secondary {
+  background-color: $color-white;
+  color: $color-brand;
+
+  &:hover {
+    border-color: $color-brand;
+  }
+
+  &:active {
+    border-color: $color-brand-80;
+    background-color: $color-white-80;
+  }
+}
+
+.c-button--small {
+  padding: $global-spacing-unit-tiny + 3 $global-spacing-unit-small $global-spacing-unit-tiny;
+  font-size: 80%;
+}
+
+.c-button--large {
+  padding: $global-spacing-unit + 3 $global-spacing-unit-large $global-spacing-unit - 3;
+  font-size: 120%;
+}

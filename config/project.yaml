@@ -1,16 +1,412 @@
-dateModified: 1552367743
+dateModified: 1554187525
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
   transportType: craft\mail\transportadapters\Sendmail
 fieldGroups:
+  074c96ff-0c3a-4759-a18c-50876512345c:
+    name: Assets
+  22e34b96-b070-4971-b0f3-59f065435a17:
+    name: Homepage
   7e2a939a-a0dd-4825-9cff-33ef02c3bfeb:
     name: Common
+  b3ca06cb-332e-4629-85d4-1036322a636d:
+    name: Globals
+  d1be5ead-550d-4e84-b123-d95fc45cb898:
+    name: SEO
+fields:
+  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+    contentColumnType: text
+    fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
+    handle: pageTitle
+    instructions: 'Google typically displays the first 50-60 characters of a title tag, or as many characters as will fit into a 512-pixel display.'
+    name: 'Page title'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  2dee1627-2da5-4f40-ae34-a9e308859b68:
+    contentColumnType: text
+    fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
+    handle: seo
+    instructions: ''
+    name: SEO
+    searchable: true
+    settings:
+      elementDisplayPreviewType: none
+      facebookTabEnabled: ''
+      generalEnabledFields:
+        - seoTitle
+        - seoDescription
+        - seoImage
+      generalTabEnabled: '1'
+      sitemapTabEnabled: ''
+      twitterTabEnabled: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: nystudio107\seomatic\fields\SeoSettings
+  77009258-1296-4767-b24f-55808517ae58:
+    contentColumnType: text
+    fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
+    handle: metaDescription
+    instructions: 'A short description of the page''s content for search engines. Recommended length is 160 characters.'
+    name: 'Meta description'
+    searchable: true
+    settings:
+      charLimit: '260'
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  91666da3-f600-47da-855c-a1938230b28c:
+    contentColumnType: string
+    fieldGroup: 22e34b96-b070-4971-b0f3-59f065435a17
+    handle: whatsOn
+    instructions: ''
+    name: 'What''s on'
+    searchable: true
+    settings:
+      limit: '3'
+      localizeRelations: false
+      selectionLabel: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  92d407d4-5702-4094-9c0e-150858c0563f:
+    contentColumnType: string
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+    handle: backgroundImage
+    instructions: ''
+    name: 'Background image'
+    searchable: true
+    settings:
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+      singleUploadLocationSubpath: /backgrounds
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: '1'
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  b56bb5db-3ad4-4fa7-b048-6333c49893f9:
+    contentColumnType: text
+    fieldGroup: 074c96ff-0c3a-4759-a18c-50876512345c
+    handle: altText
+    instructions: ''
+    name: 'ALT text'
+    searchable: true
+    settings:
+      charLimit: ''
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ce83b7a3-b117-4b6f-81f0-d896b523f676:
+    contentColumnType: string
+    fieldGroup: 22e34b96-b070-4971-b0f3-59f065435a17
+    handle: featureBanner
+    instructions: 'The image that will appear at the top of the page'
+    name: 'Feature banner'
+    searchable: true
+    settings:
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: ''
+      singleUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+      singleUploadLocationSubpath: '{slug}/'
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: '1'
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+globalSets:
+  0ec1b038-e7f9-45fd-88f0-a81ac806857b:
+    fieldLayouts:
+      31b1a802-f5d2-4939-b501-2b4f22737ba8:
+        tabs:
+          -
+            fields:
+              92d407d4-5702-4094-9c0e-150858c0563f:
+                required: false
+                sortOrder: 1
+            name: Design
+            sortOrder: 1
+    handle: footer
+    name: Footer
+  2918c09a-46de-4be2-875c-eb709d6bbcfe:
+    fieldLayouts:
+      b20793a8-ba77-4e0f-95c5-e23bf4c790cf:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+    handle: openingHours
+    name: 'Opening hours'
+  a5f994ad-0b13-41bf-b7eb-eb1e23fd93c2:
+    fieldLayouts:
+      293004cb-dd5e-4a87-8688-53071fa5c088:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+    handle: location
+    name: Location
+imageTransforms:
+  16d20324-3a53-4b69-852f-8f3dd8e514eb:
+    format: null
+    handle: w500h500
+    height: '500'
+    interlace: none
+    mode: crop
+    name: 500x500
+    position: center-center
+    quality: '82'
+    width: '500'
+  a2127a59-da79-4437-9cac-b04510ad4ce0:
+    format: null
+    handle: w620h440
+    height: '440'
+    interlace: none
+    mode: crop
+    name: 620x440
+    position: center-center
+    quality: null
+    width: '620'
 plugins:
   assetrev:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  aws-s3:
+    edition: standard
+    enabled: true
+    schemaVersion: '1.2'
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  command-palette:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+    settings:
+      elementSearchElementTypes:
+        asset:
+          elementType: Asset
+          enabled: ''
+        category:
+          elementType: Category
+          enabled: '1'
+        entry:
+          elementType: Entry
+          enabled: '1'
+        globalset:
+          elementType: 'Global Set'
+          enabled: '1'
+        matrixblock:
+          elementType: 'Matrix Block'
+          enabled: ''
+        tag:
+          elementType: Tag
+          enabled: ''
+        user:
+          elementType: User
+          enabled: '1'
+      pluginName: Command
+      theme: 'Palette Craft.css'
+  cp-element-count:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      expandSingles: '1'
+      redirectToEntry: '1'
+  imager:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.6
+    settings:
+      addHrefLang: '1'
+      cpTitlePrefix: '⚙ '
+      devModeCpTitlePrefix: '&#x1f6a7;⚙ '
+      devModeTitlePrefix: '&#x1f6a7; '
+      displayAnalysisSidebar: true
+      displayPreviewSidebar: '1'
+      environment: local
+      generatorEnabled: '1'
+      headersEnabled: '1'
+      maxDescriptionLength: '155'
+      maxTitleLength: '70'
+      pluginName: SEO
+      regenerateSitemapsAutomatically: '1'
+      renderEnabled: '1'
+      separatorChar: '|'
+      siteGroupsSeparate: '1'
+      sitemapsEnabled: '1'
+sections:
+  64f02460-fbb8-4392-98b6-c1582e727a71:
+    enableVersioning: true
+    entryTypes:
+      6ce1892f-9c35-4069-9721-f5de0aa4aaee:
+        fieldLayouts:
+          d240c17d-d380-48f5-9938-a58744af9ee1:
+            tabs:
+              -
+                fields:
+                  afec3e3a-e901-4dc8-bf01-ee410b1c5177:
+                    required: false
+                    sortOrder: 1
+                name: 'Tab 1'
+                sortOrder: 1
+        handle: landingPage
+        hasTitleField: true
+        name: 'Landing page'
+        sortOrder: 1
+        titleFormat: ''
+        titleLabel: Title
+      c0b75679-a1f6-4a0a-81e9-6b99cf3e0a9b:
+        fieldLayouts:
+          35ac9013-4191-46b6-8fb3-517ada36a202:
+            tabs:
+              -
+                fields:
+                  92d407d4-5702-4094-9c0e-150858c0563f:
+                    required: false
+                    sortOrder: 1
+                name: Design
+                sortOrder: 1
+              -
+                fields:
+                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                    required: false
+                    sortOrder: 2
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 3
+                  77009258-1296-4767-b24f-55808517ae58:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
+        handle: contactPage
+        hasTitleField: true
+        name: 'Contact page'
+        sortOrder: 4
+        titleFormat: ''
+        titleLabel: Title
+      f1bd2ba6-0fd5-4beb-bf2a-da9d5c0d0f4a:
+        handle: contentPage
+        hasTitleField: true
+        name: 'General content page'
+        sortOrder: 3
+        titleFormat: ''
+        titleLabel: Title
+    handle: pages
+    name: Pages
+    propagateEntries: true
+    siteSettings:
+      89ad90bb-4100-47b8-a793-95080e52e0d7:
+        enabledByDefault: true
+        hasUrls: true
+        template: _pages/_entry
+        uriFormat: '{parent.uri}/{slug}'
+    structure:
+      maxLevels: ''
+      uid: 95236a0b-1c56-41fd-b0ba-dad29da7db07
+    type: structure
+  87457e89-8cd3-486f-81dc-91d6797ed996:
+    enableVersioning: true
+    entryTypes:
+      87939b2c-e1a9-4434-a3fa-af3b3893c93b:
+        fieldLayouts:
+          8f13f643-6b84-4672-807d-903bd2362a3b:
+            tabs:
+              -
+                fields:
+                  92d407d4-5702-4094-9c0e-150858c0563f:
+                    required: false
+                    sortOrder: 1
+                  ce83b7a3-b117-4b6f-81f0-d896b523f676:
+                    required: false
+                    sortOrder: 2
+                name: Design
+                sortOrder: 1
+              -
+                fields:
+                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                    required: false
+                    sortOrder: 2
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 3
+                  77009258-1296-4767-b24f-55808517ae58:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
+        handle: homepage
+        hasTitleField: true
+        name: Homepage
+        sortOrder: 1
+        titleFormat: '{section.name|raw}'
+        titleLabel: Title
+    handle: homepage
+    name: Homepage
+    propagateEntries: true
+    siteSettings:
+      89ad90bb-4100-47b8-a793-95080e52e0d7:
+        enabledByDefault: true
+        hasUrls: true
+        template: index
+        uriFormat: __home__
+    type: single
 siteGroups:
   4221bd02-481b-4416-bdaa-48cadfabefb5:
     name: 'Adelaide Gaol'
@@ -33,6 +429,51 @@ system:
 users:
   allowPublicRegistration: false
   defaultGroup: null
+  groups:
+    c7832887-5670-49e5-a471-64cb4d402fb1:
+      handle: contentAuthors
+      name: 'Content authors'
+      permissions:
+        - accesssitewhensystemisoff
+        - accesscp
+        - 'publishentries:87457e89-8cd3-486f-81dc-91d6797ed996'
+        - 'editentries:87457e89-8cd3-486f-81dc-91d6797ed996'
+        - 'createentries:64f02460-fbb8-4392-98b6-c1582e727a71'
+        - 'publishentries:64f02460-fbb8-4392-98b6-c1582e727a71'
+        - 'deleteentries:64f02460-fbb8-4392-98b6-c1582e727a71'
+        - 'publishpeerentries:64f02460-fbb8-4392-98b6-c1582e727a71'
+        - 'deletepeerentries:64f02460-fbb8-4392-98b6-c1582e727a71'
+        - 'editpeerentries:64f02460-fbb8-4392-98b6-c1582e727a71'
+        - 'editentries:64f02460-fbb8-4392-98b6-c1582e727a71'
   photoSubpath: ''
   photoVolumeUid: null
   requireEmailVerification: true
+volumes:
+  315e066f-9afa-4a0d-a8cd-3eadad862a9c:
+    fieldLayouts:
+      9802b098-c118-404e-93ef-e16209ca3779:
+        tabs:
+          -
+            fields:
+              b56bb5db-3ad4-4fa7-b048-6333c49893f9:
+                required: false
+                sortOrder: 1
+            name: Content
+            sortOrder: 1
+    handle: generalImages
+    hasUrls: true
+    name: 'General images'
+    settings:
+      path: assets/img/
+    sortOrder: '4'
+    type: craft\volumes\Local
+    url: /assets/img/
+  fbc888f1-54b7-47c2-9cb5-7b263d5a373a:
+    handle: generalDocuments
+    hasUrls: true
+    name: 'General documents'
+    settings:
+      path: assets/documents/
+    sortOrder: 5
+    type: craft\volumes\Local
+    url: /assets/documents/

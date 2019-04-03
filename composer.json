@@ -1,7 +1,15 @@
 {
   "require": {
+    "aelvan/craft-cp-element-count": "1.1.0",
+    "aelvan/imager": "v2.1.7",
+    "amimpact/command-palette": "3.1.4",
     "clubstudioltd/craft-asset-rev": "6.0.2",
+    "craftcms/aws-s3": "1.2.2",
+    "craftcms/ckeditor": "1.0.0-beta.2",
     "craftcms/cms": "^3.1.15",
+    "nystudio107/craft-minify": "1.2.9",
+    "nystudio107/craft-seomatic": "3.1.46",
+    "verbb/expanded-singles": "1.0.7",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {
