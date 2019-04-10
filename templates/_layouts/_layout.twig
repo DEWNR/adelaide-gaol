@@ -93,7 +93,14 @@
 
     {# -- HTML Body #}
     {# {{ entry.backgroundImage.one().getUrl() }} #}
-    <body style="background-image: url({{ entry.backgroundImage.one().getUrl() }})">
+{% if not entry.backgroundImage | length %}
+    {% set background = craft.entries.section('homepage').one().backgroundImage.one().getUrl() %}
+{% else %}
+    {% set background = entry.backgroundImage.one().getUrl() %}
+{% endif %}
+
+
+    <body style="background-image: url({{ background }})">
         <a href="#main-content" id="skip-to-content" class="c-button c-button--secondary c-skip-to-content">Skip to content</a>
 
         <div id="page-container">

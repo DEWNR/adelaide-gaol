@@ -1,4 +1,4 @@
-dateModified: 1554187525
+dateModified: 1554347357
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
@@ -112,6 +112,21 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  b17641df-1d5e-47d4-8d87-9bb1d03dd179:
+    contentColumnType: string
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+    handle: mainContent
+    instructions: ''
+    name: 'Main content'
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_maincontent}}'
+      localizeBlocks: false
+      maxBlocks: ''
+      minBlocks: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
   b56bb5db-3ad4-4fa7-b048-6333c49893f9:
     contentColumnType: text
     fieldGroup: 074c96ff-0c3a-4759-a18c-50876512345c
@@ -154,6 +169,20 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  eea35a5c-d918-43f2-b45b-e6dc84e9b7ca:
+    contentColumnType: text
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+    handle: bodyContent
+    instructions: ''
+    name: 'Body content'
+    searchable: true
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
 globalSets:
   0ec1b038-e7f9-45fd-88f0-a81ac806857b:
     fieldLayouts:
@@ -207,6 +236,85 @@ imageTransforms:
     position: center-center
     quality: null
     width: '620'
+matrixBlockTypes:
+  1376e80e-a0c3-47e0-b863-a58b5e4c8a36:
+    field: b17641df-1d5e-47d4-8d87-9bb1d03dd179
+    fieldLayouts:
+      2b9ce2be-4530-4605-8903-d4a073861eee:
+        tabs:
+          -
+            fields:
+              05bbb5c2-adf3-43bf-bcda-d36630677062:
+                required: false
+                sortOrder: 2
+              49593971-e1ee-4231-bf88-d5e85f2c1152:
+                required: false
+                sortOrder: 1
+              e6f9c89d-1d49-4470-acd5-c22772f1299b:
+                required: false
+                sortOrder: 3
+            name: Content
+            sortOrder: 1
+    fields:
+      05bbb5c2-adf3-43bf-bcda-d36630677062:
+        contentColumnType: text
+        fieldGroup: null
+        handle: bodyCopy
+        instructions: ''
+        name: 'Body copy'
+        searchable: true
+        settings:
+          columnType: text
+          purifierConfig: ''
+          purifyHtml: '1'
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\ckeditor\Field
+      49593971-e1ee-4231-bf88-d5e85f2c1152:
+        contentColumnType: text
+        fieldGroup: null
+        handle: heading
+        instructions: ''
+        name: Heading
+        searchable: true
+        settings:
+          charLimit: '255'
+          code: ''
+          columnType: text
+          initialRows: '4'
+          multiline: ''
+          placeholder: ''
+        translationKeyFormat: null
+        translationMethod: none
+        type: craft\fields\PlainText
+      e6f9c89d-1d49-4470-acd5-c22772f1299b:
+        contentColumnType: string
+        fieldGroup: null
+        handle: image
+        instructions: ''
+        name: Image
+        searchable: true
+        settings:
+          allowedKinds: null
+          defaultUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+          defaultUploadLocationSubpath: ''
+          limit: '1'
+          localizeRelations: false
+          restrictFiles: ''
+          selectionLabel: ''
+          singleUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+          singleUploadLocationSubpath: ''
+          source: null
+          sources: '*'
+          targetSiteId: null
+          useSingleFolder: ''
+          viewMode: list
+        translationKeyFormat: null
+        translationMethod: site
+        type: craft\fields\Assets
+    handle: text
+    name: Text
+    sortOrder: 1
 plugins:
   assetrev:
     edition: standard
@@ -300,11 +408,24 @@ sections:
             tabs:
               -
                 fields:
-                  afec3e3a-e901-4dc8-bf01-ee410b1c5177:
+                  92d407d4-5702-4094-9c0e-150858c0563f:
                     required: false
                     sortOrder: 1
-                name: 'Tab 1'
+                name: Content
                 sortOrder: 1
+              -
+                fields:
+                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                    required: false
+                    sortOrder: 2
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 3
+                  77009258-1296-4767-b24f-55808517ae58:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: landingPage
         hasTitleField: true
         name: 'Landing page'
@@ -342,6 +463,32 @@ sections:
         titleFormat: ''
         titleLabel: Title
       f1bd2ba6-0fd5-4beb-bf2a-da9d5c0d0f4a:
+        fieldLayouts:
+          0476d75d-8a76-49d8-ac2e-3ad74c2665c3:
+            tabs:
+              -
+                fields:
+                  92d407d4-5702-4094-9c0e-150858c0563f:
+                    required: false
+                    sortOrder: 2
+                  eea35a5c-d918-43f2-b45b-e6dc84e9b7ca:
+                    required: false
+                    sortOrder: 1
+                name: Content
+                sortOrder: 1
+              -
+                fields:
+                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                    required: false
+                    sortOrder: 2
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 3
+                  77009258-1296-4767-b24f-55808517ae58:
+                    required: false
+                    sortOrder: 1
+                name: SEO
+                sortOrder: 2
         handle: contentPage
         hasTitleField: true
         name: 'General content page'

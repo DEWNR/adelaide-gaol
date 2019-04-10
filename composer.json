@@ -9,6 +9,7 @@
     "craftcms/cms": "^3.1.15",
     "nystudio107/craft-minify": "1.2.9",
     "nystudio107/craft-seomatic": "3.1.46",
+    "rias/craft-position-fieldtype": "1.0.14",
     "verbb/expanded-singles": "1.0.7",
     "vlucas/phpdotenv": "^2.4.0"
   },
