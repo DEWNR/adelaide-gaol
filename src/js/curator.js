@@ -16,7 +16,7 @@
     },
     feedId: feedId,
     container: '#curator-feed',
-    debug: true,
+    debug: false,
     maxPosts: 10,
     filter: {
       showNetworks: false,
