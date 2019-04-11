@@ -17,6 +17,7 @@
 /web/assets/fonts/*
 /web/assets/js/*
 /web/assets/img/site/*
+/web/assets/img/*/_*/
 /web/cpresources/*
 
 # BUILD FILES
