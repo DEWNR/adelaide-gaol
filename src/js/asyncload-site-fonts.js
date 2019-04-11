@@ -3,16 +3,16 @@
 /* global FontFaceObserver */
 
 if (!document.documentElement.classList.contains('fonts-loaded')) {
-  var fonts = [
+  const fonts = [
     'dewnrger',
     'fontello'
   ];
 
-  var observers = [];
-  var loadedFonts = [];
+  let observers = [];
+  let loadedFonts = [];
 
   fonts.forEach((family) => {
-    var obs = new FontFaceObserver(family);
+    const obs = new FontFaceObserver(family);
     observers.push(obs.load());
   });
 
