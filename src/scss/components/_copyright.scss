@@ -29,6 +29,7 @@
   &__item {
     display: inline-block;
     text-align: center;
+    font-size: 75%;
 
     & + .c-copyright__item {
       padding-left: $global-spacing-unit-small;
