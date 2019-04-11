@@ -78,6 +78,11 @@
   }
 }
 
+.o-layout--flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 
 /* Gutter size modifiers.
    ========================================================================== */

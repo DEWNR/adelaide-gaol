@@ -48,3 +48,11 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
+
+/**
+ * add a shade to all templates except for the homepage to make the title a bit
+ * easier to see.
+ */
+body:not(.homepage) #page-container {
+  background-color: rgba(0, 0, 0, 0.3);
+}
