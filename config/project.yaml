@@ -1,4 +1,4 @@
-dateModified: 1554347357
+dateModified: 1554969588
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
@@ -32,6 +32,30 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
+  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
+    contentColumnType: string
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+    handle: pageVisibility
+    instructions: 'Here you can Hide this page from search, Hide this page from navigation menus & Hide this page from external search engine.'
+    name: 'Page visibility'
+    searchable: true
+    settings:
+      options:
+        -
+          default: ''
+          label: 'Hide this page from search'
+          value: hideThisPageFromSearch
+        -
+          default: ''
+          label: 'Hide this page from navigation menus'
+          value: hideThisPageFromNavigationMenus
+        -
+          default: ''
+          label: 'Hide this page from external search engine'
+          value: hideThisPageFromExternalSearchEngine
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Checkboxes
   2dee1627-2da5-4f40-ae34-a9e308859b68:
     contentColumnType: text
     fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
@@ -52,6 +76,23 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: nystudio107\seomatic\fields\SeoSettings
+  3fdca85e-701c-4e5d-8b12-6cdc4215ac87:
+    contentColumnType: text
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+    handle: introText
+    instructions: 'If the page has introduction text place it here'
+    name: 'Intro text'
+    searchable: true
+    settings:
+      charLimit: '9000'
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   77009258-1296-4767-b24f-55808517ae58:
     contentColumnType: text
     fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
@@ -408,6 +449,9 @@ sections:
             tabs:
               -
                 fields:
+                  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
+                    required: false
+                    sortOrder: 2
                   92d407d4-5702-4094-9c0e-150858c0563f:
                     required: false
                     sortOrder: 1
@@ -438,6 +482,9 @@ sections:
             tabs:
               -
                 fields:
+                  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
+                    required: false
+                    sortOrder: 2
                   92d407d4-5702-4094-9c0e-150858c0563f:
                     required: false
                     sortOrder: 1
@@ -468,12 +515,18 @@ sections:
             tabs:
               -
                 fields:
-                  92d407d4-5702-4094-9c0e-150858c0563f:
+                  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
                     required: false
-                    sortOrder: 2
-                  eea35a5c-d918-43f2-b45b-e6dc84e9b7ca:
+                    sortOrder: 4
+                  3fdca85e-701c-4e5d-8b12-6cdc4215ac87:
                     required: false
                     sortOrder: 1
+                  92d407d4-5702-4094-9c0e-150858c0563f:
+                    required: false
+                    sortOrder: 3
+                  eea35a5c-d918-43f2-b45b-e6dc84e9b7ca:
+                    required: false
+                    sortOrder: 2
                 name: Content
                 sortOrder: 1
               -
