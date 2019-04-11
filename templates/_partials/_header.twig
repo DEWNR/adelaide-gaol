@@ -18,9 +18,9 @@
         </button>
 
         <div class="c-site-search">
-            <form class="c-site-search__form">
-                <input class="c-site-search__input" type="search" name="site-search" id="site-search" placeholder="Search the site...">
-                <button class="c-site-search__button" type="button">
+            <form class="c-site-search__form" action="{{ url('search/results')}}">
+                <input class="c-site-search__input" type="search" name="q" id="site-search" placeholder="Search the site...">
+                <button class="c-site-search__button" type="submit">
                     <span aria-hidden="true" class="icon-search"></span>
                     <span class="sr-only">Submit search</span>
                 </button>

@@ -1,0 +1,32 @@
+{% extends "_layouts/_layout" %}
+
+{% set query = craft.app.request.getParam('q') %}
+{% set entries = craft.entries.search(query).orderBy('score').all() %}
+
+{% block content %}
+    <section>
+        <div class="o-wrapper">
+
+            <div class="c-page c-page--search">
+                <h1 class="c-page__title" style="color: black;">Search results</h1>
+
+                {% if entries | length %}
+                    <p>Here are your results for "{{ query }}":</p>
+                    <ul>
+                        {% for entry in entries %}
+                            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+
+                {% else %}
+                    <p>Your search didn't return any results. Please try again...</p>
+                    <form class="c-site-search__form" action="{{ url('search/results')}}">
+                        <input type="search" name="q" id="site-search" placeholder="Search the site...">
+                        <input type="submit" value="Search">
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
