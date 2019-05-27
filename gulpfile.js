@@ -183,6 +183,8 @@ gulp.task('styles', ['styles:scss'], () => {
 
   return gulp.src([
     config.styles.build + '**/*.css',
+    '!' + config.styles.build + '**/style-guide.css',
+    '!' + config.styles.build + '**/open-forms.css',
     config.fontello.build + 'css/fontello-codes.css'
   ])
     .pipe($.plumber({ errorHandler: handleError }))
@@ -197,6 +199,39 @@ gulp.task('styles', ['styles:scss'], () => {
     .pipe(gulp.dest('.'))
     .pipe($.if(isProd, writeVersionFile()))
     .pipe($.browserSync.stream({ match: '**/*.css' }));
+});
+
+gulp.task('styleGuide', ['styles:scss'], () => {
+  log(`Creating style guide css`);
+
+  return gulp.src([config.styles.build + '**/style-guide.css'])
+    .pipe($.plumber({ errorHandler: handleError }))
+    .pipe($.if(isDev, $.sourcemaps.init({ loadMaps: true })))
+    .pipe($.if(isDev, $.sourcemaps.write()))
+    .pipe(gulp.dest(config.styles.dest))
+    .pipe($.browserSync.stream({ match: '**/*.css' }));
+});
+
+gulp.task('openForms', ['styles:scss'], () => {
+  log(`Creating open-forms css`);
+
+  return gulp.src([config.styles.build + '**/open-forms.css'])
+    .pipe($.postcss([
+      $.autoprefixer(),
+      $.cssDeclarationSorter(),
+      $.cssnano({
+        safe: true,
+        autoprefixer: false,
+        discardComments: {
+          removeAll: true
+        },
+        discardDuplicates: true,
+        discardEmpty: true,
+        minifyFontValues: false,
+        minifySelectors: true
+      })
+    ]))
+    .pipe(gulp.dest(config.styles.dest));
 });
 
 /**
@@ -522,4 +557,6 @@ gulp.task('default', ['build'], () => {
   gulp.watch([`${config.templates.src}**/*.{${config.templates.extensions}}`])
     .on('change', $.browserSync.reload)
     .on('error', (error) => handleError(error, false));
+  gulp.watch([`${config.styles.src}**/open-forms.scss`], ['openForms']);
+  gulp.watch([`${config.styles.src}**/style-guide.scss`], ['styleGuide']);
 });
