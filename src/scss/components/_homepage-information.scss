@@ -1,0 +1,37 @@
+/* ==========================================================================
+   #Homepage information panel
+   ========================================================================== */
+.c-homepage-information {
+  @include mq($until: md) {
+    background-color: transparent;
+    color: $color-white;
+
+    .c-panel__title {
+      margin-top: 0;
+      margin-bottom: $global-spacing-unit;
+    }
+
+    .c-button {
+      margin-top: $global-spacing-unit;
+      width: 100%;
+    }
+  }
+
+  @include mq($from: md) {
+    .c-button {
+      float: right;
+    }
+  }
+}
+
+.c-homepage-information__title {
+  margin-top: 0;
+}
+
+.c-homepage-information__description {
+  .dewnrger & {
+    font-family: 'Dewnrger', sans-serif;
+  }
+
+  margin-bottom: 0;
+}

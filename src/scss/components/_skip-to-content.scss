@@ -2,12 +2,13 @@
    #Skip to content
    ========================================================================== */
 .c-skip-to-content {
+  @include button;
+  @include button-secondary;
+
   position: absolute;
   top: -1000px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1px;
-  height: 1px;
   overflow: hidden;
   z-index: z-index(10);
   margin-top: $global-spacing-unit;

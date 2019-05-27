@@ -1,0 +1,37 @@
+/* ==========================================================================
+   #Badges
+   ========================================================================== */
+.c-badge {
+  display: inline-block;
+  padding: 6px 12px 4px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 5px 10px 5px 0;
+  line-height: 1;
+
+  &--primary {
+    background: $shade-primary-1;
+    color: $color-primary;
+  }
+
+  &--secondary {
+    background: $shade-secondary-1;
+    color: $color-secondary;
+  }
+
+  &--info {
+    background: $shade-accent-1;
+    color: $color-accent;
+  }
+
+  &--success {
+    background: $shade-success-1;
+    color: $color-success;
+  }
+
+  &--error {
+    background: $shade-error-1;
+    color: $color-error;
+  }
+}

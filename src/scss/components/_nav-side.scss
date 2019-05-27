@@ -1,223 +1,75 @@
 /* ==========================================================================
-   #NAV SIDE
+   #Side Navigation
    ========================================================================== */
 
-/* stylelint-disable max-nesting-depth */
-
+/* Container (nav)
+   ========================================================================== */
 .c-nav-side {
-    margin-top: $global-spacing-unit;
-
-    &__toggle {
-      margin: $global-spacing-unit;
-      margin-top: 0;
-      display: block;
-
-      @include mq($from: md) {
-        display: none;
-      }
-    }
+  .dewnrger & {
+    font-family: 'Dewnrger', sans-serif;
   }
 
-  /* List (ul)
-     ========================================================================== */
-  .c-nav-side__list {
-    display: none;
-    list-style: none;
-    margin: 0;
-    margin-bottom: $global-spacing-unit;
+  display: none;
 
-    @include mq($from: md) {
-      display: block;
-      margin-bottom: 0;
-      margin-left: 0;
-    }
+  @include mq($from: md) {
+    display: block;
+  }
+}
 
-    &--lvl-0 {
-      margin-left: $global-spacing-unit-large;
-      margin-right: $global-spacing-unit;
 
-      .c-nav-side--open & {
-        display: block;
-      }
+/* Parent (h2)
+   ========================================================================== */
+.c-nav-side__parent {
+  margin-top: 0;
+  color: $color-primary;
+}
 
-      @include mq($from: md) {
-        margin: 0;
-      }
-    }
 
-    &--lvl-1,
-    &--lvl-2,
-    &--lvl-3,
-    &--lvl-4,
-    &--lvl-5 {
-      padding-left: $global-spacing-unit;
-    }
+/* List (ul)
+   ========================================================================== */
+.c-nav-side__list {
+  list-style: none;
+  margin: 0;
+  margin-bottom: $global-spacing-unit;
+
+  &--lvl-0 {
+    margin-left: $global-spacing-unit-large;
   }
 
-
-  /* Item (li)
-     ========================================================================== */
-  .c-nav-side__item {
-    $module: '.c-nav-side__item';
-
-    @include font-size(14px);
-    margin-bottom: 1px;
-    vertical-align: middle;
-
-    border-bottom: 1px solid $color-brand-20;
-
-    &--active#{$module}--parent,
-    &--open {
-      border-bottom: 0;
-    }
-
-    .c-nav-side__sub > & {
-      &:last-child {
-        border-bottom: 0;
-      }
-    }
-
+  &--lvl-1,
+  &--lvl-2,
+  &--lvl-3,
+  &--lvl-4,
+  &--lvl-5 {
+    padding-left: $global-spacing-unit;
   }
+}
 
-  /* Link (a)
-     ========================================================================== */
-  .c-nav-side__link {
-    text-decoration: none;
-    font-weight: bold;
-    display: flex;
-    padding: $global-spacing-unit-tiny 0;
-    background-color: $color-white;
-    border: none;
-    align-items: center;
+/* Item (li)
+   ========================================================================== */
+.c-nav-side__item {
+  line-height: 1.3;
+  font-weight: 600;
+  margin-bottom: $global-spacing-unit-small;
+  position: relative;
 
-    &,
-    &:visited {
-      color: $color-brand-80;
-    }
-
-    &:hover,
-    &:focus {
-      color: $color-black;
-      text-decoration: none;
-    }
-
-    i {
-      @include font-size(26px);
-      display: none;
-      height: 1em;
-      width: $global-spacing-unit;
-      text-align: left;
-      margin-left: -$global-spacing-unit;
-      z-index: z-index(1);
-      position: relative;
-    }
-
-    &--active {
-      color: $color-black;
-      text-decoration: underline;
-    }
-
-    &--back {
-      display: none;
-      margin-left: $global-spacing-unit-large;
-      margin-right: $global-spacing-unit;
-
-      &,
-      &:visited {
-        color: $color-brand;
-      }
-
-      .c-nav-side--open & {
-        display: block;
-      }
-
-      @include mq($from: md) {
-        display: block;
-        margin: 0;
-      }
-
-      i {
-        display: inline-block;
-        vertical-align: bottom;
-      }
-    }
-
-    .c-nav-side__list--lvl-1 & {
-      background-color: $color-white;
-
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-        background-color: none;
-      }
-    }
-
-    .c-nav-side__list--active & {
-      color: $color-black;
-    }
-
-    .c-nav-side__item--parent > & {
-      i {
-        display: block;
-      }
-
-      span {
-        margin-left: -$global-spacing-unit+5;
-
-        &:before {
-           content: '\f105';
-           font-family: FontAwesome;
-           margin-right: 10px;
-           display: inline-block;
-           line-height: 1;
-           font-size: 18px;
-           position: relative;
-           top: 1px;
-           transition: transform 0.2s linear;
-        }
-      }
-    }
-
-    .c-nav-side__item--parent.c-nav-side__item--active > & {
-      color: $color-black;
-
-      span:before {
-         transform: rotate(90deg);
-      }
-    }
-
-    .c-nav-side__item--parent.c-nav-side__item--open > & {
-      span:before {
+  &--active {
+    .fontello & {
+      &::before {
+        content: '\e822';
+        font-family: fontello;
+        position: absolute;
+        left: (-$global-spacing-unit) - 5;
+        top: -2px;
         transform: rotate(90deg);
-     }
-    }
-
-    .c-nav-side__item--parent.c-nav-side__item--closed > & {
-      span:before {
-        transform: rotate(0deg);
-     }
-    }
-
-    .c-nav-side__list-sub > .c-nav-side__item:last-child & {
-      border-bottom: none;
+      }
     }
   }
+}
 
-
-  /* List-sub (ul)
-     ========================================================================== */
-  .c-nav-side__list-sub {
-    display: none;
-    // show the parent item has an open-modifier
-    // or the parent item is active
-    &--open,
-    .c-nav-side__item--active > & {
-      display: block;
-    }
-
-    // hide th list sub by default
-    // or if the parent item is closed
-    .c-nav-side__item--closed > & {
-      display: none;
-    }
-  }
+/* link (a)
+   ========================================================================== */
+.c-nav-side__link {
+  color: $color-brand;
+  text-decoration: none;
+}

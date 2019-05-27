@@ -4,6 +4,7 @@
 h1 {
   font-size: $global-font-size-h1-mobile;
   font-weight: bold;
+  line-height: 1.1;
 
   @include mq($from: md) {
     font-size: $global-font-size-h1;

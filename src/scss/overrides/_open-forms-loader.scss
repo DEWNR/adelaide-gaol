@@ -1,0 +1,22 @@
+/* ==========================================================================
+   #Overrides for the open forms loader because the standard one is ugly
+   ========================================================================== */
+.openforms-loader {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2em;
+
+  .dewnrger & {
+    font-family: 'Dewnrger', sans-serif;
+  }
+
+  .progress {
+    background-color: $shade-neutral-3 !important;
+
+    .indeterminate {
+      background-color: $shade-neutral-6 !important;
+    }
+  }
+}

@@ -49,6 +49,8 @@
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
   @include fontello();
+
+  content: '\e80d'; // fallback icon in case 'icon-*' does not exist
 }
 
 .icon-chevron,

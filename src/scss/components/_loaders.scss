@@ -1,0 +1,76 @@
+/* ==========================================================================
+   #Loaders
+   ========================================================================== */
+.c-loader__animation + .c-loader__label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 8px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: $shade-primary-4;
+}
+
+.c-loader--bounce-side .c-loader__animation {
+  max-width: 50px;
+  margin: auto;
+  height: 20px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    background: $color-primary;
+    animation: loaderBounceSide 0.8s infinite;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -10%;
+    background: $shade-primary-2;
+    opacity: 1;
+    animation: loaderBounceSide 0.8s infinite 0.05s;
+  }
+}
+
+.c-loader--fill .c-loader__animation {
+  width: 90%;
+  margin: auto;
+  height: 10px;
+  background: $shade-neutral-2;
+  border-radius: 40px;
+  position: relative;
+
+  &::before {
+    content: "";
+    border-radius: inherit;
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    left: 0;
+    background: $color-primary;
+    opacity: 1;
+    animation: loaderFill 5s infinite;
+  }
+}
+
+.c-loader--spin .c-loader__animation {
+  @include animate-spin;
+
+  display: block;
+
+  &::before {
+    content: '\e839';
+    color: $color-primary;
+    font-size: 150%;
+
+    .fontello & {
+      font-family: fontello;
+    }
+  }
+}

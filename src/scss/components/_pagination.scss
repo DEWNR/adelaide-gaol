@@ -1,0 +1,74 @@
+/* ==========================================================================
+   #Pagination
+   ========================================================================== */
+.c-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: $global-spacing-unit auto 0;
+
+  @include mq($from: md) {
+    width: 50%;
+  }
+}
+
+.c-pagination__page-number {
+  @include button;
+
+  position: relative;
+  padding: $global-spacing-unit-small;
+  background: transparent;
+  color: $color-black;
+
+  &[href] {
+    color: $color-brand;
+  }
+
+  &:hover {
+    background: $color-black-20;
+  }
+
+  & + & {
+    margin-left: $global-spacing-unit-small;
+  }
+
+  &--current {
+    cursor: default;
+
+    &:hover {
+      background: none;
+    }
+
+    &::after {
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      content: "";
+      bottom: 0;
+      left: 0;
+      background: currentColor;
+    }
+  }
+}
+
+.c-pagination__next,
+.c-pagination__previous {
+  @include button;
+
+  color: $color-brand;
+  background: transparent;
+  padding: $global-spacing-unit-small;
+
+  &:hover {
+    background: $shade-neutral-2;
+  }
+
+  &--disabled {
+    &:hover {
+      background: none;
+    }
+
+    color: $shade-neutral-4;
+    cursor: default;
+  }
+}

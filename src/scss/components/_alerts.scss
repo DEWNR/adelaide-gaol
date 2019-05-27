@@ -1,0 +1,104 @@
+/* ==========================================================================
+   #Alert
+   ========================================================================== */
+.c-alert {
+  margin-bottom: 15px;
+  display: block;
+  padding: 10px 40px 10px 15px;
+  border-radius: $border-radius;
+  font-weight: 600;
+  position: relative;
+  transform: scaleY(1);
+  transform-origin: top center;
+
+  &__close {
+    background: none;
+    padding: 0;
+    height: 100%;
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    right: 0;
+    top: 0;
+  }
+
+  &__close::before,
+  &__close::after {
+    content: "";
+    border-radius: 40px;
+    position: absolute;
+    width: 4px;
+    height: 16px;
+    top: 8px;
+    right: 30px;
+  }
+
+  &__close::before {
+    transform: rotate(45deg) translateY(-5.5px) translateX(13.5px);
+  }
+
+  &__close::after {
+    transform: rotate(-45deg) translateY(13.5px) translateX(5.5px);
+  }
+
+  transition: all 0.4s ease;
+
+  &.hidden {
+    opacity: 0;
+    transform: scaleY(0);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 0;
+  }
+
+  &--primary {
+    background: $shade-primary-1;
+    color: $color-primary;
+
+    .c-alert__close::before,
+    .c-alert__close::after {
+      background: $color-primary;
+    }
+  }
+
+  &--secondary {
+    background: $shade-secondary-1;
+    color: $color-secondary;
+
+    .c-alert__close::before,
+    .c-alert__close::after {
+      background: $color-secondary;
+    }
+  }
+
+  &--info {
+    background: $shade-accent-1;
+    color: $color-accent;
+
+    .c-alert__close::before,
+    .c-alert__close::after {
+      background: $color-accent;
+    }
+  }
+
+  &--success {
+    background: $shade-success-1;
+    color: $color-success;
+
+    .c-alert__close::before,
+    .c-alert__close::after {
+      background: $color-success;
+    }
+  }
+
+  &--error {
+    background: $shade-error-1;
+    color: $color-error;
+
+    .c-alert__close::before,
+    .c-alert__close::after {
+      background: $color-error;
+    }
+  }
+}

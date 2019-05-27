@@ -1,0 +1,97 @@
+/* ==========================================================================
+   #Homepage exhibition panel
+   ========================================================================== */
+$panel-padding: $global-spacing-unit-large !default;
+
+.c-homepage-exhibition {
+  @include mq($until: md) {
+    background-color: $color-white;
+  }
+
+  > .o-layout {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+
+    > :first-child {
+      order: 2;
+    }
+
+    > :last-child {
+      order: 1;
+    }
+
+    @include mq($from: md) {
+      flex-direction: row;
+
+      > :first-child {
+        order: 1
+      }
+
+      > :last-child {
+        order: 2
+      }
+    }
+  }
+}
+
+.c-homepage-exhibition__text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include mq($until: md) {
+    padding-bottom: $global-spacing-unit;
+
+    .c-panel__title {
+      color: $color-primary;
+    }
+  }
+
+  @include mq($from: md) {
+    .c-button {
+      margin-top: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.c-homepage-exhibition__images {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  height: 0;
+  padding-bottom: calc(63vw);
+  overflow: hidden;
+  margin-top: -$panel-padding;
+  margin-left: -$panel-padding;
+  margin-right: -$panel-padding;
+
+  > :last-child {
+    display: none;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @include mq($from: md) {
+    height: calc(100% + (#{$panel-padding} * 2));
+    max-height: 350px;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-bottom: -$panel-padding;
+    align-items: center;
+  }
+
+  @include mq($from: lg) {
+    height: calc(100% + (#{$panel-padding} * 2));
+    max-height: 300px;
+    padding-bottom: 0;
+
+    > :last-child {
+      display: block;
+    }
+  }
+}

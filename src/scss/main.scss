@@ -55,6 +55,18 @@
 @import 'components/page';
 @import 'components/nav-side';
 @import 'components/content';
+@import 'components/card';
+@import 'components/pagination';
+@import 'components/search-results';
+@import 'components/loaders';
+@import 'components/alerts';
+@import 'components/badges';
+@import 'components/venue';
+@import 'components/table';
+@import 'components/nav-teaser';
+@import 'components/homepage-exhibition';
+@import 'components/homepage-information';
+@import 'components/homepage-whats-on';
 
 /* Utilities
    ========================================================================== */
@@ -64,4 +76,5 @@
 
 /* Overrides
    ========================================================================== */
-@import 'overrides/print'
+@import 'overrides/print';
+@import 'overrides/open-forms-loader';

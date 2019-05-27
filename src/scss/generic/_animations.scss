@@ -32,3 +32,29 @@
     transform: rotate(359deg);
   }
 }
+
+@keyframes loaderBounceSide {
+  0% {
+    left: 85%;
+  }
+
+  50% {
+    left: -10%;
+  }
+
+  100% {
+    left: 85%;
+  }
+}
+
+@keyframes loaderFill {
+  0% {
+    width: 2%;
+  }
+
+  50%,
+  100% {
+    width: 100%;
+  }
+}
+

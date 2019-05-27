@@ -59,6 +59,8 @@
     color: $color-white;
     font-size: 120%;
     font-weight: bold;
+    padding: 0;
+    margin-left: $global-spacing-unit-small;
 
     &:hover {
       cursor: pointer;
@@ -70,6 +72,75 @@
       right: 0;
       top: 50%;
       transform: translate(110%, -50%);
+    }
+  }
+}
+
+/* Search results page
+   ========================================================================== */
+
+.c-page .c-site-search  {
+  display: block;
+  margin: 5em 0;
+  padding: 0 40px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: none;
+
+  .has-nav-open & {
+    display: none;
+  }
+
+  &__form {
+    flex-direction: column;
+    max-width: 100%;
+
+    @include mq($from: md) {
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    background: rgba($color-black, 0.8);
+    align-self: normal;
+    color: $color-white;
+    padding: $global-spacing-unit-small $global-spacing-unit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 120%;
+    border-radius: 3px 3px 0 0;
+
+    @include mq($from: md) {
+      border-radius: 3px 0 0 3px;
+      text-align: left;
+    }
+  }
+
+  &__input {
+    font-size: 40px;
+    border-radius: 0 0 3px 3px;
+
+    @include mq($from: md) {
+      border-radius: 0 3px 3px 0;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    display: none;
+    transition: none;
+
+    @include mq($from: md) {
+      display: block;
+      font-size: 200%;
+      font-weight: bold;
+      position: relative;
+      transform: none;
     }
   }
 }

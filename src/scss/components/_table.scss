@@ -1,0 +1,44 @@
+/* ==========================================================================
+   #Table
+   ========================================================================== */
+$table-color-main: $shade-primary-2 !default;
+
+.c-table {
+  display: table;
+  width: 100%;
+
+  .dewnrger & {
+    font-family: 'Dewnrger', sans-serif;
+  }
+}
+
+.c-table__column {
+  display: table-cell;
+  padding: $global-spacing-unit;
+  border: 1px solid $table-color-main;
+  border-width: 1px 1px 0 0;
+
+  &:first-child {
+    border-width: 1px 1px 0 1px;
+  }
+
+  .c-table__row--header & {
+    border-color: $table-color-main;
+  }
+
+  .c-table__row:last-child & {
+    border-bottom-width: 1px;
+  }
+
+  &--header {}
+}
+
+.c-table__row {
+  display: table-row;
+
+
+  &--header {
+    background-color: $table-color-main;
+    font-weight: 600;
+  }
+}

@@ -1,56 +1,67 @@
 /* ==========================================================================
    #Links
    ========================================================================== */
-a:not([class]) {
-  color: color('links');
-  text-decoration: none;
-  position: relative;
-  text-decoration-skip-ink: auto;
-
+a:not([class]),
+a.link {
+  &,
   &:visited {
-    color: color('brand');
-  }
+    display: inline;
+    border-bottom: 2px dashed;
+    font-weight: inherit;
+    line-height: $golden-ratio;
+    cursor: pointer;
+    color: $shade-neutral-6;
+    text-decoration: none;
 
-  &::after {
-
-  }
-
-  &:hover {
-    text-decoration: underline;
-
-    &::after {
-
+    &:hover,
+    &.hover {
+      color: $shade-neutral-8;
+      border-bottom: 2px solid;
     }
   }
 
-  &:active,
-  &:focus {
+  &.link--primary {
+    color: $color-primary;
 
+    &:hover,
+    &.hover {
+      color: $shade-primary-5;
+    }
+  }
+
+  &.link--secondary {
+    color: $color-secondary;
+
+    &:hover,
+    &.hover {
+      color: $shade-secondary-5;
+    }
   }
 }
 
+
 /* Heading links
    ========================================================================== */
-$color-links-headings: blue !default;
-$color-links-headings-hover: red !default;
+$color-links-headings: $color-brand !default;
+$color-links-headings-hover: $color-brand !default;
 
 @mixin _heading-link() {
   text-decoration: none;
+  border-color: transparent;
   color: $color-links-headings;
 }
 
 @mixin _heading-visited() {
-  text-decoration: underline;
   color: $color-links-headings;
 }
 
 @mixin _heading-hover() {
-  text-decoration: none;
+  border-color: currentColor;
   color: $color-links-headings-hover;
 }
 
 @mixin _heading-focus() {
-  text-decoration: underline;
+  border-color: currentColor;
   color: $color-links-headings;
 }
 

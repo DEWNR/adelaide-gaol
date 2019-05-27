@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #Venue
+   ========================================================================== */
+.c-venue {
+  & + &,
+  .c-panel + & {
+    margin-top: $global-spacing-unit-large;
+  }
+
+  .dewnrger & {
+    font-family: 'Dewnrger', sans-serif;
+  }
+}
+
+/* set an outer wrapper and an inner wrapper so that we can hide the before
+ * element at the start of each line
+ **/
+.c-venue__info-owrap {
+  overflow: hidden;
+  position: relative;
+  margin-top: $global-spacing-unit-small;
+}
+
+.c-venue__info-iwrap {
+  position: relative;
+  left: -$global-spacing-unit;
+}
+
+.c-venue__info-item {
+  color: $color-primary;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.1rem;
+
+  &::before {
+    content: "|";
+    padding: 0 $global-spacing-unit-tiny;
+    display: inline;
+  }
+}
+
+.c-venue__images {}

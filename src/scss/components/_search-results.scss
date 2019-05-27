@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #Search results
+   ========================================================================== */
+.c-search-results {
+  list-style: none;
+  margin: 0;
+
+  // sloppy work around to force 0 padding with out `!important`
+  &.c-search-results {
+    padding: 0;
+  }
+}
+
+.c-search-results__item {
+  padding: $global-spacing-unit 0 0;
+
+  & + & {
+    border-top: 1px solid rgba($color-brand, 0.4);
+  }
+}
+
+.c-search-results__link {
+  font-weight: bold;
+  color: $color-brand;
+
+  &:not(:hover) {
+    text-decoration: none;
+  }
+}
+
+.c-search-results__description {
+  width: 75ch;
+}

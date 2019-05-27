@@ -1,72 +1,48 @@
 /* ==========================================================================
    #Panel
    ========================================================================== */
+$panel-padding: $global-spacing-unit-large;
+$panel-padding-from-md: $global-spacing-unit-large;
+
 .c-panel {
-  background: rgba($color-black, 0.8);
-  color: $color-white;
-  padding: $global-spacing-unit;
+  background: rgba($color-primary, 0.8);
+  padding: $panel-padding;
+  color: $color-black;
 
   & + & {
-    margin-top: $global-spacing-unit-large;
+    margin-top: 0;
   }
 
   @include mq($from: md) {
-    padding: $global-spacing-unit;
-  }
-}
+    background: rgba($color-black, 0.8);
+    color: $color-white;
 
-.c-panel__group {
-  display: flex;
-  margin-top: $global-spacing-unit-small;
-}
+    > .o-layout {
+      display: flex;
+      align-items: stretch;
+    }
 
-.c-panel__item {
-  .c-panel__group & {
-    display: inline-flex;
-    flex-direction: column;
-  }
-}
-
-.c-panel__images {
-  margin-top: -$global-spacing-unit;
-  margin-bottom: -$global-spacing-unit;
-
-  > .o-layout {
-    margin-right: -$global-spacing-unit;
+    & + & {
+      margin-top: $global-spacing-unit-large;
+    }
   }
 
-  @include mq($from: md) {
-    margin-top: -$global-spacing-unit;
-    margin-bottom: -$global-spacing-unit;
+  &--light {
+    background: $color-white;
+    color: $color-black;
   }
-}
-
-.c-panel__image {
-  // max-width: 100%;
 }
 
 .c-panel__title {
-  margin: 0;
   text-transform: uppercase;
-}
+  letter-spacing: -0.01em;
+  color: $color-white;
 
-.c-panel__subtitle {
-  margin: 0;
-
-  .c-panel__image + & {
-    margin-top: $global-spacing-unit;
-  }
-}
-
-.c-panel__text {
-  margin-top: 0;
-  margin-bottom: auto;
-
-  &--small {
-    font-size: 20px;
+  .c-panel--light & {
+    color: $color-primary;
   }
 
-  &--tiny {
-    font-size: 14px;
+  @include mq($from: md) {
+    margin-top: 0;
   }
 }

@@ -1,0 +1,88 @@
+/* ==========================================================================
+   #Homepage what's on panel
+   ========================================================================== */
+$panel-padding: $global-spacing-unit-large !default;
+
+.c-homepage-whats-on {
+  @include mq($until: md) {
+    .c-panel__title {
+      margin-top: 0;
+      margin-bottom: $panel-padding;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  > .o-layout > .o-layout__item {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.c-homepage-whats-on__image-wrapper {
+  margin-left: -$panel-padding;
+  margin-right: -$panel-padding;
+  display: block;
+  width: calc(100% + (#{$panel-padding} * 2));
+
+  .c-homepage-whats-on__image {
+    width: 100%;
+  }
+
+  @include mq($from: md) {
+    margin: 0;
+    display: inline;
+    width: initial;
+
+    .c-homepage-whats-on__image {
+      width: auto;
+    }
+  }
+}
+
+.c-homepage-whats-on__text-wrapper {
+  margin-left: -$panel-padding;
+  margin-right: -$panel-padding;
+  background: $color-white;
+  padding: $panel-padding;
+  display: flex;
+  flex-direction: column;
+
+  .o-layout__item:last-child & {
+    padding-bottom: $panel-padding + 150px;
+  }
+
+  .c-homepage-whats-on__title {
+    margin-top: 0;
+  }
+
+  @include mq($from: md) {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    height: 100%;
+
+
+    .c-homepage-whats-on__title {
+      margin-top: $global-spacing-unit;
+      margin-bottom: auto;
+    }
+
+    .c-homepage-whats-on__description {
+      margin-top: 0.5em;
+      margin-bottom: 0.8em;
+    }
+
+    .o-layout__item:last-child & {
+      padding-bottom: 0;
+    }
+
+    .c-button {
+      margin-top: auto;
+      margin-right: auto;
+      z-index: 999;
+    }
+  }
+}

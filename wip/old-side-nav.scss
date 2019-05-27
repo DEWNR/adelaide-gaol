@@ -1,0 +1,166 @@
+/* Item (li)
+   ========================================================================== */
+.c-nav-side__item {
+  $module: '.c-nav-side__item';
+
+  @include font-size(14px);
+
+  margin-bottom: 1px;
+  vertical-align: middle;
+  border-bottom: 1px solid $color-brand-20;
+
+  &--active#{$module}--parent,
+  &--open {
+    border-bottom: 0;
+  }
+
+  .c-nav-side__sub > & {
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+/* Link (a)
+   ========================================================================== */
+.c-nav-side__link {
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  padding: $global-spacing-unit-tiny 0;
+  background-color: $color-white;
+  border: none;
+  align-items: center;
+
+  &,
+  &:visited {
+    color: $color-brand-80;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-black;
+    text-decoration: none;
+  }
+
+  i {
+    @include font-size(26px);
+
+    display: none;
+    height: 1em;
+    width: $global-spacing-unit;
+    text-align: left;
+    margin-left: -$global-spacing-unit;
+    z-index: z-index(1);
+    position: relative;
+  }
+
+  &--active {
+    color: $color-black;
+    text-decoration: underline;
+  }
+
+  &--back {
+    display: none;
+    margin-left: $global-spacing-unit-large;
+    margin-right: $global-spacing-unit;
+
+    &,
+    &:visited {
+      color: $color-brand;
+    }
+
+    .c-nav-side--open & {
+      display: block;
+    }
+
+    @include mq($from: md) {
+      display: block;
+      margin: 0;
+    }
+
+    i {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+
+  .c-nav-side__list--lvl-1 & {
+    background-color: $color-white;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      background-color: none;
+    }
+  }
+
+  .c-nav-side__list--active & {
+    color: $color-black;
+  }
+
+  .c-nav-side__item--parent > & {
+    i {
+      display: block;
+    }
+
+    span {
+      margin-left: -$global-spacing-unit+5;
+
+      &::before {
+        content: '\f105';
+        font-family: FontAwesome;
+        margin-right: 10px;
+        display: inline-block;
+        line-height: 1;
+        font-size: 18px;
+        position: relative;
+        top: 1px;
+        transition: transform 0.2s linear;
+      }
+    }
+  }
+
+  .c-nav-side__item--parent.c-nav-side__item--active > & {
+    color: $color-black;
+
+    span::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  .c-nav-side__item--parent.c-nav-side__item--open > & {
+    span::before {
+      transform: rotate(90deg);
+    }
+  }
+
+  .c-nav-side__item--parent.c-nav-side__item--closed > & {
+    span::before {
+      transform: rotate(0deg);
+    }
+  }
+
+  .c-nav-side__list-sub > .c-nav-side__item:last-child & {
+    border-bottom: none;
+  }
+}
+
+
+/* List-sub (ul)
+   ========================================================================== */
+.c-nav-side__list-sub {
+  display: none;
+  // show the parent item has an open-modifier
+  // or the parent item is active
+  &--open,
+  .c-nav-side__item--active > & {
+    display: block;
+  }
+
+  // hide th list sub by default
+  // or if the parent item is closed
+  .c-nav-side__item--closed > & {
+    display: none;
+  }
+}

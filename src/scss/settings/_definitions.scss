@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* Contents
-    - CSS vars.............So that we can edit these variables inline.
+    - Global vars..........General things we want to keep consistent.
     - Typography...........Our most basic and global typographic settings.
     - Colors...............Load up a map with our color definitions.
     - Assets...............Asset paths for fonts, sprites, etc.
@@ -12,9 +12,11 @@
     - Forms................Some variables to keep form elements consistent.
    ========================================================================== */
 
-/* CSS vars
+/* Global vars
    ========================================================================== */
-
+$border-radius: 6px;
+$box-shadow: 0 2px 5px rgba(#333, 0.2);
+$golden-ratio: 1.61803398875; // the golden ratio (handy for quick proportions)
 
 /* Typography
    ========================================================================== */
@@ -46,17 +48,65 @@ $global-font-size-h6-mobile: $global-font-size-h6 / 1.2 !default;
  * 4. Create some secondary definitions that can be reused
  */
 
+$color-primary: #5f2a2b;
+$color-secondary: #b68150;
+$color-accent: #245e71;
+$color-success: #8bc34a;
+$color-error: #f44336;
+
+$shade-primary-1: mix($color-primary, #fff, 16.66666667%);
+$shade-primary-2: mix($color-primary, #fff, 33.33333333%);
+$shade-primary-3: mix($color-primary, #fff, 50%);
+$shade-primary-4: mix($color-primary, #fff, 66.66666667%);
+$shade-primary-5: mix($color-primary, #fff, 83.33333333%);
+
+$shade-secondary-1: mix($color-secondary, #fff, 16.66666667%);
+$shade-secondary-2: mix($color-secondary, #fff, 33.33333333%);
+$shade-secondary-3: mix($color-secondary, #fff, 50%);
+$shade-secondary-4: mix($color-secondary, #fff, 66.66666667%);
+$shade-secondary-5: mix($color-secondary, #fff, 83.33333333%);
+
+$shade-accent-1: mix($color-accent, #fff, 16.66666667%);
+$shade-accent-2: mix($color-accent, #fff, 33.33333333%);
+$shade-accent-3: mix($color-accent, #fff, 50%);
+$shade-accent-4: mix($color-accent, #fff, 66.66666667%);
+$shade-accent-5: mix($color-accent, #fff, 83.33333333%);
+
+$shade-success-1: mix($color-success, #fff, 16.66666667%);
+$shade-success-2: mix($color-success, #fff, 33.33333333%);
+$shade-success-3: mix($color-success, #fff, 50%);
+$shade-success-4: mix($color-success, #fff, 66.66666667%);
+$shade-success-5: mix($color-success, #fff, 83.33333333%);
+
+$shade-error-1: mix($color-error, #fff, 16.66666667%);
+$shade-error-2: mix($color-error, #fff, 33.33333333%);
+$shade-error-3: mix($color-error, #fff, 50%);
+$shade-error-4: mix($color-error, #fff, 66.66666667%);
+$shade-error-5: mix($color-error, #fff, 83.33333333%);
+
+$shade-neutral-1: #f2f2f2;
+$shade-neutral-2: #e8e9e9;
+$shade-neutral-3: #d1d3d4;
+$shade-neutral-4: #babdbf;
+$shade-neutral-5: #808488;
+$shade-neutral-6: #666a6d;
+$shade-neutral-7: #4d5052;
+$shade-neutral-8: #232121;
+
+$color-white: #fff;
+$color-gray: #999;
+$color-light-gray: #ddd;
+$color-black: #232121;
+
+/* ================================================ */
+
 $color-brand: #5f2a2b; /* [1] */
 $color-brand-20: shade($color-brand, 20%); /* [2] */
 $color-brand-40: shade($color-brand, 40%); /* [2] */
 $color-brand-60: shade($color-brand, 60%); /* [2] */
 $color-brand-80: shade($color-brand, 80%); /* [2] */
 
-$color-white: #fff; /* [1] */
-$color-white-20: shade($color-white, 20%); /* [2] */
-$color-white-40: shade($color-white, 40%); /* [2] */
-$color-white-60: shade($color-white, 60%); /* [2] */
-$color-white-80: shade($color-white, 80%); /* [2] */
+
 
 $color-black: #232121; /* [1] */
 $color-black-20: tint($color-black, 20%); /* [2] */
@@ -69,7 +119,7 @@ $global-colors: (
   'error': #da291c, /* [3] */
   'success': #78be20, /* [3] */
   'warning': #fae100, /* [3] */
-  'links': #446eca /* [3] */
+  'links': $color-brand /* [3] */
 ) !default;
 
 $color-text: $color-black; /* [4] */

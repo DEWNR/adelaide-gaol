@@ -2,31 +2,56 @@
    #Content
    ========================================================================== */
 .c-content {
-  background-color: $color-white;
+  // Catch all of the elements that might pop up in a WYSIWYG so that we don't
+  // end up with any unstyled elements on the page.
+  p,
+  li {
+    font-size: 1.26rem;
+    letter-spacing: -0.03rem;
 
-  .o-layout__item {
-    padding: $global-spacing-unit-large;
+    .dewnrger & {
+      font-family: 'Dewnrger', sans-serif;
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-primary;
+  }
+
+  ul,
+  ol {
+    padding-left: $global-spacing-unit-large;
   }
 
   &__intro {
-    color: $color-brand;
+    color: $color-primary;
     font-weight: 700;
     font-size: 1.5em;
     font-kerning: normal;
     letter-spacing: -0.05rem;
 
     .dewnrger & {
-      font-family: dewnrger, sans-serif;
+      font-family: 'Dewnrger', sans-serif;
     }
   }
 
-  p {
-    font-size: 1.26rem;
-    // font-kerning: normal;
-    letter-spacing: -0.03rem;
+  &__heading {
+    @include when-is(h3) {
+      font-weight: 400;
 
-    .dewnrger & {
-      font-family: dewnrger, sans-serif;
+      @include rem(margin-top, $global-spacing-unit-large);
     }
+  }
+
+  &__caption {
+    // background: linear-gradient(to bottom, $shade-neutral-2, $color-white);
+    background: $shade-neutral-2;
+    padding: $global-spacing-unit-small $global-spacing-unit;
+    font-style: italic;
+    font-size: 0.8em;
   }
 }

@@ -1,66 +1,143 @@
 /* ==========================================================================
    #Buttons
    ========================================================================== */
-.c-button {
+$color-background: $color-white !default;
+
+@mixin button {
+  width: auto;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
   margin: 0;
   cursor: pointer;
+  user-select: none;
+  border: none;
+  font-weight: 700;
   padding: $global-spacing-unit-small + 4 $global-spacing-unit $global-spacing-unit-small;
-  border-width: 2px;
-  border-style: solid;
+  border-radius: 0;
+  text-decoration: none;
   text-transform: uppercase;
-  font-weight: bold;
-  border-color: transparent;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-
-  &,
-  &:hover,
-  &:active,
-  &:focus {
-    text-decoration: none;
-  }
+  background: $color-primary;
+  color: $color-background;
+  position: relative;
+  transition: 0.2s ease;
 
   .dewnrger & {
     font-family: 'Dewnrger', sans-serif;
   }
-}
 
-.c-button--primary {
-  background-color: $color-brand;
-  color: $color-white;
-
-  &:hover {
-    border-color: $color-white;
+  &:hover,
+  &.hover {
+    text-decoration: none;
   }
 
-  &:active {
-    background-color: $color-brand-80;
-    border-color: $color-white-80;
-  }
-}
-
-.c-button--secondary {
-  background-color: $color-white;
-  color: $color-brand;
-
-  &:hover {
-    border-color: $color-brand;
+  &:active,
+  &.active {
+    box-shadow: inset 0 1px 2px rgba(#000, 0.1);
   }
 
-  &:active {
-    border-color: $color-brand-80;
-    background-color: $color-white-80;
+  &.disabled {
+    opacity: 0.4;
+    user-select: none;
+    pointer-events: none;
   }
 }
 
-.c-button--small {
-  padding: $global-spacing-unit-tiny + 3 $global-spacing-unit-small $global-spacing-unit-tiny;
-  font-size: 80%;
+@mixin button-primary {
+  background: $color-primary;
+
+  &:hover,
+  &.hover {
+    background: $shade-primary-5;
+  }
+
+  &:active,
+  &.active {
+    background: $shade-primary-4;
+  }
 }
 
-.c-button--large {
-  padding: $global-spacing-unit + 3 $global-spacing-unit-large $global-spacing-unit - 3;
-  font-size: 120%;
+@mixin button-secondary {
+  background: $color-secondary;
+
+  &:hover,
+  &.hover {
+    background: $shade-secondary-5;
+  }
+
+  &:active,
+  &.active {
+    background: $shade-secondary-4;
+  }
+}
+
+@mixin button-accent {
+  background: $color-accent;
+
+  &:hover,
+  &.hover {
+    background: $shade-accent-5;
+  }
+
+  &:active,
+  &.active {
+    background: $shade-accent-4;
+  }
+}
+
+a.c-button,
+input.c-button,
+button.c-button,
+button {
+  @include button;
+
+  &--medium {
+    padding: 15px 18px;
+  }
+
+  &--small {
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &--primary {
+    @include button-primary;
+  }
+
+  &--secondary {
+    @include button-secondary;
+  }
+
+  &--accent {
+    @include button-accent;
+  }
+
+  &--success {
+    background: $color-success;
+
+    &:hover,
+    &.hover {
+      background: $shade-success-5;
+    }
+
+    &:active,
+    &.active {
+      background: $shade-success-4;
+    }
+  }
+
+  &--error {
+    background: $color-error;
+
+    &:hover,
+    &.hover {
+      background: $shade-error-5;
+    }
+
+    &:active,
+    &.active {
+      background: $shade-error-4;
+    }
+  }
 }

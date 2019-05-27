@@ -6,20 +6,22 @@
  * Page Component, not to be confused with Page Element.
  *
  */
- .c-page {
+.c-page {
+  &__title {
+    color: $color-white;
+    text-transform: uppercase;
+    max-width: 20ch;
+    line-height: 1.1em;
+    margin: 0;
+    padding: 2em $global-spacing-unit-large 5em $global-spacing-unit-large;
 
-    &__title {
-        color: $color-white;
-        text-transform: uppercase;
-        width: 20ch;
-        line-height: 1.1em;
-        margin: 0;
-        padding: 2em 0 5em $global-spacing-unit-large;
+    @include mq($until: md) {
+      max-height: 500px;
+      overflow: hidden;
     }
- }
 
- body {
-     background-repeat: no-repeat;
-     background-size: cover;
-     background-attachment: fixed;
- }
+    .searchPage & {
+      padding-bottom: 0;
+    }
+  }
+}
