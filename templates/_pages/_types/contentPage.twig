@@ -61,6 +61,45 @@
 
                                             </figure>
 
+                                        {% case "table" %}
+                                            {% set table = block.table %}
+
+                                            {% if block.heading | length %}
+                                            <h3 class="c-content__heading">{{ block.heading }}</h3>
+                                            {% endif %}
+
+                                            {% if block.subHeading | length %}
+                                            <p><strong>{{ block.subHeading }}</strong></p>
+                                            {% endif %}
+
+                                            <table class="c-table">
+                                                <thead class="c-table__header">
+                                                    <tr class="c-table__row">
+                                                        {% for column in table.columns %}
+
+                                                        <th class="c-table__cell c-table__cell--header" width="{{ column.width }}">{{ column.heading }}</th>
+
+                                                        {% endfor %}
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="c-table__body">
+                                                    {% for row in table.rows %}
+
+                                                    <tr class="c-table__row">
+                                                        {% for cell in row %}
+                                                        <td class="c-table__cell" data-label="{{ table.columns[loop.index0].heading }}">{{ cell }}</td>
+
+                                                        {% endfor %}
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+
+                                            {% if block.note | length %}
+                                            <p class="c-content__note">{{ block.note }}</p>
+                                            {% endif %}
+
+
                                     {% endswitch %}
                                 {% endfor %}
                             </div>

@@ -1,4 +1,4 @@
-dateModified: 1558926649
+dateModified: 1558932791
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
@@ -1212,6 +1212,99 @@ matrixBlockTypes:
               00a7439a-67da-40ad-be7b-8f5eb497ee7e:
                 required: false
                 sortOrder: 2
+  cb00f34e-4b00-4ed8-8863-730b28b555c7:
+    field: b17641df-1d5e-47d4-8d87-9bb1d03dd179
+    name: Table
+    handle: table
+    sortOrder: 5
+    fields:
+      c8fef5b6-5bdf-4f9b-9c5e-6ad4b3c042f8:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      7642fea9-15ec-4d50-881f-cd5bbef3defa:
+        name: 'Sub heading'
+        handle: subHeading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      7aa25025-7ca3-4819-9e6a-f653ad8e8d11:
+        name: Table
+        handle: table
+        instructions: 'Alignment will be set automatically'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: supercool\tablemaker\fields\TableMakerField
+        settings:
+          columnsLabel: ''
+          columnsInstructions: ''
+          columnsAddRowLabel: ''
+          rowsLabel: ''
+          rowsInstructions: ''
+          rowsAddRowLabel: ''
+        contentColumnType: text
+        fieldGroup: null
+      8bc7afa1-7b76-474c-ba9e-9172a5741f32:
+        name: Note
+        handle: note
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      f1e31612-ce9e-43f8-aa0c-c44af31d11eb:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              c8fef5b6-5bdf-4f9b-9c5e-6ad4b3c042f8:
+                required: false
+                sortOrder: 1
+              7642fea9-15ec-4d50-881f-cd5bbef3defa:
+                required: false
+                sortOrder: 2
+              7aa25025-7ca3-4819-9e6a-f653ad8e8d11:
+                required: true
+                sortOrder: 3
+              8bc7afa1-7b76-474c-ba9e-9172a5741f32:
+                required: false
+                sortOrder: 4
 plugins:
   assetrev:
     edition: standard

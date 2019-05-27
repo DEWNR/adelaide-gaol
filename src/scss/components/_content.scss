@@ -6,8 +6,9 @@
   // end up with any unstyled elements on the page.
   p,
   li {
-    font-size: 1.26rem;
+    // font-size: 1.26rem;
     letter-spacing: -0.03rem;
+    line-height: $golden-ratio;
 
     .dewnrger & {
       font-family: 'Dewnrger', sans-serif;
@@ -48,10 +49,14 @@
   }
 
   &__caption {
-    // background: linear-gradient(to bottom, $shade-neutral-2, $color-white);
     background: $shade-neutral-2;
     padding: $global-spacing-unit-small $global-spacing-unit;
     font-style: italic;
     font-size: 0.8em;
+  }
+
+  &__note {
+    font-size: 0.8em;
+    font-style: italic;
   }
 }
