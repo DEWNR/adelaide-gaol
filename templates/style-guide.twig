@@ -1,0 +1,399 @@
+{# Prevent this file being accessed in a staging or development environment #}
+{% if craft.app.env != "dev" %}
+    {% redirect "/" %}
+{% else %}
+
+<!DOCTYPE html>
+<html lang="en" id="styleguide" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        {% include "_inlinecss/_site_fonts.css" %}
+    </style>
+
+    <script>
+        {{ source('_inlinejs/tab-handler.min.js') }}
+        {{ source('_inlinejs/fontfaceobserver.min.js') }}
+        {{ source('_inlinejs/asyncload-site-fonts.min.js') }}
+    </script>
+
+    <link rel="stylesheet" href="{{ rev('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ rev('assets/css/style-guide.css') }}">
+</head>
+<body>
+    <h1 class="main-title">{{ siteName }} Style Guide</h1>
+    <main>
+        <section class="colors">
+            <h6>Colors</h6>
+            <div class="palette primary">
+                <div class="palette__main"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <h5>Primary</h5>
+            </div>
+            <div class="palette secondary">
+                <div class="palette__main"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <h5>Secondary</h5>
+            </div>
+            <div class="palette accent1">
+                <div class="palette__main"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <h5>Accent #1</h5>
+            </div>
+            <div class="palette accent2">
+                <div class="palette__main"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <h5>Accent #2</h5>
+            </div>
+            <div class="palette accent3">
+                <div class="palette__main"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <h5>Accent #3</h5>
+            </div>
+            <div class="palette neutrals">
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <div class="palette__shade"></div>
+                <h5>Neutrals</h5>
+            </div>
+        </section>
+        <section class="typography">
+            <h6>Typography</h6>
+            <div class="font-family">
+                <div class="font-family-bold">
+                    <h1>Aa</h1>
+                    <h4>Dewnrger Bold Condensed</h4>
+                </div>
+                <div class="font-family-light">
+                    <h1>Aa</h1>
+                    <h4>Dewnrger Light Condensed</h4>
+                </div>
+            </div>
+            <div class="font-example">
+                <div class="font-example__headline">
+                    <h6 class="subheader">Headlines</h6>
+                    <h1>h1 headline</h1>
+                    <h2>h2 headline</h2>
+                    <h3>h3 headline</h3>
+                    <h4>h4 headline</h4>
+                    <h5>h5 headline</h5>
+                    <h6>h6 headline</h6>
+                </div>
+                <div class="font-example__bodytext">
+                    <h6 class="subheader">Body Text</h6>
+                    <p>I think we need to start from scratch. Jazz it up a little bit - use a funky color like purple.</p>
+                    <p><strong>Can you add a bit of pastel pink and baby blue because the purple alone looks too fancy.</strong></p>
+                    <p><em>Make the Purple more well, purple-er. Try a more powerful colour, it needs to be the same, but totally different.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="buttons-wrapper">
+            <h6>Buttons</h6>
+            <div class="buttons">
+                <a href="#null" class="c-button c-button--primary">Default button</a>
+                <input type="button" class="c-button c-button--primary hover" value="Hovered Button">
+                <button class="c-button c-button--primary active">Active Button</button>
+                <a href="#null" class="c-button disabled">Disabled Button</a>
+                <a href="#null" class="c-button c-button--secondary">Secondary Button</a>
+                <a href="#null" class="c-button c-button--accent">Other Button</a>
+                <a href="#null" class="c-button c-button--success">Success Button</a>
+                <a href="#null" class="c-button c-button--error">Error Button</a>
+                <a href="#null" class="c-button c-button--primary c-button--medium">Medium Button</a>
+                <a href="#null" class="c-button c-button--primary c-button--small">Small Button</a>
+            </div>
+        </section>
+
+        <section class="links">
+            <h6>Links</h6>
+            <div class="links__sec">
+                <a href="#null">Sample Link</a>
+                <br>
+                <a href="#null" class="link hover">Hovered Link</a>
+            </div>
+            <div class="links__sec">
+                <a href="#null" class="link link--primary">Sample Link</a>
+                <br>
+                <a href="#null" class="link link--primary hover">Hovered Link</a>
+            </div>
+            <div class="links__sec">
+                <a href="#null" class="link link--secondary">Sample Link</a>
+                <br>
+                <a href="#null" class="link link--secondary hover">Hovered Link</a>
+            </div>
+        </section>
+
+        <section class="forms">
+            <h6>Form elements</h6>
+            <div class="inputs">
+                <div class="c-field">
+                    <label for="normalInput" class="c-field__label">A Normal Input</label>
+                    <input id="normalInput" name="normalInput" type="text" class="c-field__input" placeholder="Placeholder">
+                    <p class="c-field__feedback">A message here.</p>
+                </div>
+                <div class="c-field">
+                    <label for="activeInput" class="c-field__label">An Active Input</label>
+                    <input id="activeInput" name="activeInput" type="text" class="c-field__input active" placeholder="Placeholder" value="Typing here...">
+                </div>
+                <div class="c-field">
+                    <label for="disabledInput" class="c-field__label">A Disabled Input</label>
+                    <input id="disabledInput" name="disabledInput" type="text" class="c-field__input" placeholder="Placeholder" disabled="disabled">
+                </div>
+                <div class="c-field">
+                    <label for="normalSelect" class="c-field__label">A Normal Select</label>
+                    <select id="normalSelect" name="normalSelect" class="c-field__input c-field__input--select">
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="textarea-select">
+
+                <div class="c-field c-field--success">
+                    <label for="rightInput" class="c-field__label">A Right Input</label>
+                    <div class="c-field__control">
+                        <input id="rightInput" name="rightInput" type="text" class="c-field__input" placeholder="Placeholder">
+                        <div class="c-field__validator-status"></div>
+                    </div>
+                    <p class="c-field__feedback">Awesome job.</p>
+                </div>
+                <div class="c-field c-field--error">
+                    <label for="wrongInput" class="c-field__label">A Wrong Input</label>
+                    <div class="c-field__control">
+                        <input id="wrongInput" name="wrongInput" type="text" class="c-field__input" placeholder="Placeholder">
+                        <div class="c-field__validator-status"></div>
+                    </div>
+                    <p class="c-field__feedback">You shall not pass.</p>
+                </div>
+                <div class="c-field">
+                    <label for="normalTextarea" class="c-field__label">Textarea</label>
+                    <textarea class="c-field__input c-field__input--textarea" name="normalTextarea" id="normalTextarea" placeholder="Placeholder"></textarea>
+                </div>
+
+            </div>
+
+            <div class="toggle-buttons">
+                <h6 class="subheader">Toggle Buttons</h6>
+
+                {# start toggles #}
+                <div class="c-toggle">
+                    <input class="c-toggle__input" type="checkbox" name="toggleCheckbox1" id="toggleCheckbox1" checked="checked">
+                    <label class="c-toggle__label" for="toggleCheckbox1"></label>
+                </div>
+                <div class="c-toggle">
+                    <input class="c-toggle__input" type="checkbox" name="toggleCheckbox2" id="toggleCheckbox2">
+                    <label class="c-toggle__label" for="toggleCheckbox2"></label>
+                </div>
+                <div class="c-toggle">
+                    <input class="c-toggle__input" type="checkbox" name="toggleCheckbox3" id="toggleCheckbox3" disabled="disabled">
+                    <label class="c-toggle__label" for="toggleCheckbox3"></label>
+                </div>
+
+            </div>
+
+            <div class="checkboxes">
+                <h6 class="subheader">Checkboxes</h6>
+
+                {# Start checkboxes #}
+                <div class="c-checkbox">
+                    <input class="c-checkbox__input" type="checkbox" name="checkbox1" id="checkbox1">
+                    <span class="c-checkbox__box"></span>
+                    <label class="c-checkbox__label" for="checkbox1">Checkbox</label>
+                </div>
+                <div class="c-checkbox">
+                    <input class="c-checkbox__input" type="checkbox" name="checkbox2" id="checkbox2" checked="checked">
+                    <span class="c-checkbox__box"></span>
+                    <label class="c-checkbox__label" for="checkbox2">Checked box</label>
+                </div>
+
+            </div>
+
+            <div class="radio-buttons">
+                <h6 class="subheader">Radio Buttons</h6>
+
+                {# Start radio buttons #}
+                <div class="c-radio">
+                    <input class="c-radio__input" type="radio" name="radio-test" value="1" id="radio1">
+                    <label class="c-radio__label" for="radio1">Radio Button</label>
+                </div>
+                <div class="c-radio">
+                    <input class="c-radio__input" type="radio" name="radio-test" value="2" id="radio2" checked="checked">
+                    <label class="c-radio__label" for="radio2">Selected Radio Button</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="badges">
+            <h6>Badges</h6>
+            <span class="c-badge c-badge--primary">Received</span>
+            <span class="c-badge c-badge--secondary">Pending</span>
+            <span class="c-badge c-badge--info">Pending</span>
+            <span class="c-badge c-badge--success">Approved</span>
+            <span class="c-badge c-badge--error">Rejected</span>
+        </section>
+
+        <section class="loading">
+            <h6>Loading indicators</h6>
+            <div class="c-loader c-loader--bounce-side">
+                <div class="c-loader__animation" data-loading="Loading..."></div>
+                <label class="c-loader__label">Please wait...</label>
+            </div>
+            <div class="c-loader c-loader--fill">
+                <div class="c-loader__animation" data-loading="Loading..."></div>
+                <label class="c-loader__label">Please wait...</label>
+            </div>
+            <div class="c-loader c-loader--spin">
+                <div class="c-loader__animation" data-loading="Loading..."></div>
+                <label class="c-loader__label">Please wait...</label>
+            </div>
+        </section>
+
+        <section class="alerts">
+            <h6>Alerts</h6>
+            <div class="c-alert c-alert--primary">A normal alert here. <button class="c-alert__close"></button></div>
+            <div class="c-alert c-alert--secondary">A normal alert here. <button class="c-alert__close"></button></div>
+            <div class="c-alert c-alert--info">A normal alert here. <button class="c-alert__close"></button></div>
+            <div class="c-alert c-alert--success">A happy alert here. <button class="c-alert__close"></button></div>
+            <div class="c-alert c-alert--error">A sad alert here. <button class="c-alert__close"></button></div>
+        </section>
+
+        <section class="icons">
+            <h6>Icons</h6>
+            <p><strong>All icons are prefixed with `icon-`</strong></p>
+            <div><i class="icon-mail"></i> mail</div>
+            <div><i class="icon-print"></i> print</div>
+            <div><i class="icon-search"></i> search</div>
+            <div><i class="icon-star-half"></i> star-half</div>
+            <div><i class="icon-star"></i> star</div>
+            <div><i class="icon-star-outline"></i> star-outline</div>
+            <div><i class="icon-plus-circle-outline"></i> plus-circle-outline</div>
+            <div><i class="icon-plus-circle"></i> plus-circle</div>
+            <div><i class="icon-plus"></i> plus</div>
+            <div><i class="icon-pin"></i> pin</div>
+            <div><i class="icon-calendar"></i> calendar</div>
+            <div><i class="icon-chevron"></i> chevron</div>
+            <div><i class="icon-arrow"></i> arrow</div>
+            <div><i class="icon-minus-circle-outline"></i> minus-circle-outline</div>
+            <div><i class="icon-minus-circle"></i> minus-circle</div>
+            <div><i class="icon-minus"></i> minus</div>
+            <div><i class="icon-help-circle-outline"></i> help-circle-outline</div>
+            <div><i class="icon-help"></i> help</div>
+            <div><i class="icon-help-circle"></i> help-circle</div>
+            <div><i class="icon-info-circle-outline"></i> info-circle-outline</div>
+            <div><i class="icon-information-circle"></i> information-circle</div>
+            <div><i class="icon-info"></i> info</div>
+            <div><i class="icon-book"></i> book</div>
+            <div><i class="icon-loading"></i> loading</div>
+            <div><i class="icon-flash"></i> flash</div>
+            <div><i class="icon-close-circle-outline"></i> close-circle-outline</div>
+            <div><i class="icon-close-circle"></i> close-circle</div>
+            <div><i class="icon-close"></i> close</div>
+            <div><i class="icon-menu"></i> menu</div>
+            <div><i class="icon-youtube"></i> youtube</div>
+            <div><i class="icon-facebook"></i> facebook</div>
+            <div><i class="icon-linkedin"></i> linkedin</div>
+            <div><i class="icon-instagram"></i> instagram</div>
+            <div><i class="icon-facebook-alt"></i> facebook-alt</div>
+            <div><i class="icon-linkedin-alt"></i> linkedin-alt</div>
+        </section>
+
+
+    </main>
+
+    <div class="notification hidden">
+        <span></span>
+    </div>
+
+    <script src="{{ rev('assets/js/main.js') }}"></script>
+
+    <script>
+        var alerts = document.querySelectorAll('.c-alert');
+
+        for (var i = 0; i < alerts.length; i++) {
+            var currentAlert = alerts[i];
+            currentAlert.children[0].addEventListener('click', function(event) {
+                this.parentNode.classList.add('sr-only');
+            });
+        }
+    </script>
+
+    <script>
+    copyIconClass();
+
+        function copyIconClass() {
+            var icons = document.querySelectorAll('.icons div');
+
+            for (var i = 0; i < icons.length; i++) {
+                var currentIcon = icons[i];
+
+                currentIcon.addEventListener('click', function(event) {
+                    var currentClass = 'icon-' + this.innerText.trim();
+                    copyToClipboard(currentClass);
+                });
+            }
+        };
+
+        function copyToClipboard(str) {
+            var textarea = document.createElement('textarea');
+            var notification = document.querySelector('.notification');
+
+            textarea.classList.add('sr-only');
+            textarea.value = str;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            notification.children[0].innerText = `'${str}'\n has been copied to the clipboard.`;
+
+            notification.classList.remove('hidden');
+            window.setTimeout(function() {
+                notification.classList.add('hidden');
+            }, 1500);
+        };
+    </script>
+
+    <script>
+        (function() {
+            var nullLinks = document.querySelectorAll('[href="#null"]');
+
+            nullLinks.forEach(function (link) {
+                link.addEventListener('click', function(event) {
+                event.preventDefault();
+            })
+            })
+        })();
+    </script>
+    <script src="//localhost:443/browser-sync/browser-sync-client.js"></script>
+</body>
+</html>
+{% endif %}
