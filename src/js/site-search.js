@@ -17,5 +17,7 @@
     }
   };
 
-  searchToggle.addEventListener('click', handleSearchVisibility, false);
+  if (searchToggle) {
+    searchToggle.addEventListener('click', handleSearchVisibility, false);
+  }
 })();

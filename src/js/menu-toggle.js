@@ -12,5 +12,7 @@
     }
   };
 
-  menuToggle.addEventListener('click', handleMenuVisibility, false);
+  if (menuToggle) {
+    menuToggle.addEventListener('click', handleMenuVisibility, false);
+  }
 })();
