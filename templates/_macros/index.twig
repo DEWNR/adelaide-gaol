@@ -29,3 +29,151 @@ Y - A full numeric representation of a year, 4 digits
 {% macro dateFormatted(givenDate) %}
     {{ givenDate | date('jS F Y') }}
 {% endmacro %}
+
+
+{#
+================================================================================
+Image transforms
+================================================================================
+Full image
+ - used for taking up all 12 columns, all of the time
+
+#}
+{% macro imageTransform(image, transformName, className) %}
+    {% set currentRatio = transformName[transformName | indexOf('-') + 1:] %}
+    {% set numerator = currentRatio[:currentRatio | indexOf('x')] | number_format %}
+    {% set denominator = currentRatio[currentRatio | indexOf('x') + 1:] | number_format %}
+
+    {% set currentRatio = numerator/denominator %}
+    {% set currentSize = transformName[:transformName | indexOf('-')] %}
+
+    {% switch currentSize %}
+
+    {% case "full" %}
+
+        {% set props = {
+            lgWidth: 1280,
+            mdWidth: 1024,
+            smWidth: 720,
+            ratio: currentRatio
+        } %}
+
+    {% case "half" %}
+
+        {% set props = {
+            lgWidth: 900,
+            mdWidth: 512,
+            smWidth: 360,
+            ratio: currentRatio
+        } %}
+
+    {% case "third" %}
+
+        {% set props = {
+            lgWidth: 427,
+            mdWidth: 341,
+            smWidth: 240,
+            ratio: currentRatio
+        } %}
+
+    {% case "quarter" %}
+
+        {% set props = {
+            lgWidth: 320,
+            mdWidth: 256,
+            smWidth: 180,
+            ratio: currentRatio
+        } %}
+
+    {% default %}
+
+        {% set props = {
+            lgWidth: 1280,
+            mdWidth: 1024,
+            smWidth: 720,
+            ratio: 16/9
+        } %}
+
+    {% endswitch %}
+
+
+
+    {% set transformedImages = craft.imager.transformImage(image,
+        [
+            { width: props.lgWidth },
+            { width: props.lgWidth * 2 },
+            { width: props.mdWidth },
+            { width: props.mdWidth * 2 },
+            { width: props.smWidth, jpegQuality: 65 },
+            { width: props.smWidth * 2 },
+        ],
+        {
+            format: 'jpeg',
+            ratio: props.ratio,
+            allowUpScale: false,
+            mode: 'crop',
+            position: (image.focalPoint.x * 100) ~ '% ' ~ (image.focalPoint.y * 100) ~ '%',
+            interlace: true
+        }
+    ) %}
+
+    {% if craft.imager.serverSupportsWebp() %}
+        {% set transformedImagesWebP = craft.imager.transformImage(image, [
+            { width: props.lgWidth },
+            { width: props.lgWidth * 2 },
+            { width: props.mdWidth },
+            { width: props.mdWidth * 2 },
+            { width: props.smWidth, webpQuality: 65 },
+            { width: props.smWidth * 2 },
+        ],
+        {
+            format: 'webp',
+            ratio: props.ratio,
+            allowUpScale: false,
+            mode: 'crop',
+            position: (image.focalPoint.x * 100) ~ '% ' ~ (image.focalPoint.y * 100) ~ '%',
+            interlace: true
+        }
+        ) %}
+    {% endif %}
+
+    {% set placeholderImage = craft.imager.transformImage(image, [{
+        width: 3,
+        format: 'gif',
+        ratio: props.ratio,
+        allowUpScale: false,
+        mode: 'crop',
+        position: (image.focalPoint.x * 100) ~ '% ' ~ (image.focalPoint.y * 100) ~ '%',
+        interlace: true
+    }]) %}
+
+    <picture {{ className ? 'class=' ~ className ~ '-wrapper' }}>
+        {% if craft.imager.serverSupportsWebp() %}
+            <source media="(min-width: 1024px)"
+                data-srcset="
+                    {{ transformedImagesWebP[0].url ~ " 1x" }},
+                    {{ transformedImagesWebP[1].url ~ " 2x" }}"
+                type="image/webp">
+            <source
+                media="(min-width: 720px)"
+                data-srcset="
+                    {{ transformedImagesWebP[2].url ~ " 1x" }},
+                    {{ transformedImagesWebP[3].url ~ " 2x" }}"
+                type="image/webp">
+            <source
+                data-srcset="
+                    {{ transformedImagesWebP[4].url ~ " 1x" }},
+                    {{ transformedImagesWebP[5].url ~ " 2x" }}"
+                type="image/webp">
+        {% endif %}
+        <img
+            class="{{ className ? className ~ ' lazyload' : 'lazyload' }}"
+            src="{{ placeholderImage[0].url }}"
+            data-sizes="
+                (min-width: 720px) {{ props.mdWidth ~ 'px' }},
+                (min-width: 1024) {{ props.lgWidth ~ 'px' }},
+                {{ props.smWidth ~ 'px' }}"
+            data-srcset="{{ craft.imager.srcset(transformedImages) }}"
+            alt="{{ image.title }}">
+    </picture>
+{% endmacro %}
