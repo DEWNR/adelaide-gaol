@@ -15,6 +15,7 @@
         "tailwind",
         "variants",
         "function",
+        "at-root",
         "include",
         "screen",
         "return",
