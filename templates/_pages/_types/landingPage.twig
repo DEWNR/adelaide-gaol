@@ -1,0 +1,30 @@
+{% set nextLevel = entry.level + 1 %}
+{% set children = craft.entries.descendantOf(entry).level(nextLevel).all() %}
+
+{% import "_macros" as macro %}
+
+<section>
+    <div class="o-wrapper">
+        <div class="c-page">
+            <h1 class="c-page__title">{{ entry.title }}</h1>
+
+            <div class="o-layout o-layout--flex">
+                {% for card in children %}
+                    <div class="o-layout__item   u-4/12@md u-margin-bottom">
+                        <a href="{{ url(card.url) }}" class="c-card">
+                            {% if card.backgroundImage | length %}
+                            {% set cardImage = card.backgroundImage.one() %}
+                                {{ macro.imageTransform(cardImage, 'third-16x9', 'c-card__image') }}
+                            {% endif %}
+                            <div class="c-card__text">
+                                <h2 class="c-card__heading">{{ card.title }}</h2>
+                                <p class="c-card__description">{{ item.metaDescription | default('') }}</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</section>
