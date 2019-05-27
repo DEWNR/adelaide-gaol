@@ -1,4 +1,4 @@
-dateModified: 1558674259
+dateModified: 1558926649
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
@@ -314,13 +314,13 @@ fields:
   9d0c606e-a901-4c04-819a-740acb47e441:
     name: 'Open forms embed code'
     handle: openForm
-    instructions: "1. Go to the https://admin.au.openforms.com\r\n2. Log in if you aren't already, find the form that you need\r\n3. Go to Settings -> Print and embed\r\n4. Copy the 36 character code at the end of the link on this page"
+    instructions: "1. Go to the https://admin.au.openforms.com\r\n2. Log in if you aren't already, find the form that you need\r\n3. Go to Settings -> Print and embed\r\n4. Copy the character code at the end of the link on this page"
     searchable: true
     translationMethod: none
     translationKeyFormat: null
     type: craft\fields\PlainText
     settings:
-      placeholder: 05e6ee91-f7c2-4a13-a58e-34fb9ad28d50
+      placeholder: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
       code: ''
       multiline: ''
       initialRows: '4'
@@ -454,20 +454,40 @@ fields:
       localizeRelations: false
     contentColumnType: string
     fieldGroup: 22e34b96-b070-4971-b0f3-59f065435a17
+  5427f99f-233b-4d57-a480-0cd24b0f29f6:
+    name: 'Curator feed ID'
+    handle: curatorFeedId
+    instructions: "1. Go to the https://admin.au.openforms.com\r\n2. Log in if you aren't already\r\n3. Select the feed that you want to display from the dropdown list in the top right\r\n4. Copy the \"feed id\" from just below the drop down"
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: '36'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
 globalSets:
   0ec1b038-e7f9-45fd-88f0-a81ac806857b:
+    name: Footer
+    handle: footer
     fieldLayouts:
       31b1a802-f5d2-4939-b501-2b4f22737ba8:
         tabs:
           -
+            name: Design
+            sortOrder: 1
             fields:
               92d407d4-5702-4094-9c0e-150858c0563f:
                 required: false
                 sortOrder: 1
-            name: Design
-            sortOrder: 1
-    handle: footer
-    name: Footer
+              5427f99f-233b-4d57-a480-0cd24b0f29f6:
+                required: false
+                sortOrder: 2
   a5f994ad-0b13-41bf-b7eb-eb1e23fd93c2:
     name: Contact
     handle: contact
