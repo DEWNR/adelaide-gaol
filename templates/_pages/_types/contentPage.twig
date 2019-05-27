@@ -42,7 +42,7 @@
                                             {% endif %}
 
                                             {% if block.bodyCopy | length %}
-                                            {{ block.bodyCopy }}
+                                            {{ include(template_from_string(block.bodyCopy)) }}
                                             {% endif %}
 
 

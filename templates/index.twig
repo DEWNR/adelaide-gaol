@@ -31,8 +31,9 @@
                         <h3 class="c-homepage-information__title   o-layout__item u-4/12@lg">Opening hours</h3>
                         <div class="o-layout__item u-8/12@lg">
                             {% set hours = contact.openHours.one() %}
+                            {% set note = hours.note | nl2br %}
                             <p class="c-homepage-information__description">{{ hours.times }}</p>
-                            <small class="c-homepage-information__description">{{ hours.note }}</small>
+                            <small class="c-homepage-information__description">{{ note | raw }}</small>
                         </div>
                     </div>
                 </div>
