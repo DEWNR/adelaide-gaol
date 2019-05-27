@@ -2,6 +2,9 @@
     {{ dump(entry) }}
     {{ craft.entries.section('pages') }}
 </pre> #}
+{% set parent = entry.getParent() %}
+
+{% import "_macros" as macro %}
 
 {% block _inline_css %}
     <style>
@@ -11,82 +14,70 @@
 
 {% block content %}
 
-    <section class="c-general-page">
-
+    <section>
         <div class="o-wrapper">
-
-
             <div class="c-page">
 
                 <h1 class="c-page__title">{{ entry.title }}</h1>
 
+                <div id="content-container">
 
-                <div class="o-layout">
-                    <div class="c-content">
+                    <div class="o-layout">
+                        {% include "_partials/_nav-side" %}
 
+                        <div class="o-layout__item   u-8/12@lg">
 
-                        <nav class="c-nav-side    o-layout__item  u-4/12@md u-3/12@lg">
+                            <div class="c-content">
+                                {% if entry.introText | length %}
+                                    <p class="c-content__intro">{{ entry.introText }}</p>
+                                {% endif %}
 
+                                {% set matrixBlocks = entry.mainContent.all() %}
+                                {% for block in matrixBlocks %}
+                                    {% switch block.type %}
 
-                            {% set topLevel = (entry.level == 1) ? entry : entry.getAncestors().level(1).first()  %}
+                                        {% case "text" %}
+                                            {% if block.heading | length %}
+                                            <h3 class="c-content__heading">{{ block.heading }}</h3>
+                                            {% endif %}
 
-                            {# don't show the tree if nothing's under it #}
-                            {% if topLevel.hasDescendants %}
-
-                                {# <h2>{{topLevel}}</h2> #}
-                                <ul class="c-nav-side__list   c-nav-side__list--lvl-0  o-list-bare">
-                                {% set subnav =  topLevel.getDescendants()  %}
-
-                                {% nav page in subnav  %}
-                                    {% if page.id != entry.id %}
-                                        <li>{{ page.getLink() }}</li>
-                                    {%else%}
-                                        <li class="current-page">{{page}}</li>
-                                    {%endif%}
-
-                                    {% ifchildren %}
-                                        <ul class="sub-nav">
-                                                {% children %}
-                                            </ul>
-                                    {% endifchildren %}
-
-                                {% endnav %}
-                                </ul>
-
-                            {% endif %}
+                                            {% if block.bodyCopy | length %}
+                                            {{ block.bodyCopy }}
+                                            {% endif %}
 
 
-                        </nav>
+                                        {% case "image" %}
+                                            {% set image = block.image.one() %}
+                                            {% set aspectRatio = block.aspectRatio | default('16x9') %}
+                                            {% set transform = 'full-' ~ aspectRatio %}
+                                            <figure class="c-content__image">
+                                                {{ macro.imageTransform(image, transform) }}
 
+                                                {% if block.showCaption %}
+                                                <figcaption class="c-content__caption">
+                                                    {{ block.customCaption ? block.customCaption : image.title }}
+                                                </figcaption>
+                                                {% endif %}
 
-                        <div class="o-layout__item  u-8/12@md u-9/12@lg">
-                            {% if entry.introText | length %}
-                                <p class="c-content__intro">{{ entry.introText }}</p>
-                            {% endif %}
+                                            </figure>
 
-
-
-                            <div>
-                                {{ entry.bodyContent }}
+                                    {% endswitch %}
+                                {% endfor %}
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
 
-
-
-
-
+                    {% if parent and parent.slug == 'history' %}
+                        {% include "_partials/_history-paging" %}
+                    {% endif %}
                 </div>
 
             </div>
-
-
         </div>
-
-
     </section>
+
 
 {% endblock %}
 

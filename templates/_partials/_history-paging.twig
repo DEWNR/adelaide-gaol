@@ -1,0 +1,59 @@
+{% import "_macros" as macro %}
+
+{% set previous = craft.entries.prevSiblingOf(entry).one() %}
+{% set next = craft.entries.nextSiblingOf(entry).one() %}
+
+<section class="o-layout">
+    <div class="o-layout__item u-8/12@md u-push-4/12@md">
+        <div class="c-content">
+            <h2 class="u-padding-top-large">Continue...</h2>
+        </div>
+    </div>
+</section>
+
+<section class="o-layout o-layout--flex  c-nav-teasers">
+    <div class="o-layout__item u-6/12 u-4/12@lg">
+    {% if previous %}
+        <a href="{{ previous.getUrl() }}" class="c-nav-teaser c-nav-teaser--prev">
+            {% if previous.navImage.one() %}
+                {% set prevImage = previous.navImage.one() %}
+            {% elseif previous.backgroundImage.one() %}
+                {% set prevImage = previous.backgroundImage.one() %}
+            {% else %}
+                {% set prevImage = null %}
+            {% endif %}
+
+            {% if prevImage %}
+                {{ macro.imageTransform(prevImage, 'quarter-1x1', 'c-nav-teaser__image') }}
+            {% endif %}
+
+            <div class="c-nav-teaser__text">
+                <span>Previous: </span>
+                <h4 class="c-nav-teaser__heading">{{ previous.navTitle ? previous.navTitle : previous.title }}</h4>
+            </div>
+        </a>
+    {% endif %}
+    </div>
+    <div class="o-layout__item u-6/12 u-4/12@lg">
+    {% if next %}
+        <a href="{{ next.getUrl() }}" class="c-nav-teaser c-nav-teaser--next">
+            {% if next.navImage.one() %}
+                {% set nextImage = next.navImage.one() %}
+            {% elseif next.backgroundImage.one() %}
+                {% set nextImage = next.backgroundImage.one() %}
+            {% else %}
+                {% set nextImage = null %}
+            {% endif %}
+
+            {% if nextImage %}
+                {{ macro.imageTransform(nextImage, 'quarter-1x1', 'c-nav-teaser__image') }}
+
+            {% endif %}
+            <div class="c-nav-teaser__text">
+                <span>Next: </span>
+                <h4 class="c-nav-teaser__heading">{{ next.navTitle ? next.navTitle : next.title }}</h4>
+            </div>
+        </a>
+    {% endif %}
+    </div>
+</div>
