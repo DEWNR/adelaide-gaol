@@ -1,41 +1,34 @@
-{% set pages = craft.entries.section('pages').all() %}
-
-{% set pages = [
-    {
-        'link': 'home',
-        'url': '#'
-    },
-    {
-        'link': 'Visiting the gaol',
-        'url': '#'
-    },
-    {
-        'link': 'history',
-        'url': '#'
-    },
-    {
-        'link': 'Venue Hire',
-        'url': '#'
-    },
-    {
-        'link': 'get involved',
-        'url': '#'
-    },
-    {
-        'link': 'education',
-        'url': '#'
-    },
-    {
-        'link': 'contact',
-        'url': '#'
-    }
-] %}
-
+{# start the array with the homepage, then add all the level 1 pages #}
+{% set pages = craft.entries.section('homepage').all() %}
+{% set pages = pages | merge(craft.entries.level(1).all()) %}
 
 <nav id="nav-primary" class="c-nav-primary" aria-label="Primary menu">
     <ul class="c-nav-primary__list">
         {% for page in pages %}
-            <li class="c-nav-primary__item"><a class="c-nav-primary__link" href="{{ page.url }}">{{ page.link | upper }}</a></li>
+
+        {% if not page.hideNav %}
+            <li class="{{ page.hasDescendants() ? 'c-nav-primary__item  has-children' : 'c-nav-primary__item' }}">
+                <a class="c-nav-primary__link" href="{{ page.getUrl() }}">
+                {{ page.navTitle ? page.navTitle | upper : page.title | upper }}
+                </a>
+
+                {% if page.hasDescendants() %}
+                {% set subPages = page.getDescendants().all() %}
+
+                <ul class="c-nav-primary__sub-list">
+                    {% for page in subPages %}
+                    {% if not page.hideNav %}
+                    <li class="c-nav-primary__sub-item">
+                        <a href="{{ page.getUrl() }}" class="c-nav-primary__sub-link">{{ page.navTitle ? page.navTitle : page.title }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+
+                {% endif %}
+
+            </li>
+        {% endif %}
         {% endfor %}
     </ul>
 </nav>

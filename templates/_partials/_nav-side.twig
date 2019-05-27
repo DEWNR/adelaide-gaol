@@ -1,0 +1,35 @@
+{% set topLevel = (entry.level == 1) ? entry : entry.getAncestors().level(1).one()  %}
+{% set subnav =  topLevel.getDescendants().all()  %}
+
+<nav class="c-nav-side    o-layout__item u-hidden@md u-display-inline-block@lg u-4/12@lg">
+
+    {# don't show the tree if nothing's under it #}
+    {% if topLevel.hasDescendants %}
+
+        <h2 class="c-nav-side__parent">{{ topLevel.navTitle ? topLevel.navTitle | upper : topLevel.title | upper }}</h2>
+        <ul class="c-nav-side__list   c-nav-side__list--lvl-0">
+
+        {% nav page in subnav %}
+            {% if not page.hideNav %}
+                {% if page.id == entry.id %}
+                    {# This takes care of the current page #}
+                    <li class="c-nav-side__item c-nav-side__item--active">
+                        {{ page.navTitle ? page.navTitle : page.title }}
+                    </li>
+                {% else %}
+                    {# Make sure other pages have a link to them #}
+                    <li class="c-nav-side__item">
+                        <a class="c-nav-side__link" href="{{ page.url }}">
+                            {{ page.navTitle ? page.navTitle : page.title }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endif %}
+
+        {% endnav %}
+
+        </ul>
+
+    {% endif %}
+
+</nav>
