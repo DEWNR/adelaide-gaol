@@ -1,4 +1,4 @@
-dateModified: 1558932791
+dateModified: 1558941889
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
@@ -214,19 +214,26 @@ fields:
     translationMethod: site
     type: craft\fields\Assets
   eea35a5c-d918-43f2-b45b-e6dc84e9b7ca:
-    contentColumnType: text
-    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+    name: 'Body content'
     handle: bodyContent
     instructions: ''
-    name: 'Body content'
     searchable: true
-    settings:
-      columnType: text
-      purifierConfig: ''
-      purifyHtml: '1'
-    translationKeyFormat: null
     translationMethod: none
-    type: craft\ckeditor\Field
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
   19e48188-b3a7-4847-9b64-c6e090157fb3:
     name: 'Hide from navigation'
     handle: hideNav
@@ -595,11 +602,18 @@ matrixBlockTypes:
         searchable: true
         translationMethod: none
         translationKeyFormat: null
-        type: craft\ckeditor\Field
+        type: craft\redactor\Field
         settings:
+          redactorConfig: Standard.json
           purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
           purifyHtml: '1'
           columnType: text
+          availableVolumes: ''
+          availableTransforms: ''
         contentColumnType: text
         fieldGroup: null
     fieldLayouts:
@@ -1314,10 +1328,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: '1.2'
-  ckeditor:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   command-palette:
     edition: standard
     enabled: true

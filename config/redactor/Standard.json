@@ -1,8 +1,4 @@
 {
-  "buttons": ["html","undo","format","bold","italic","lists","link","file"],
-  "plugins": ["table","video"],
-  "formatting": ["p", "h2", "h3", "h4", "h5", "h6", "blockquote"],
-  "formattingAdd": {
-
-  }
+  "buttons": ["format","kbd","bold","italic","lists","link"],
+  "plugins": []
 }
