@@ -1,30 +1,90 @@
 {% extends "_layouts/_layout" %}
 
+{% set bodyClass = 'searchPage' %}
+
 {% set query = craft.app.request.getParam('q') %}
-{% set entries = craft.entries.search(query).orderBy('score').all() %}
+{% set entries = craft.entries.search(query).all() %}
 
 {% block content %}
     <section>
         <div class="o-wrapper">
 
-            <div class="c-page c-page--search">
-                <h1 class="c-page__title" style="color: black;">Search results</h1>
+            <div class="c-page">
+                <h1 class="c-page__title">Search results</h1>
 
-                {% if entries | length %}
-                    <p>Here are your results for "{{ query }}":</p>
-                    <ul>
-                        {% for entry in entries %}
-                            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-                        {% endfor %}
-                    </ul>
-
-                {% else %}
-                    <p>Your search didn't return any results. Please try again...</p>
+                <div class="c-site-search">
                     <form class="c-site-search__form" action="{{ url('search/results')}}">
-                        <input type="search" name="q" id="site-search" placeholder="Search the site...">
-                        <input type="submit" value="Search">
+                        <span class="c-site-search__text">Search: </span>
+                        <input class="c-site-search__input" type="search" name="q" id="site-search" placeholder="Search the site..." value="{{ query }}">
+                        <button class="c-site-search__button" type="submit">
+                            <span aria-hidden="true" class="icon-search"></span>
+                            <span class="sr-only">Submit search</span>
+                        </button>
                     </form>
-                {% endif %}
+                </div>
+
+
+                <div id="content-container">
+                    <div class="c-content">
+
+                    {% if entries | length %}
+
+                        {% if query == "" %}
+                            <style>
+                                #content-container {
+                                    display: none;
+                                }
+                            </style>
+                        {% else %}
+
+                        {% paginate craft.entries.search(query).orderBy('score').limit(10) as pageInfo, pageEntries %}
+
+                        <p class="c-content__intro">Displaying {{ pageInfo.first }} - {{ pageInfo.last }} of {{ pageInfo.total }} results</p>
+
+                        <ul class="c-search-results">
+                        {% for entry in pageEntries %}
+                            <li class="c-search-results__item">
+                                <a class="c-search-results__link" href="{{ entry.url }}">{{ entry.title }}</a>
+                                <p class="c-search-results__description">{{ entry.metaDescription | default('some description') }}</p>
+                            </li>
+                        {% endfor %}
+                        </ul>
+
+                        {% if pageInfo.totalPages > 1 %}
+                            <div class="c-pagination">
+                                {% if pageInfo.prevUrl %}
+                                    <a class="c-pagination__previous" title="Previous page" href="{{ pageInfo.prevUrl ~ '?q=' ~ query }}"><i class="icon-chevron icon-chevron--left"></i></a>
+                                {% else %}
+                                    <span class="c-pagination__previous c-pagination__next--disabled"><i class="icon-chevron icon-chevron--left"></i></span>
+                                {% endif %}
+
+
+                                <div class="c-pagination__pages">
+                                    {% for i in 1..pageInfo.totalPages %}
+                                        {% if i == pageInfo.currentPage %}
+                                            <span class="c-pagination__page-number c-pagination__page-number--current">{{ i }}</span>
+                                        {% else %}
+                                            <a class="c-pagination__page-number" href="{{ pageInfo.getPageUrl(i) ~ '?q=' ~ query }}">{{ i }}</a>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+
+
+                                {% if pageInfo.nextUrl %}
+                                    <a class="c-pagination__next" title="Next page" href="{{ pageInfo.nextUrl ~ '?q=' ~ query }}"><i class="icon-chevron icon-chevron--right"></i></a>
+                                {% else %}
+                                    <span class="c-pagination__next c-pagination__next--disabled"><i class="icon-chevron icon-chevron--right"></i></span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        {% endif %}
+
+                    {% else %}
+                        <p class="c-content__intro">There are no results...</p>
+                    {% endif %}
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
