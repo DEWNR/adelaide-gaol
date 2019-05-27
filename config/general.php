@@ -36,6 +36,7 @@ return [
 
         'aliases' => [
           '@siteUrl' => getenv('SITE_URL'),
+          '@sitePath' => getenv('SITE_PATH'),
         ],
 
     ],

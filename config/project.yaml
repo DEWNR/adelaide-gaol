@@ -1,4 +1,4 @@
-dateModified: 1554969588
+dateModified: 1558674259
 email:
   fromEmail: liam.rella@gmail.com
   fromName: 'Adelaide Gaol'
@@ -12,70 +12,90 @@ fieldGroups:
     name: Common
   b3ca06cb-332e-4629-85d4-1036322a636d:
     name: Globals
+  bffa8730-7777-4085-b664-2e8d29e12a38:
+    name: Showcase
   d1be5ead-550d-4e84-b123-d95fc45cb898:
     name: SEO
+  393f9ebd-413e-474c-982a-93189561fe81:
+    name: Contact
 fields:
-  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
-    contentColumnType: text
-    fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
-    handle: pageTitle
-    instructions: 'Google typically displays the first 50-60 characters of a title tag, or as many characters as will fit into a 512-pixel display.'
-    name: 'Page title'
+  15e84307-ddbb-4acc-af39-b0df0ca5d6ed:
+    name: 'Navigation title'
+    handle: navTitle
+    instructions: 'Simplified title for the menus/navigation'
     searchable: true
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    translationKeyFormat: null
     translationMethod: none
+    translationKeyFormat: null
     type: craft\fields\PlainText
-  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
-    contentColumnType: string
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
     fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
+    name: 'Page visibility'
     handle: pageVisibility
     instructions: 'Here you can Hide this page from search, Hide this page from navigation menus & Hide this page from external search engine.'
-    name: 'Page visibility'
     searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Checkboxes
     settings:
       options:
         -
-          default: ''
           label: 'Hide this page from search'
-          value: hideThisPageFromSearch
-        -
+          value: hideSearch
           default: ''
+        -
           label: 'Hide this page from navigation menus'
-          value: hideThisPageFromNavigationMenus
-        -
+          value: hideNav
           default: ''
+        -
           label: 'Hide this page from external search engine'
-          value: hideThisPageFromExternalSearchEngine
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\Checkboxes
+          value: hideSearchEngines
+          default: ''
+    contentColumnType: string
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
   2dee1627-2da5-4f40-ae34-a9e308859b68:
-    contentColumnType: text
-    fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
+    name: SEO
     handle: seo
     instructions: ''
-    name: SEO
     searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: nystudio107\seomatic\fields\SeoSettings
     settings:
       elementDisplayPreviewType: none
-      facebookTabEnabled: ''
-      generalEnabledFields:
-        - seoTitle
-        - seoDescription
-        - seoImage
       generalTabEnabled: '1'
-      sitemapTabEnabled: ''
+      generalEnabledFields:
+        - seoImage
       twitterTabEnabled: ''
+      facebookTabEnabled: '1'
+      facebookEnabledFields:
+        - seoPreview
+        - ogImage
+      sitemapTabEnabled: ''
+    contentColumnType: text
+    fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
+  306a2583-a0b0-49b7-9347-0039034cb6d4:
+    name: 'Showcase content'
+    handle: showcaseContent
+    instructions: ''
+    searchable: true
+    translationMethod: site
     translationKeyFormat: null
-    translationMethod: none
-    type: nystudio107\seomatic\fields\SeoSettings
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_showcasecontent}}'
+      localizeBlocks: false
+    contentColumnType: string
+    fieldGroup: bffa8730-7777-4085-b664-2e8d29e12a38
   3fdca85e-701c-4e5d-8b12-6cdc4215ac87:
     contentColumnType: text
     fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
@@ -94,22 +114,22 @@ fields:
     translationMethod: none
     type: craft\fields\PlainText
   77009258-1296-4767-b24f-55808517ae58:
-    contentColumnType: text
-    fieldGroup: d1be5ead-550d-4e84-b123-d95fc45cb898
-    handle: metaDescription
-    instructions: 'A short description of the page''s content for search engines. Recommended length is 160 characters.'
     name: 'Meta description'
+    handle: metaDescription
+    instructions: 'A short description of the page’s content for search engines. Recommended length is 160 characters.'
     searchable: true
-    settings:
-      charLimit: '260'
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    translationKeyFormat: null
     translationMethod: none
+    translationKeyFormat: null
     type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: '260'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
   91666da3-f600-47da-855c-a1938230b28c:
     contentColumnType: string
     fieldGroup: 22e34b96-b070-4971-b0f3-59f065435a17
@@ -154,37 +174,20 @@ fields:
     translationMethod: site
     type: craft\fields\Assets
   b17641df-1d5e-47d4-8d87-9bb1d03dd179:
-    contentColumnType: string
-    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+    name: 'Main content'
     handle: mainContent
     instructions: ''
-    name: 'Main content'
     searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
     settings:
+      minBlocks: ''
+      maxBlocks: ''
       contentTable: '{{%matrixcontent_maincontent}}'
       localizeBlocks: false
-      maxBlocks: ''
-      minBlocks: ''
-    translationKeyFormat: null
-    translationMethod: site
-    type: craft\fields\Matrix
-  b56bb5db-3ad4-4fa7-b048-6333c49893f9:
-    contentColumnType: text
-    fieldGroup: 074c96ff-0c3a-4759-a18c-50876512345c
-    handle: altText
-    instructions: ''
-    name: 'ALT text'
-    searchable: true
-    settings:
-      charLimit: ''
-      code: ''
-      columnType: text
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
+    contentColumnType: string
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
   ce83b7a3-b117-4b6f-81f0-d896b523f676:
     contentColumnType: string
     fieldGroup: 22e34b96-b070-4971-b0f3-59f065435a17
@@ -224,6 +227,233 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\ckeditor\Field
+  19e48188-b3a7-4847-9b64-c6e090157fb3:
+    name: 'Hide from navigation'
+    handle: hideNav
+    instructions: 'Hide this page from navigation menus'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+  12748b23-edd5-4a57-93f1-6470f9183e7e:
+    name: 'Hide from search'
+    handle: hideSearch
+    instructions: 'Hide this page from site search results'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+  f7ddae0a-bbf1-40ef-b5ac-0978ef9b9720:
+    name: 'Hide from search engines'
+    handle: hideSearchEngines
+    instructions: 'Hide this page from external search engines'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+  1099e536-c5dc-41ff-b53a-7f1e2f2cf594:
+    name: 'Navigation image'
+    handle: navImage
+    instructions: 'An alternate image to use for when this page appears as a navigation tile. Fallback will be the background image.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: '1'
+      defaultUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: 'Select an image'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+  50ad4e82-9a8b-4a14-bc45-ea67782d122e:
+    name: Usage
+    handle: usage
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: nav33d\relations\fields\Relations
+    contentColumnType: string
+    fieldGroup: 074c96ff-0c3a-4759-a18c-50876512345c
+  ca79482c-11fc-4497-b060-cbdc4872c00d:
+    name: 'Show map'
+    handle: showMap
+    instructions: 'Toggle the display of the map at the bottom of the page'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: '1'
+    contentColumnType: boolean
+    fieldGroup: 393f9ebd-413e-474c-982a-93189561fe81
+  9d0c606e-a901-4c04-819a-740acb47e441:
+    name: 'Open forms embed code'
+    handle: openForm
+    instructions: "1. Go to the https://admin.au.openforms.com\r\n2. Log in if you aren't already, find the form that you need\r\n3. Go to Settings -> Print and embed\r\n4. Copy the 36 character code at the end of the link on this page"
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: 05e6ee91-f7c2-4a13-a58e-34fb9ad28d50
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: '36'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 7e2a939a-a0dd-4825-9cff-33ef02c3bfeb
+  a71afc39-91ab-4b38-9a00-c6b57f462d62:
+    name: 'Social media'
+    handle: socialMedia
+    instructions: 'Add links to any social media accounts here.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Table
+    settings:
+      addRowLabel: 'Add an account'
+      maxRows: ''
+      minRows: ''
+      columns:
+        col1:
+          heading: Platform
+          handle: platform
+          width: ''
+          type: singleline
+        col2:
+          heading: Link
+          handle: link
+          width: 60%
+          type: singleline
+      defaults:
+        -
+          col1: ''
+          col2: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: b3ca06cb-332e-4629-85d4-1036322a636d
+  289c1b0b-f04b-4f80-81e5-f7948058ea56:
+    name: Address
+    handle: address
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: '1'
+      maxBlocks: '1'
+      contentTable: '{{%matrixcontent_address}}'
+      localizeBlocks: false
+    contentColumnType: string
+    fieldGroup: b3ca06cb-332e-4629-85d4-1036322a636d
+  4605541b-9251-4ee7-85de-c0fe95b5e134:
+    name: 'Phone number'
+    handle: phoneNumber
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: '(+61 8) 8231 4062'
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: b3ca06cb-332e-4629-85d4-1036322a636d
+  fadf5ba6-5f6a-4fe7-944f-50f651c9055e:
+    name: Email
+    handle: email
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Email
+    settings:
+      placeholder: ''
+    contentColumnType: string
+    fieldGroup: b3ca06cb-332e-4629-85d4-1036322a636d
+  12b60dfa-1e6a-4dfa-a448-7f1cf8ac189c:
+    name: 'Featured exhibition'
+    handle: featuredExhibition
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:df592026-16aa-4bcb-ae52-dd9a7914f1d5'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '1'
+      selectionLabel: 'Select an exhibition'
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 22e34b96-b070-4971-b0f3-59f065435a17
+  dbf47131-2b50-46a6-b4a7-2be256307a7a:
+    name: 'Opening hours'
+    handle: openHours
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: '1'
+      maxBlocks: '1'
+      contentTable: '{{%matrixcontent_openhours}}'
+      localizeBlocks: false
+    contentColumnType: string
+    fieldGroup: b3ca06cb-332e-4629-85d4-1036322a636d
+  e5e53169-46da-4f34-941d-393a1ef70c5e:
+    name: 'Visitor information'
+    handle: visitorInformation
+    instructions: 'Choose which page the ''plan your visit'' button goes to'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources: '*'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: 22e34b96-b070-4971-b0f3-59f065435a17
 globalSets:
   0ec1b038-e7f9-45fd-88f0-a81ac806857b:
     fieldLayouts:
@@ -238,124 +468,730 @@ globalSets:
             sortOrder: 1
     handle: footer
     name: Footer
-  2918c09a-46de-4be2-875c-eb709d6bbcfe:
-    fieldLayouts:
-      b20793a8-ba77-4e0f-95c5-e23bf4c790cf:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-    handle: openingHours
-    name: 'Opening hours'
   a5f994ad-0b13-41bf-b7eb-eb1e23fd93c2:
+    name: Contact
+    handle: contact
     fieldLayouts:
       293004cb-dd5e-4a87-8688-53071fa5c088:
         tabs:
           -
             name: Content
             sortOrder: 1
-    handle: location
-    name: Location
+            fields:
+              4605541b-9251-4ee7-85de-c0fe95b5e134:
+                required: false
+                sortOrder: 1
+              fadf5ba6-5f6a-4fe7-944f-50f651c9055e:
+                required: false
+                sortOrder: 2
+              dbf47131-2b50-46a6-b4a7-2be256307a7a:
+                required: false
+                sortOrder: 3
+              289c1b0b-f04b-4f80-81e5-f7948058ea56:
+                required: false
+                sortOrder: 4
+              a71afc39-91ab-4b38-9a00-c6b57f462d62:
+                required: false
+                sortOrder: 5
 imageTransforms:
   16d20324-3a53-4b69-852f-8f3dd8e514eb:
     format: null
-    handle: w500h500
+    handle: w500_1x1
     height: '500'
     interlace: none
     mode: crop
-    name: 500x500
+    name: '500px 1:1'
     position: center-center
     quality: '82'
     width: '500'
+  46a09943-f87b-4119-9784-a839dcca440d:
+    format: null
+    handle: w420_16x9
+    height: '236'
+    interlace: none
+    mode: crop
+    name: '420px 16x9'
+    position: center-center
+    quality: null
+    width: '420'
   a2127a59-da79-4437-9cac-b04510ad4ce0:
     format: null
-    handle: w620h440
+    handle: w620_16x9
     height: '440'
     interlace: none
     mode: crop
-    name: 620x440
+    name: '620px 16:9'
     position: center-center
     quality: null
     width: '620'
+  e9743417-81c6-48e9-afdd-246eee809c31:
+    format: null
+    handle: w720_16x9
+    height: '405'
+    interlace: none
+    mode: crop
+    name: '720px 16:9'
+    position: center-center
+    quality: null
+    width: '720'
+  c3b318c4-72f9-4021-accb-70c3e602a7e9:
+    format: null
+    handle: placeholder
+    height: 3
+    interlace: none
+    mode: crop
+    name: Placeholder
+    position: center-center
+    quality: 10
+    width: 3
 matrixBlockTypes:
   1376e80e-a0c3-47e0-b863-a58b5e4c8a36:
     field: b17641df-1d5e-47d4-8d87-9bb1d03dd179
+    name: Text
+    handle: text
+    sortOrder: 1
+    fields:
+      49593971-e1ee-4231-bf88-d5e85f2c1152:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: '255'
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      05bbb5c2-adf3-43bf-bcda-d36630677062:
+        name: 'Body copy'
+        handle: bodyCopy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\ckeditor\Field
+        settings:
+          purifierConfig: ''
+          purifyHtml: '1'
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
     fieldLayouts:
       2b9ce2be-4530-4605-8903-d4a073861eee:
         tabs:
           -
+            name: Content
+            sortOrder: 1
             fields:
-              05bbb5c2-adf3-43bf-bcda-d36630677062:
-                required: false
-                sortOrder: 2
               49593971-e1ee-4231-bf88-d5e85f2c1152:
                 required: false
                 sortOrder: 1
-              e6f9c89d-1d49-4470-acd5-c22772f1299b:
+              05bbb5c2-adf3-43bf-bcda-d36630677062:
                 required: false
-                sortOrder: 3
-            name: Content
-            sortOrder: 1
+                sortOrder: 2
+  9dba9e47-abda-4167-a3a1-99bd3e30c48e:
+    field: 306a2583-a0b0-49b7-9347-0039034cb6d4
+    name: Venue
+    handle: venue
+    sortOrder: 1
     fields:
-      05bbb5c2-adf3-43bf-bcda-d36630677062:
-        contentColumnType: text
-        fieldGroup: null
-        handle: bodyCopy
-        instructions: ''
-        name: 'Body copy'
-        searchable: true
-        settings:
-          columnType: text
-          purifierConfig: ''
-          purifyHtml: '1'
-        translationKeyFormat: null
-        translationMethod: none
-        type: craft\ckeditor\Field
-      49593971-e1ee-4231-bf88-d5e85f2c1152:
-        contentColumnType: text
-        fieldGroup: null
+      35451de2-f673-4ab2-8959-592fbb591a15:
+        name: Heading
         handle: heading
         instructions: ''
-        name: Heading
         searchable: true
-        settings:
-          charLimit: '255'
-          code: ''
-          columnType: text
-          initialRows: '4'
-          multiline: ''
-          placeholder: ''
-        translationKeyFormat: null
         translationMethod: none
+        translationKeyFormat: null
         type: craft\fields\PlainText
-      e6f9c89d-1d49-4470-acd5-c22772f1299b:
-        contentColumnType: string
-        fieldGroup: null
-        handle: image
-        instructions: ''
-        name: Image
-        searchable: true
         settings:
-          allowedKinds: null
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      44360068-4be7-42a9-852c-c5439df67e59:
+        name: Information
+        handle: information
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Table
+        settings:
+          addRowLabel: ''
+          maxRows: '1'
+          minRows: ''
+          columns:
+            col1:
+              heading: Capacity
+              handle: capacity
+              width: ''
+              type: number
+            col2:
+              heading: Times
+              handle: times
+              width: ''
+              type: singleline
+            col3:
+              heading: Cost
+              handle: cost
+              width: ''
+              type: number
+            col4:
+              heading: Catering
+              handle: catering
+              width: ''
+              type: checkbox
+          defaults:
+            -
+              col1: ''
+              col2: ''
+              col3: ''
+              col4: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      788a94a9-0a89-45e1-88c0-7333c98e63b3:
+        name: Description
+        handle: description
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      e1da43e0-d3a7-49e8-8760-31aa42df088d:
+        name: Images
+        handle: images
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: '1'
           defaultUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
           defaultUploadLocationSubpath: ''
-          limit: '1'
-          localizeRelations: false
-          restrictFiles: ''
-          selectionLabel: ''
           singleUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
           singleUploadLocationSubpath: ''
-          source: null
+          restrictFiles: '1'
+          allowedKinds:
+            - image
           sources: '*'
+          source: null
           targetSiteId: null
-          useSingleFolder: ''
           viewMode: list
+          limit: '3'
+          selectionLabel: ''
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      dd15d2dc-1829-491e-927d-b6b1440abffd:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              35451de2-f673-4ab2-8959-592fbb591a15:
+                required: true
+                sortOrder: 1
+              44360068-4be7-42a9-852c-c5439df67e59:
+                required: false
+                sortOrder: 2
+              788a94a9-0a89-45e1-88c0-7333c98e63b3:
+                required: false
+                sortOrder: 3
+              e1da43e0-d3a7-49e8-8760-31aa42df088d:
+                required: false
+                sortOrder: 4
+  c68f49cb-1e24-4d89-8bed-5c3a0fae3793:
+    field: 306a2583-a0b0-49b7-9347-0039034cb6d4
+    name: Party
+    handle: party
+    sortOrder: 2
+    fields:
+      8f00bf6d-7974-46fb-946e-312250d7f160:
+        name: Heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
         translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      5b93a5cb-8a3b-4c4e-bf4b-7a2bf65a206e:
+        name: Options
+        handle: options
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Table
+        settings:
+          addRowLabel: 'Add a row'
+          maxRows: '3'
+          minRows: ''
+          columns:
+            col1:
+              heading: Image
+              handle: image
+              width: ''
+              type: singleline
+            col2:
+              heading: Heading
+              handle: heading
+              width: ''
+              type: singleline
+            col3:
+              heading: Description
+              handle: description
+              width: ''
+              type: multiline
+          defaults:
+            -
+              col1: ''
+              col2: ''
+              col3: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      6b124afa-04ad-429a-8218-29358cbf3861:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              8f00bf6d-7974-46fb-946e-312250d7f160:
+                required: false
+                sortOrder: 1
+              5b93a5cb-8a3b-4c4e-bf4b-7a2bf65a206e:
+                required: false
+                sortOrder: 2
+  db138faf-a99e-4d47-99bd-e4b81f046b51:
+    field: b17641df-1d5e-47d4-8d87-9bb1d03dd179
+    name: Image
+    handle: image
+    sortOrder: 2
+    fields:
+      52229d9d-cf05-4b9a-ba28-821f297b604a:
+        name: Image
+        handle: image
+        instructions: ''
+        searchable: true
         translationMethod: site
+        translationKeyFormat: null
         type: craft\fields\Assets
-    handle: text
-    name: Text
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources:
+            - 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: 'Select an image'
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
+      c4481010-52a1-43b9-81bd-fbb0b20a04c1:
+        name: 'Custom caption'
+        handle: customCaption
+        instructions: 'The caption will default to the image title, if you would like to use a custom caption place it here.'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      1ca8a582-b6ad-4fc1-8030-5228dcf8109b:
+        name: 'Show caption'
+        handle: showCaption
+        instructions: 'If this is selected the caption will be visible below the image'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Lightswitch
+        settings:
+          default: ''
+        contentColumnType: boolean
+        fieldGroup: null
+      705182cf-7cc6-4c7c-80de-872686c70d16:
+        name: 'Aspect ratio'
+        handle: aspectRatio
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\RadioButtons
+        settings:
+          options:
+            -
+              label: '16:9'
+              value: 16x9
+              default: '1'
+            -
+              label: '4:3'
+              value: 4x3
+              default: ''
+            -
+              label: '1:1'
+              value: 1x1
+              default: ''
+            -
+              label: 'Golden ratio'
+              value: 1.61803398875x1
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      08e0e414-d083-4f52-be93-2c009bec90ca:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              52229d9d-cf05-4b9a-ba28-821f297b604a:
+                required: true
+                sortOrder: 1
+              c4481010-52a1-43b9-81bd-fbb0b20a04c1:
+                required: false
+                sortOrder: 2
+              1ca8a582-b6ad-4fc1-8030-5228dcf8109b:
+                required: false
+                sortOrder: 3
+              705182cf-7cc6-4c7c-80de-872686c70d16:
+                required: false
+                sortOrder: 4
+  e089e35c-cee0-44c5-8139-2773fc942445:
+    field: 289c1b0b-f04b-4f80-81e5-f7948058ea56
+    name: Address
+    handle: address
     sortOrder: 1
+    fields:
+      aaae91d8-fcf3-4e31-a9cc-2333abb9e2c6:
+        name: Number
+        handle: number
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Number
+        settings:
+          defaultValue: null
+          min: '0'
+          max: null
+          decimals: 0
+          size: '3'
+          prefix: ''
+          suffix: ''
+        contentColumnType: integer(10)
+        fieldGroup: null
+      1e5de676-a0d1-46c6-9fb6-b1b824086432:
+        name: Street
+        handle: street
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      ccd64acc-596d-494a-a347-38acd43d030a:
+        name: Suburb
+        handle: suburb
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      9f82244a-bc2d-47ae-b61f-b2c9f4faf0df:
+        name: State
+        handle: state
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Dropdown
+        settings:
+          options:
+            -
+              label: ACT
+              value: act
+              default: ''
+            -
+              label: 'Northern Territory'
+              value: nt
+              default: ''
+            -
+              label: 'New South Wales'
+              value: nsw
+              default: ''
+            -
+              label: Queensland
+              value: qld
+              default: ''
+            -
+              label: 'South Australia'
+              value: sa
+              default: ''
+            -
+              label: Tasmania
+              value: tas
+              default: ''
+            -
+              label: Victoria
+              value: vic
+              default: ''
+            -
+              label: 'Western Australia'
+              value: wa
+              default: ''
+        contentColumnType: string
+        fieldGroup: null
+      cc0f72ca-5dd3-4a4e-adb6-b67da7067674:
+        name: Postcode
+        handle: postcode
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      5835df6f-9afd-4964-bea8-c3d3e96b86ee:
+        name: Description
+        handle: description
+        instructions: 'Description of the address'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '1'
+          charLimit: '70'
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      36cb8c2e-017f-4379-a898-c79b87d4558c:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              aaae91d8-fcf3-4e31-a9cc-2333abb9e2c6:
+                required: false
+                sortOrder: 1
+              1e5de676-a0d1-46c6-9fb6-b1b824086432:
+                required: false
+                sortOrder: 2
+              ccd64acc-596d-494a-a347-38acd43d030a:
+                required: false
+                sortOrder: 3
+              9f82244a-bc2d-47ae-b61f-b2c9f4faf0df:
+                required: false
+                sortOrder: 4
+              cc0f72ca-5dd3-4a4e-adb6-b67da7067674:
+                required: false
+                sortOrder: 5
+              5835df6f-9afd-4964-bea8-c3d3e96b86ee:
+                required: false
+                sortOrder: 6
+  5e0f76ba-63ca-47f2-961a-c7b9ea5773ea:
+    field: b17641df-1d5e-47d4-8d87-9bb1d03dd179
+    name: Form
+    handle: form
+    sortOrder: 3
+    fields:
+      b9356e5f-62fa-494b-b796-1ab6479fa913:
+        name: 'Open forms embed code'
+        handle: openForm
+        instructions: "1. Go to the https://admin.au.openforms.com\r\n2. Log in if you aren't already, find the form that you need\r\n3. Go to Settings -> Print and embed\r\n4. Copy the 36 character code at the end of the link on this page"
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: 05e6ee91-f7c2-4a13-a58e-34fb9ad28d50
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: '36'
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      c757aae3-7d85-47e6-a4f7-0390fdedb3df:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              b9356e5f-62fa-494b-b796-1ab6479fa913:
+                required: false
+                sortOrder: 1
+  df06497a-03da-4e51-a624-a667521615fe:
+    field: b17641df-1d5e-47d4-8d87-9bb1d03dd179
+    name: 'Image gallery'
+    handle: imageGallery
+    sortOrder: 4
+    fields:
+      208a8ff8-3792-4b4b-9730-54b29fa93fbf:
+        name: Images
+        handle: images
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+          defaultUploadLocationSubpath: '{owner.slug}'
+          singleUploadLocationSource: 'volume:315e066f-9afa-4a0d-a8cd-3eadad862a9c'
+          singleUploadLocationSubpath: ''
+          restrictFiles: '1'
+          allowedKinds:
+            - image
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: ''
+          selectionLabel: 'Add an image'
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
+    fieldLayouts:
+      97ff2111-ce81-43ad-b050-11d96a0ce251:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              208a8ff8-3792-4b4b-9730-54b29fa93fbf:
+                required: false
+                sortOrder: 1
+  5160f906-7b5f-4c76-852b-ee62112b4d66:
+    field: dbf47131-2b50-46a6-b4a7-2be256307a7a
+    name: 'Opening hours'
+    handle: openingHours
+    sortOrder: 1
+    fields:
+      ea6f7e6f-48e4-41b6-bd5f-88b8f7eb35f7:
+        name: Times
+        handle: times
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      00a7439a-67da-40ad-be7b-8f5eb497ee7e:
+        name: Note
+        handle: note
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '1'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      68f7892a-4d1a-40f4-9982-4372a89fe89a:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              ea6f7e6f-48e4-41b6-bd5f-88b8f7eb35f7:
+                required: false
+                sortOrder: 1
+              00a7439a-67da-40ad-be7b-8f5eb497ee7e:
+                required: false
+                sortOrder: 2
 plugins:
   assetrev:
     edition: standard
@@ -420,134 +1256,271 @@ plugins:
   seomatic:
     edition: standard
     enabled: true
-    schemaVersion: 3.0.6
+    schemaVersion: 3.0.7
     settings:
-      addHrefLang: '1'
+      pluginName: SEO
+      renderEnabled: true
+      sitemapsEnabled: true
+      regenerateSitemapsAutomatically: true
+      headersEnabled: true
+      environment: $ENVIRONMENT
+      displayPreviewSidebar: true
+      displayAnalysisSidebar: true
+      devModeTitlePrefix: '&#x1f6a7; '
       cpTitlePrefix: '⚙ '
       devModeCpTitlePrefix: '&#x1f6a7;⚙ '
-      devModeTitlePrefix: '&#x1f6a7; '
-      displayAnalysisSidebar: true
-      displayPreviewSidebar: '1'
-      environment: local
-      generatorEnabled: '1'
-      headersEnabled: '1'
-      maxDescriptionLength: '155'
-      maxTitleLength: '70'
-      pluginName: SEO
-      regenerateSitemapsAutomatically: '1'
-      renderEnabled: '1'
       separatorChar: '|'
+      maxTitleLength: 70
+      maxDescriptionLength: 155
       siteGroupsSeparate: '1'
-      sitemapsEnabled: '1'
+      addHrefLang: true
+      addXDefaultHrefLang: true
+      generatorEnabled: false
+  dumper:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  assetusage:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  relations:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.1.2
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  tablemaker:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 sections:
   64f02460-fbb8-4392-98b6-c1582e727a71:
     enableVersioning: true
     entryTypes:
+      2e515959-ef26-4d31-9904-75e7f49e36ed:
+        name: 'Showcase page'
+        handle: showcasePage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 5
+        fieldLayouts:
+          70b6a58d-f3e5-4a19-aa3f-1fe5f537406e:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  306a2583-a0b0-49b7-9347-0039034cb6d4:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Design
+                sortOrder: 2
+                fields:
+                  92d407d4-5702-4094-9c0e-150858c0563f:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Settings
+                sortOrder: 3
+                fields:
+                  15e84307-ddbb-4acc-af39-b0df0ca5d6ed:
+                    required: false
+                    sortOrder: 1
+                  1099e536-c5dc-41ff-b53a-7f1e2f2cf594:
+                    required: false
+                    sortOrder: 2
+                  19e48188-b3a7-4847-9b64-c6e090157fb3:
+                    required: false
+                    sortOrder: 3
+                  12748b23-edd5-4a57-93f1-6470f9183e7e:
+                    required: false
+                    sortOrder: 4
+                  f7ddae0a-bbf1-40ef-b5ac-0978ef9b9720:
+                    required: false
+                    sortOrder: 5
+              -
+                name: SEO
+                sortOrder: 4
+                fields:
+                  77009258-1296-4767-b24f-55808517ae58:
+                    required: false
+                    sortOrder: 1
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 2
       6ce1892f-9c35-4069-9721-f5de0aa4aaee:
+        name: 'Landing page'
+        handle: landingPage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
         fieldLayouts:
           d240c17d-d380-48f5-9938-a58744af9ee1:
             tabs:
               -
+                name: Design
+                sortOrder: 1
                 fields:
-                  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
-                    required: false
-                    sortOrder: 2
                   92d407d4-5702-4094-9c0e-150858c0563f:
                     required: false
                     sortOrder: 1
-                name: Content
-                sortOrder: 1
               -
+                name: Settings
+                sortOrder: 2
                 fields:
-                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                  15e84307-ddbb-4acc-af39-b0df0ca5d6ed:
+                    required: false
+                    sortOrder: 1
+                  1099e536-c5dc-41ff-b53a-7f1e2f2cf594:
                     required: false
                     sortOrder: 2
-                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                  19e48188-b3a7-4847-9b64-c6e090157fb3:
                     required: false
                     sortOrder: 3
+                  12748b23-edd5-4a57-93f1-6470f9183e7e:
+                    required: false
+                    sortOrder: 4
+                  f7ddae0a-bbf1-40ef-b5ac-0978ef9b9720:
+                    required: false
+                    sortOrder: 5
+              -
+                name: SEO
+                sortOrder: 3
+                fields:
                   77009258-1296-4767-b24f-55808517ae58:
                     required: false
                     sortOrder: 1
-                name: SEO
-                sortOrder: 2
-        handle: landingPage
-        hasTitleField: true
-        name: 'Landing page'
-        sortOrder: 1
-        titleFormat: ''
-        titleLabel: Title
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 2
       c0b75679-a1f6-4a0a-81e9-6b99cf3e0a9b:
+        name: 'Contact page'
+        handle: contactPage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 4
         fieldLayouts:
           35ac9013-4191-46b6-8fb3-517ada36a202:
             tabs:
               -
+                name: Content
+                sortOrder: 1
                 fields:
-                  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
+                  eea35a5c-d918-43f2-b45b-e6dc84e9b7ca:
                     required: false
+                    sortOrder: 1
+                  9d0c606e-a901-4c04-819a-740acb47e441:
+                    required: true
                     sortOrder: 2
+                  ca79482c-11fc-4497-b060-cbdc4872c00d:
+                    required: false
+                    sortOrder: 3
+              -
+                name: Design
+                sortOrder: 2
+                fields:
                   92d407d4-5702-4094-9c0e-150858c0563f:
                     required: false
                     sortOrder: 1
-                name: Design
-                sortOrder: 1
               -
+                name: Settings
+                sortOrder: 3
                 fields:
-                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                  15e84307-ddbb-4acc-af39-b0df0ca5d6ed:
+                    required: false
+                    sortOrder: 1
+                  1099e536-c5dc-41ff-b53a-7f1e2f2cf594:
                     required: false
                     sortOrder: 2
-                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                  19e48188-b3a7-4847-9b64-c6e090157fb3:
                     required: false
                     sortOrder: 3
+                  12748b23-edd5-4a57-93f1-6470f9183e7e:
+                    required: false
+                    sortOrder: 4
+                  f7ddae0a-bbf1-40ef-b5ac-0978ef9b9720:
+                    required: false
+                    sortOrder: 5
+              -
+                name: SEO
+                sortOrder: 4
+                fields:
                   77009258-1296-4767-b24f-55808517ae58:
                     required: false
                     sortOrder: 1
-                name: SEO
-                sortOrder: 2
-        handle: contactPage
-        hasTitleField: true
-        name: 'Contact page'
-        sortOrder: 4
-        titleFormat: ''
-        titleLabel: Title
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 2
       f1bd2ba6-0fd5-4beb-bf2a-da9d5c0d0f4a:
+        name: 'General content page'
+        handle: contentPage
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 3
         fieldLayouts:
           0476d75d-8a76-49d8-ac2e-3ad74c2665c3:
             tabs:
               -
+                name: Content
+                sortOrder: 1
                 fields:
-                  23fd6fa9-4ba4-40a7-8253-6b0a0513414d:
-                    required: false
-                    sortOrder: 4
                   3fdca85e-701c-4e5d-8b12-6cdc4215ac87:
                     required: false
                     sortOrder: 1
+                  b17641df-1d5e-47d4-8d87-9bb1d03dd179:
+                    required: false
+                    sortOrder: 2
+              -
+                name: Design
+                sortOrder: 2
+                fields:
                   92d407d4-5702-4094-9c0e-150858c0563f:
                     required: false
-                    sortOrder: 3
-                  eea35a5c-d918-43f2-b45b-e6dc84e9b7ca:
-                    required: false
-                    sortOrder: 2
-                name: Content
-                sortOrder: 1
+                    sortOrder: 1
               -
+                name: Settings
+                sortOrder: 3
                 fields:
-                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                  15e84307-ddbb-4acc-af39-b0df0ca5d6ed:
+                    required: false
+                    sortOrder: 1
+                  1099e536-c5dc-41ff-b53a-7f1e2f2cf594:
                     required: false
                     sortOrder: 2
-                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                  19e48188-b3a7-4847-9b64-c6e090157fb3:
                     required: false
                     sortOrder: 3
+                  12748b23-edd5-4a57-93f1-6470f9183e7e:
+                    required: false
+                    sortOrder: 4
+                  f7ddae0a-bbf1-40ef-b5ac-0978ef9b9720:
+                    required: false
+                    sortOrder: 5
+                  50ad4e82-9a8b-4a14-bc45-ea67782d122e:
+                    required: false
+                    sortOrder: 6
+              -
+                name: SEO
+                sortOrder: 4
+                fields:
                   77009258-1296-4767-b24f-55808517ae58:
                     required: false
                     sortOrder: 1
-                name: SEO
-                sortOrder: 2
-        handle: contentPage
-        hasTitleField: true
-        name: 'General content page'
-        sortOrder: 3
-        titleFormat: ''
-        titleLabel: Title
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 2
     handle: pages
     name: Pages
     propagateEntries: true
@@ -565,10 +1538,31 @@ sections:
     enableVersioning: true
     entryTypes:
       87939b2c-e1a9-4434-a3fa-af3b3893c93b:
+        name: Homepage
+        handle: homepage
+        hasTitleField: false
+        titleLabel: Title
+        titleFormat: Home
+        sortOrder: 1
         fieldLayouts:
           8f13f643-6b84-4672-807d-903bd2362a3b:
             tabs:
               -
+                name: Content
+                sortOrder: 1
+                fields:
+                  e5e53169-46da-4f34-941d-393a1ef70c5e:
+                    required: true
+                    sortOrder: 1
+                  12b60dfa-1e6a-4dfa-a448-7f1cf8ac189c:
+                    required: true
+                    sortOrder: 2
+                  91666da3-f600-47da-855c-a1938230b28c:
+                    required: true
+                    sortOrder: 3
+              -
+                name: Design
+                sortOrder: 2
                 fields:
                   92d407d4-5702-4094-9c0e-150858c0563f:
                     required: false
@@ -576,27 +1570,35 @@ sections:
                   ce83b7a3-b117-4b6f-81f0-d896b523f676:
                     required: false
                     sortOrder: 2
-                name: Design
-                sortOrder: 1
               -
+                name: Settings
+                sortOrder: 3
                 fields:
-                  0fd0dc82-c922-4113-ba9c-fb9e4e33e276:
+                  15e84307-ddbb-4acc-af39-b0df0ca5d6ed:
+                    required: false
+                    sortOrder: 1
+                  1099e536-c5dc-41ff-b53a-7f1e2f2cf594:
                     required: false
                     sortOrder: 2
-                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                  19e48188-b3a7-4847-9b64-c6e090157fb3:
                     required: false
                     sortOrder: 3
+                  12748b23-edd5-4a57-93f1-6470f9183e7e:
+                    required: false
+                    sortOrder: 4
+                  f7ddae0a-bbf1-40ef-b5ac-0978ef9b9720:
+                    required: false
+                    sortOrder: 5
+              -
+                name: SEO
+                sortOrder: 4
+                fields:
                   77009258-1296-4767-b24f-55808517ae58:
                     required: false
                     sortOrder: 1
-                name: SEO
-                sortOrder: 2
-        handle: homepage
-        hasTitleField: true
-        name: Homepage
-        sortOrder: 1
-        titleFormat: '{section.name|raw}'
-        titleLabel: Title
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 2
     handle: homepage
     name: Homepage
     propagateEntries: true
@@ -607,6 +1609,72 @@ sections:
         template: index
         uriFormat: __home__
     type: single
+  df592026-16aa-4bcb-ae52-dd9a7914f1d5:
+    name: Exhibitions
+    handle: exhibitions
+    type: channel
+    enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      89ad90bb-4100-47b8-a793-95080e52e0d7:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'exhibitions/{slug}'
+        template: _pages/_entry
+    entryTypes:
+      fa72f847-4bfc-48d8-9671-77a51fbf0c24:
+        name: Exhibitions
+        handle: exhibitions
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          64323ff2-a263-46e4-b0e0-09966facb43e:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  b17641df-1d5e-47d4-8d87-9bb1d03dd179:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Design
+                sortOrder: 2
+                fields:
+                  92d407d4-5702-4094-9c0e-150858c0563f:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Settings
+                sortOrder: 3
+                fields:
+                  15e84307-ddbb-4acc-af39-b0df0ca5d6ed:
+                    required: false
+                    sortOrder: 1
+                  1099e536-c5dc-41ff-b53a-7f1e2f2cf594:
+                    required: false
+                    sortOrder: 2
+                  19e48188-b3a7-4847-9b64-c6e090157fb3:
+                    required: false
+                    sortOrder: 3
+                  12748b23-edd5-4a57-93f1-6470f9183e7e:
+                    required: false
+                    sortOrder: 4
+                  f7ddae0a-bbf1-40ef-b5ac-0978ef9b9720:
+                    required: false
+                    sortOrder: 5
+              -
+                name: SEO
+                sortOrder: 4
+                fields:
+                  77009258-1296-4767-b24f-55808517ae58:
+                    required: false
+                    sortOrder: 1
+                  2dee1627-2da5-4f40-ae34-a9e308859b68:
+                    required: false
+                    sortOrder: 2
 siteGroups:
   4221bd02-481b-4416-bdaa-48cadfabefb5:
     name: 'Adelaide Gaol'
@@ -624,11 +1692,11 @@ system:
   edition: pro
   live: true
   name: 'Adelaide Gaol'
-  schemaVersion: 3.1.25
+  schemaVersion: 3.1.27
   timeZone: Australia/Darwin
 users:
   allowPublicRegistration: false
-  defaultGroup: null
+  defaultGroup: ''
   groups:
     c7832887-5670-49e5-a471-64cb4d402fb1:
       handle: contentAuthors
@@ -646,28 +1714,28 @@ users:
         - 'editpeerentries:64f02460-fbb8-4392-98b6-c1582e727a71'
         - 'editentries:64f02460-fbb8-4392-98b6-c1582e727a71'
   photoSubpath: ''
-  photoVolumeUid: null
+  photoVolumeUid: d15ca611-8410-4707-a5f5-e74de4e4be5e
   requireEmailVerification: true
 volumes:
   315e066f-9afa-4a0d-a8cd-3eadad862a9c:
-    fieldLayouts:
-      9802b098-c118-404e-93ef-e16209ca3779:
-        tabs:
-          -
-            fields:
-              b56bb5db-3ad4-4fa7-b048-6333c49893f9:
-                required: false
-                sortOrder: 1
-            name: Content
-            sortOrder: 1
-    handle: generalImages
-    hasUrls: true
     name: 'General images'
+    handle: generalImages
+    type: craft\volumes\Local
+    hasUrls: true
+    url: /assets/img/
     settings:
       path: assets/img/
-    sortOrder: '4'
-    type: craft\volumes\Local
-    url: /assets/img/
+    sortOrder: 4
+    fieldLayouts:
+      270121d4-5655-4f2d-a270-66ecab97d2dc:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              50ad4e82-9a8b-4a14-bc45-ea67782d122e:
+                required: false
+                sortOrder: 1
   fbc888f1-54b7-47c2-9cb5-7b263d5a373a:
     handle: generalDocuments
     hasUrls: true
@@ -677,3 +1745,12 @@ volumes:
     sortOrder: 5
     type: craft\volumes\Local
     url: /assets/documents/
+  d15ca611-8410-4707-a5f5-e74de4e4be5e:
+    name: 'User images'
+    handle: userImages
+    type: craft\volumes\Local
+    hasUrls: false
+    url: ''
+    settings:
+      path: '@sitePath/assets/img/users'
+    sortOrder: 6
