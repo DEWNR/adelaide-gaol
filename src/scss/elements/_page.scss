@@ -73,7 +73,8 @@ body:not(.homepage)::before {
 }
 
 #contact-map {
-  margin: 0 (-$global-spacing-unit-large) (-$global-spacing-unit-large)-6;
+  margin: -$global-spacing-unit-large;
+  margin-bottom: (-$global-spacing-unit-large) - 6;
 
   > iframe {
     width: 100%;

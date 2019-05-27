@@ -2,6 +2,11 @@
     <style>
         {{ source('index_critical.min.css', ignore_missing = true) }}
     </style>
+    <style>
+        #openforms-embed-iframe-0 {
+            margin-top: -20px;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
@@ -12,36 +17,30 @@
 
                 <h1 class="c-page__title">{{ entry.title }}</h1>
 
-                <div id="content-container">
-
+                <section class="c-panel c-panel--light">
                     <div class="o-layout">
-
                         <div class="o-layout__item u-8/12@md">
                             <div class="c-content">
-                                <h2>Our details</h2>
+                                <h3 class="c-panel__title">Our details</h3>
                                 {% set phoneNumber = contact.phoneNumber %}
                                 {% set email = contact.email %}
+                                {% set address = contact.address.one() %}
 
-                                {% for block in contact.address.all() %}
-                                    <div class="u-display-flex">
-                                        <i class="icon-pin"></i>
-                                        <p>
-                                            {{ block.number }} {{ block.street }} <br>
-                                            {{ block.suburb }} {{ block.state.value | upper }} {{ block.postcode }}
-                                        </p>
-                                    </div>
-                                    <p><i class="icon-phone"></i>{{ phoneNumber }}</p>
-                                    <p><i class="icon-mail"></i><a href="mailto:{{ email }}">{{ email }}</a></p>
-                                    {{ entry.bodyContent }}
-                                {% endfor %}
-
-
+                                <div class="u-display-flex">
+                                    <p><i class="icon-pin"></i></p>
+                                    <p>
+                                        {{ address.number }} {{ address.street }} <br>
+                                        {{ address.suburb }} {{ address.state.value | upper }} {{ address.postcode }}
+                                    </p>
+                                </div>
+                                <p><i class="icon-phone"></i>{{ phoneNumber }}</p>
+                                <p><i class="icon-mail"></i><a href="mailto:{{ email }}">{{ email }}</a></p>
                             </div>
                         </div>
 
                         <div class="o-layout__item u-4/12@md">
                             <div class="c-content">
-                                <h2>Our social channels</h2>
+                                <h3 class="c-panel__title">Our social channels</h3>
                                 <ul class="o-list-bare u-padding-none">
 
                                 {% for account in contact.socialMedia %}
@@ -63,27 +62,32 @@
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        {% if entry.openForm %}
-                        <div class="o-layout__item u-8/12@md u-push-2/12@md u-margin-bottom">
+                {% if entry.openForm %}
+                <section class="c-panel c-panel--light">
+                    <div class="o-layout">
+                        <div class="o-layout__item u-4/12@md">
                             <div class="c-content">
-                                <h2>Get in touch</h2>
-                                <a class="openforms-embed" href="https://au.openforms.com/Form/{{ entry.openForm }}">Click here to view form.</a><script src="https://au.openforms.com/Scripts/embed-iframe.js"></script>
+                                <h3 class="c-panel__title">Get in touch</h3>
+                                {{ entry.bodyContent }}
                             </div>
                         </div>
-                        {% endif %}
-
-
-
+                        <div class="o-layout__item u-8/12@md">
+                            <a class="openforms-embed" href="https://au.openforms.com/Form/{{ entry.openForm }}">Click here to view form.</a><script src="https://au.openforms.com/Scripts/embed-iframe.js"></script>
+                        </div>
                     </div>
+                </section>
+                {% endif %}
 
-                    {% if entry.showMap %}
+                {% if entry.showMap %}
+                <section class="c-panel c-panel--light">
                     <div id="contact-map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13086.195409501654!2d138.5849041!3d-34.9177696!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd2dcecf4ff262abf!2sAdelaide+Gaol!5e0!3m2!1sen!2sau!4v1558074734851!5m2!1sen!2sau"  frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
-                    {% endif %}
-
-                </div>
+                </section>
+                {% endif %}
 
             </div>
         </div>
