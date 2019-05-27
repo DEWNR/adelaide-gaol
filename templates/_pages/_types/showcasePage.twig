@@ -1,0 +1,117 @@
+{% set venues = entry.showcaseContent.type('venue').all() %}
+{% set parties = entry.showcaseContent.type('party').all() %}
+
+{% import "_macros" as macros %}
+
+{% block _inline_css %}
+    <style>
+        {{ source('index_critical.min.css', ignore_missing = true) }}
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <section>
+        <div class="o-wrapper">
+            <div class="c-page">
+
+                <h1 class="c-page__title">{{ entry.title }}</h1>
+
+                <div class="c-panel c-panel--light">
+                    <div class="o-layout">
+                        <div class="o-layout__item   u-4/12@lg">
+                            <h2 class="c-panel__title">Looking for a venue with a difference?</h2>
+                        </div>
+                        <div class="o-layout__item   u-8/12@lg">
+                            <p class="c-panel__text">Give your guests an arresting experience at the Adelaide Gaol. Certain areas of the Gaol (such as the New Building and surrounds) can be hired for concerts, weddings, conferences, birthdays and other events. A heritage listed site, the venue also provides a dramatic backdrop for filming and photography.</p>
+                        </div>
+                    </div>
+                </div>
+
+                {% for venue in venues %}
+                <div class="c-venue">
+                    <div class="c-panel c-panel--light">
+                        <div class="o-layout">
+                            <div class="o-layout__item u-6/12@md">
+                                <h2 class="c-panel__title">{{ venue.heading }}</h2>
+
+                                <div class="c-venue__info-owrap">
+                                    <div class="c-venue__info-iwrap">
+
+                                    {% for row in venue.information %}
+                                        <span class="c-venue__info-item">
+                                            {{ row.capacity | number_format(0, '.', ',') ~ ' person capacity' }}
+                                        </span>
+                                        <span class="c-venue__info-item">
+                                            {{ row.times }}
+                                        </span>
+                                        <span class="c-venue__info-item">
+                                            {{ 'Hire fees from $' ~ row.cost | number_format(0, '.', ',') }}
+                                        </span>
+                                        <span class="c-venue__info-item">
+                                            {{ row.catering == 1 ? 'Catering upon request' }}
+                                        </span>
+                                    {% endfor %}
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="o-layout__item u-6/12@md">
+                                <p class="c-panel__text">{{ venue.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% set images = venue.images.all() %}
+                    {% if images %}
+                    <div class="c-venue__images">
+
+                        {% switch images | length %}
+
+                        {% case "2" %}
+                            <div class="o-layout o-layout--flush">
+                            {% for image in images %}
+                                <div class="o-layout__item u-6/12">
+                                    {{ macros.imageTransform(image, 'half-16x9') }}
+                                </div>
+                            {% endfor %}
+                            </div>
+
+                        {% case "3" %}
+                            <div class="o-layout o-layout--flush">
+                            {% for image in images %}
+
+                                {% if loop.first %}
+
+                                    <div class="o-layout__item">
+                                        {{ macros.imageTransform(image, 'full-16x7') }}
+                                    </div>
+
+                                {% else %}
+
+                                    <div class="o-layout__item u-6/12">
+                                        {{ macros.imageTransform(image, 'half-16x9') }}
+                                    </div>
+
+                                {% endif %}
+
+                            {% endfor %}
+                            </div>
+
+                        {% default %}
+                            {{ macros.imageTransform(images[0], 'full-16x7') }}
+
+                        {% endswitch %}
+
+                    </div>
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
