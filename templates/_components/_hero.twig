@@ -1,0 +1,47 @@
+{# @param: #}
+
+{% set image = image %}
+
+{% if image %}
+
+    {% set transformedImageLarge = craft.imager.transformImage(image, {
+        width: 1920,
+        ratio: 16/9,
+        mode: 'crop',
+        position: (image.focalPoint.x * 100) ~ '% ' ~ (image.focalPoint.y * 100) ~ '%'
+    }) %}
+
+    {% set transformedImageMedium = craft.imager.transformImage(image, {
+        width: 1024,
+        ratio: 16/9,
+        mode: 'crop',
+        position: (image.focalPoint.x * 100) ~ '% ' ~ (image.focalPoint.y * 100) ~ '%'
+    }) %}
+
+    {% set transformedImageSmall = craft.imager.transformImage(image, {
+        width: 768,
+        ratio: 1/1,
+        mode: 'crop',
+        position: (image.focalPoint.x * 100) ~ '% ' ~ (image.focalPoint.y * 100) ~ '%'
+    }) %}
+
+    {% set backgroundSet = transformedImageSmall.url ~ " [(max-width: 768px)] | " ~ transformedImageMedium.url ~ " [(max-width: 1024px)] | " ~ transformedImageLarge.url %}
+
+
+<section class="c-hero">
+    <div class="c-hero__background lazyload" data-bgset="{{ backgroundSet }}" data-sizes="auto"></div>
+
+    {% if text %}
+    <div class="o-wrapper">
+        <h1 class="c-hero__title">
+            <img src="/assets/img/site/escape-to-the-gaol.svg" alt="Escape to the gaol">
+        </h1>
+    </div>
+    {% endif %}
+</section>
+{% else %}
+    <script>
+        console.log('No image passed through')
+    </script>
+
+{% endif %}

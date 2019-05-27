@@ -1,4 +1,10 @@
+{% set visitorInformation = entry.visitorInformation.one() %}
+{% set exhibition = entry.featuredExhibition.one() %}
+{% set whatsOn = entry.whatsOn.all() %}
+
 {% extends "_layouts/_layout.twig" %}
+
+{% import "_macros" as macro %}
 
 {% block _inline_css %}
     <style>
@@ -6,95 +12,97 @@
     </style>
 {% endblock %}
 
+
+
 {% block content %}
 
-    <section class="c-hero" style="background-size: cover; background-image: url({{ entry.featureBanner.one().getUrl() }}); background-color: orange;">
-        <div class="o-wrapper">
-            <h1 class="c-hero__title"><img src="/assets/img/site/escape-to-the-gaol.svg" alt="Escape to the gaol"></h1>
-        </div>
-    </section>
+    {% include "_components/_hero" with {
+        image: entry.featureBanner.one(),
+        text: true
+    } %}
 
-    <div class="o-wrapper o-wrapper--small">
-        <section class="c-panel">
+    <div class="o-wrapper">
+        <section class="c-panel   c-homepage-information">
             <h2 class="c-panel__title">Visitor information</h2>
+
             <div class="o-layout">
-
-                <div class="c-panel__item   o-layout__item u-4/12@lg">
+                <div class="o-layout__item u-6/12@sm u-4/12@md">
                     <div class="o-layout">
-                        <h3 class="c-panel__subtitle   o-layout__item u-4/12@sm">Opening hours</h3>
-                        <div class="o-layout__item u-8/12@sm">
-                            <p class="c-panel__text c-panel__text--small">10am - 4pm - 7 days a week</p>
-                            <p class="c-panel__text c-panel__text--tiny">
-                                Last entry for self-guided tours: 3pm <br>
-                                Closed Good Friday and Christmas Day
-                            </p>
+                        <h3 class="c-homepage-information__title   o-layout__item u-4/12@lg">Opening hours</h3>
+                        <div class="o-layout__item u-8/12@lg">
+                            {% set hours = contact.openHours.one() %}
+                            <p class="c-homepage-information__description">{{ hours.times }}</p>
+                            <small class="c-homepage-information__description">{{ hours.note }}</small>
                         </div>
                     </div>
                 </div>
 
-                <div class="c-panel__item   o-layout__item u-4/12@lg  u-margin-top-small u-margin-top-none@lg">
+                <div class="o-layout__item u-6/12@sm u-4/12@md">
                     <div class="o-layout">
-                        <h3 class="c-panel__subtitle   o-layout__item u-4/12@sm">Where to find us</h3>
-                        <div class="o-layout__item u-8/12@sm">
-                            <p class="c-panel__text c-panel__text--small">Gaol Road, Thebarton</p>
-                            <p class="c-panel__text c-panel__text--tiny">
-                                (Just off Port Road next to the Police Barracks and the new RAH)
-                            </p>
+                        <h3 class="c-homepage-information__title   o-layout__item u-4/12@lg">Where to find us</h3>
+                        <div class="o-layout__item u-8/12@lg">
+                            {% set address = contact.address.one() %}
+                            <p class="c-homepage-information__description">{{ address.street }}, {{ address.suburb }}</p>
+                            <small class="c-homepage-information__description">({{ address.description }})</small>
                         </div>
                     </div>
                 </div>
 
-                <div class="c-panel__item   o-layout__item u-4/12@lg  u-margin-top-small u-margin-top-none@lg  u-display-inline-flex@lg">
-                    <button class="c-button c-button--primary   u-margin-left-auto@lg">Plan your visit</button>
+                <div class="o-layout__item u-4/12@md">
+                    <a href="{{ visitorInformation.getUrl() }}" class="c-button c-button--primary">Plan your visit</a>
                 </div>
 
             </div>
         </section>
 
-        <section class="c-panel c-panel--single c-panel--left">
+        <section class="c-panel   c-homepage-exhibition">
             <div class="o-layout">
 
                 <div class="o-layout__item u-6/12@md">
-                    <h2 class="c-panel__title">The Mugshot Exhibition</h2>
-                    <p class="c-panel__text">Learn the untold stories behind 9 Adelaide Gaol convicted prisoners. See photographs that were recently rediscovered within the Gaol’s archives in a free exhibition in 'A' Wing of the New Building.</p>
-                    <button class="c-button c-button--primary  u-margin-top-small">Find out more</button>
+                    <div class="c-homepage-exhibition__text">
+                        <h2 class="c-panel__title">{{ exhibition.navTitle ? exhibition.navTitle : exhibition.title }}</h2>
+                        <p class="">{{ exhibition.metaDescription }}</p>
+                        <a href="{{ exhibition.getUrl() }}" class="c-button c-button--primary">Find out more</a>
+                    </div>
                 </div>
 
-                <div class="c-panel__images   o-layout__item u-6/12@md">
-                    <div class="o-layout o-layout--flush">
-                        <div class="o-layout__item u-6/12">
-                            <img class="c-panel__image" src="https://source.unsplash.com/random/620x620" alt="">
+                <div class="o-layout__item u-6/12@md">
+                    <div class="c-homepage-exhibition__images o-layout o-layout--flush">
+                        {% set images = exhibition.mainContent.type('imageGallery').one().images.limit(2).all() %}
+
+
+                        {% for image in images %}
+                        <div class="o-layout__item u-6/12@lg">
+                            {{ macro.imageTransform(image, 'quarter-1x1') }}
                         </div>
-                        <div class="o-layout__item u-6/12">
-                            <img class="c-panel__image" src="https://source.unsplash.com/random/620x620" alt="">
-                        </div>
+                        {% endfor %}
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <section class="c-panel">
+        <section class="c-panel   c-homepage-whats-on">
             <h2 class="c-panel__title">What's on at the Gaol</h2>
-            <div class="o-layout  c-panel__group">
-                <div class="c-panel__item   o-layout__item u-4/12@md">
-                    <img class="c-panel__image" src="https://source.unsplash.com/random/620x440" alt="">
-                    <h3 class="c-panel__subtitle">Tour information</h3>
-                    <p class="c-panel__text">Find your own way on a self guided tour, or book in for a guided experience.</p>
-                    <button class="c-button c-button--primary   u-margin-top u-margin-right-auto">Find out more</button>
+
+            <div class="o-layout">
+            {% for item in whatsOn %}
+
+                <div class="o-layout__item u-4/12@md">
+                    {% set image = item.navImage.one() ? item.navImage.one() : item.backgroundImage.one() %}
+                    {% if image %}
+                        {{ macro.imageTransform(image, 'third-16x9', 'c-homepage-whats-on__image') }}
+                    {% endif %}
+
+                    <div class="c-homepage-whats-on__text-wrapper">
+                        <h3 class="c-homepage-whats-on__title">{{ item.navTitle ? item.navTitle : item.title }}</h3>
+                        <p class="c-homepage-whats-on__description">{{ item.metaDescription | default() }}</p>
+                        <a class="c-button c-button--primary" href="{{ item.getUrl() }}">Find out more</a>
+                    </div>
                 </div>
-                <div class="c-panel__item   o-layout__item u-4/12@md">
-                    <img class="c-panel__image" src="https://source.unsplash.com/random/620x440" alt="">
-                    <h3 class="c-panel__subtitle">Ghostly Sightings</h3>
-                    <p class="c-panel__text">The Adelaide Gaol is said to be regularly visited by some of the inmates and prison officers who once wandered the halls...</p>
-                    <button class="c-button c-button--primary   u-margin-top u-margin-right-auto">Find out more</button>
-                </div>
-                <div class="c-panel__item   o-layout__item u-4/12@md">
-                    <img class="c-panel__image" src="https://source.unsplash.com/random/620x440" alt="">
-                    <h3 class="c-panel__subtitle">Venue hire</h3>
-                    <p class="c-panel__text">Looking for a venue with a difference? Give your guests an arresting experience at the Adelaide Gaol.</p>
-                    <button class="c-button c-button--primary   u-margin-top u-margin-right-auto">Find out more</button>
-                </div>
+
+            {% endfor %}
+
             </div>
         </section>
 
